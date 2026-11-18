@@ -1,0 +1,471 @@
+{
+  "id": "form-f3-inden",
+  "name": "## Indenização",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Movido de Atlas Fase 3 → Atlas V2. Importado de Atlas Fase 3.html · chave inden · Lista: Indenizações · Grupo: Medição e faturamento · Estados: ABE→Aberta, PAR→Em parecer MTI, PAD→Aguardando processo administrativo, APR→Aprovada, FIN���Tratamento financeiro registrado, CON→Concluída, ARQ→Arquivada �� Ações: 6",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "sections": [
+    {
+      "id": "sec-f3-inden-t0",
+      "title": "1. Apuração",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-inden-t1",
+      "title": "2. Parecer e processo",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-inden-t2",
+      "title": "3. Tratamento financeiro",
+      "icon": "description"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "identity",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-_st",
+      "label": "Situação",
+      "type": "textOptions",
+      "options": [
+        "Aberta",
+        "Em parecer MTI",
+        "Aguardando processo administrativo",
+        "Aprovada",
+        "Tratamento financeiro registrado",
+        "Concluída",
+        "Arquivada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "sectionId": "sec-f3-inden-t0",
+      "spec": "Estados do protótipo: ABE=Aberta; PAR=Em parecer MTI; PAD=Aguardando processo administrativo; APR=Aprovada; FIN=Tratamento financeiro registrado; CON=Concluída; ARQ=Arquivada"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-numero",
+      "label": "Número",
+      "type": "text",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-sit",
+      "label": "Situação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "spec": "Auto, somente leitura. Espelho do campo Situação da classe (`stName('inden', r._st)`); muda só pelas ações.",
+      "options": [
+        "Aberta",
+        "Em parecer MTI",
+        "Aguardando processo administrativo",
+        "Aprovada",
+        "Tratamento financeiro registrado",
+        "Concluída",
+        "Arquivada"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-cliente",
+      "label": "Cliente",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-org",
+      "referenceOptionsSource": "class",
+      "spec": "Filtro de opções: o=>(o.perfil||[]).includes('Cliente')"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-origem",
+      "label": "Origem",
+      "type": "textOptions",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "options": [
+        "Demanda sem cobertura",
+        "Consumo após o fim da vigência",
+        "Consumo acima do saldo contratual"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-inden-dem",
+      "label": "Demanda",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-ctAnt",
+      "label": "Contrato anterior (se houver)",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class",
+      "spec": "Filtro de opções: (x,r)=>x.cliente===r.cliente"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-pIni",
+      "label": "Período do consumo – início",
+      "type": "date",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-pFim",
+      "label": "Período do consumo – fim",
+      "type": "date",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-resp",
+      "label": "Responsável MTI",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-pes",
+      "referenceOptionsSource": "class",
+      "spec": "Filtro de opções: x=>isMTIorg(x.org)"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-novaCt",
+      "label": "Nova contratação",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-prop",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-inden-itens",
+      "label": "Consumo apurado",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-inden-itens",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-vApur",
+      "label": "Valor apurado",
+      "type": "decimal",
+      "sectionId": "sec-f3-inden-t0",
+      "tooltip": false,
+      "currency": true
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-inden-parecer",
+      "label": "Parecer da MTI",
+      "type": "text",
+      "sectionId": "sec-f3-inden-t1",
+      "tooltip": false,
+      "textLong": true
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-parecerista",
+      "label": "Parecerista",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t1",
+      "tooltip": false,
+      "linkedFormId": "form-f3-pes",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-docs",
+      "label": "Documentos",
+      "type": "file",
+      "sectionId": "sec-f3-inden-t1",
+      "tooltip": false
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-inden-procAdm",
+      "label": "Processo administrativo",
+      "type": "text",
+      "sectionId": "sec-f3-inden-t1",
+      "tooltip": false,
+      "spec": "Obrigatório condicional: r=>r._st==='PAD' · Visível quando: r=>r._st!=='PAR'"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-inden-trat",
+      "label": "Tratamento financeiro",
+      "type": "textOptions",
+      "sectionId": "sec-f3-inden-t2",
+      "tooltip": false,
+      "options": [
+        "Faturamento por indenização",
+        "Restos a receber"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-inden-fat",
+      "label": "Faturamento",
+      "type": "reference",
+      "sectionId": "sec-f3-inden-t2",
+      "tooltip": false,
+      "linkedFormId": "form-f3-fat",
+      "referenceOptionsSource": "class",
+      "spec": "Visível quando: r=>!!r.fat"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-inden-tesouro",
+      "label": "Informado ao Tesouro",
+      "type": "boolean",
+      "sectionId": "sec-f3-inden-t2",
+      "tooltip": false
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-inden-dem-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-inden-origem",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Demanda sem cobertura",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-inden-dem"
+      ]
+    },
+    {
+      "id": "rule-f3-inden-tesouro-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-inden-trat",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Restos a receber",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-inden-tesouro"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "meth-f3-inden-par",
+      "name": "Iniciar parecer",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-inden-t0",
+      "spec": "De: ABE · Quem: [\"mti\"] · → PAR"
+    },
+    {
+      "id": "meth-f3-inden-conP",
+      "name": "Concluir parecer",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-inden-t0",
+      "spec": "De: PAR · Quem: [\"mti\"] · Efeito: r=>{r.parecerista=ME();return 'PAD'}"
+    },
+    {
+      "id": "meth-f3-inden-pad",
+      "name": "Registrar processo administrativo",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-inden-t0",
+      "spec": "De: PAD · Quem: [\"mti\"] · → APR"
+    },
+    {
+      "id": "meth-f3-inden-fin",
+      "name": "Registrar tratamento financeiro",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-inden-t0",
+      "spec": "De: APR · Quem: [\"mti\"] · Efeito: r=>{if(r.trat==='Faturamento por indenização'){const x=mk('fat',{inden:r.id,acPor:ME(),acEm:now()},'Faturamento por indenização');r.fat=x.id}return 'FIN'}"
+    },
+    {
+      "id": "meth-f3-inden-con",
+      "name": "Concluir",
+      "icon": "bolt",
+      "kind": "menu",
+      "editSectionId": "sec-f3-inden-t0",
+      "spec": "De: FIN · Quem: [\"mti\"] · → CON"
+    },
+    {
+      "id": "meth-f3-inden-arq",
+      "name": "Arquivar",
+      "icon": "bolt",
+      "kind": "menu",
+      "editSectionId": "sec-f3-inden-t0",
+      "spec": "De: ABE, PAR, PAD · Quem: [\"mti\"] · Pede motivo · → ARQ"
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-inden-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-inden-p2",
+      "name": "Exemplo 2",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-inden-p3",
+      "name": "Exemplo 3",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-inden-p4",
+      "name": "Exemplo 4",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-inden-p5",
+      "name": "Exemplo 5",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-inden-p1"
+}

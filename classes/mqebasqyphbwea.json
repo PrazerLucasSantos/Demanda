@@ -1,0 +1,280 @@
+{
+  "id": "mqebasqyphbwea",
+  "name": "Workflow de Assinatura — Principal 🟢",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Classe Workflow de Assinatura (Atlas). Abas: Geral e Signatários. Configura o roteiro de assinatura digital por tipo de processo. Execução técnica via envelope no repositório. Recusa cancela o envelope inteiro. Processos em andamento preservam a configuração original.",
+  "sections": [
+    {
+      "id": "sec-wf-geral",
+      "title": "Geral",
+      "icon": "description"
+    },
+    {
+      "id": "sec-wf-signatarios",
+      "title": "Signatários",
+      "icon": "account_tree"
+    }
+  ],
+  "fields": [
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "identity",
+      "id": "patlasv4proto-wf-nome",
+      "label": "Nome",
+      "type": "text",
+      "sectionId": "sec-wf-geral",
+      "spec": "Função: Nome do workflow (ex.: Assinatura de Proposta Padrão).\nRegra: Obrigatório. Identifica o modelo na lista de Enviar para assinatura."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "highlight",
+      "id": "patlasv4proto-wf-tipo-processo",
+      "label": "Tipo de Processo",
+      "type": "textOptions",
+      "sectionId": "sec-wf-geral",
+      "options": [
+        "Proposta",
+        "Contrato",
+        "Ordem de Serviço",
+        "Termo de Homologação",
+        "RAER",
+        "Demanda · Atendimento via contrato",
+        "Orçamento"
+      ],
+      "spec": "Função: Tipo de processo ao qual este workflow se aplica.\nRegra: Um tipo por workflow. Em Enviar para assinatura só aparecem workflows ativos compatíveis com o tipo do processo."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-wf-versao",
+      "label": "Versão",
+      "type": "text",
+      "sectionId": "sec-wf-geral",
+      "options": [
+        "Versão 1 — MTI",
+        "Versão 1 — Parceiros",
+        "Versão 1 — Clientes"
+      ],
+      "spec": "Função: Versão do workflow (referência à versão de processo ativa).\nRegra: Somente leitura. Não é campo numérico livre."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "highlight",
+      "id": "patlasv4proto-wf-ativo",
+      "label": "Ativo",
+      "type": "boolean",
+      "sectionId": "sec-wf-geral",
+      "spec": "Função: Disponibiliza o workflow em Enviar para assinatura.\nRegra: Somente workflows ativos aparecem no envio. Inativar não altera envelopes já disparados.",
+      "hidden": true
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "highlight",
+      "id": "patlasv4proto-wf-etapas",
+      "label": "Etapas do Workflow",
+      "type": "embeddedReference",
+      "sectionId": "sec-wf-signatarios",
+      "linkedFormId": "form-patlasv4-proto-workflow-etapa",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "spec": "Função: Lista de etapas/signatários do workflow.\nRegra: Obrigatório ter ao menos uma etapa ativa. Cargo da etapa deve ter Pode assinar = Sim."
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "patlasv4proto-p-wf-proposta-mti",
+      "name": "Assinatura Proposta MTI",
+      "iconColor": "#0c4a6e",
+      "fieldValues": {
+        "patlasv4proto-wf-nome": "Assinatura de Proposta Padrão",
+        "patlasv4proto-wf-tipo-processo": "Proposta",
+        "patlasv4proto-wf-versao": "Versão 1 — MTI",
+        "patlasv4proto-wf-ativo": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-wf-etapas": [
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Empresa Mato-grossense de Tecnologia da Informação",
+            "patlasv4proto-wf-etapa-unidade-organizacional": "Unidade de Gestão de Projetos",
+            "patlasv4proto-wf-etapa-cargo": "Gerente de Projetos",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Empresa Mato-grossense de Tecnologia da Informação",
+            "patlasv4proto-wf-etapa-cargo": "Diretor",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "EloGroup",
+            "patlasv4proto-wf-etapa-cargo": "Gerente de Projetos"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-wf-demanda-atendimento",
+      "name": "Demanda · Atendimento via contrato",
+      "iconColor": "#137333",
+      "fieldValues": {
+        "patlasv4proto-wf-nome": "Assinatura do detalhamento de atendimento",
+        "patlasv4proto-wf-tipo-processo": "Demanda · Atendimento via contrato",
+        "patlasv4proto-wf-versao": "Versão 1 — Clientes",
+        "patlasv4proto-wf-ativo": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-wf-etapas": [
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Fiscal de Contrato",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Fiscal de Contrato",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Gerente de Projetos",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-wf-termo-homologacao",
+      "name": "Termo de Homologação",
+      "iconColor": "#b06000",
+      "fieldValues": {
+        "patlasv4proto-wf-nome": "Assinatura do Termo de Homologação",
+        "patlasv4proto-wf-tipo-processo": "Termo de Homologação",
+        "patlasv4proto-wf-versao": "Versão 1 — Clientes",
+        "patlasv4proto-wf-ativo": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-wf-etapas": [
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Fiscal de Contrato",
+            "patlasv4proto-wf-etapa-prazo-dias": 7
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Fiscal de Contrato",
+            "patlasv4proto-wf-etapa-prazo-dias": 7
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Gerente de Projetos",
+            "patlasv4proto-wf-etapa-prazo-dias": 7
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-wf-ordem-servico",
+      "name": "Ordem de Serviço",
+      "iconColor": "#7c3aed",
+      "fieldValues": {
+        "patlasv4proto-wf-nome": "Assinatura de Ordem de Serviço",
+        "patlasv4proto-wf-tipo-processo": "Ordem de Serviço",
+        "patlasv4proto-wf-versao": "Versão 1 — Clientes",
+        "patlasv4proto-wf-ativo": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-wf-etapas": [
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Gerente de Projetos",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Fiscal de Contrato",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          },
+          {
+            "patlasv4proto-wf-etapa-papel-envelope": "Assinante",
+            "patlasv4proto-wf-etapa-parecer": "Aprovar",
+            "patlasv4proto-wf-etapa-notificacao-email": true,
+            "patlasv4proto-wf-etapa-ativo": true,
+            "patlasv4proto-wf-etapa-organizacao": "Secretaria de Estado de Planejamento e Gestão",
+            "patlasv4proto-wf-etapa-cargo": "Fiscal de Contrato",
+            "patlasv4proto-wf-etapa-prazo-dias": 5
+          }
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "patlasv4proto-p-wf-proposta-mti",
+  "methods": [
+    {
+      "id": "mqebasqyphbwea-ativar-inativar",
+      "name": "Ativar/Inativar",
+      "icon": "toggle_on",
+      "kind": "destaque"
+    }
+  ],
+  "listedHidden": true,
+  "iconColor": "#212121"
+}

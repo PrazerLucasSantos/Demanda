@@ -1,0 +1,2621 @@
+{
+  "id": "form-f3-os",
+  "name": "## Ordem de serviço",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Ordem de serviço — Fase 3 (doc. 06/11/2026; vale sobre o protótipo e as fontes). Nasce do orçamento autorizado (OS dedicada já Vigente, assinaturas herdadas) ou manualmente pela MTI (sobretudo a global, sem demanda). Situações: Em preparação, Em assinatura, Vigente, Em execução, Encerrada, Substituída (Novo), Cancelada. Abas editáveis: 1–3 em Em preparação (MTI); 4 por signatário em Em assinatura; 7 em Vigente e Em execução (MTI). Acesso: MTI vê todas; cliente vê as do próprio órgão exceto em Em preparação (a organização consumidora vê as suas), assina e aprova alterações que lhe cabem; parceiro vê OS com item da sua parceria (só itens e valores da parceria), assina quando é signatário e assina dilatação de prazo. Snapshots de itens e valores; versionamento 1.0 → +0.1 com histórico permanente. Notificações: OS assinada (cliente, MTI e parceiro).",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "sections": [
+    {
+      "id": "sec-f3-os-t0",
+      "title": "1. Dados da OS",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-os-t1",
+      "title": "2. Itens",
+      "icon": "list"
+    },
+    {
+      "id": "sec-f3-os-t2",
+      "title": "3. Responsáveis",
+      "icon": "groups"
+    },
+    {
+      "id": "sec-f3-os-t3",
+      "title": "4. Assinaturas",
+      "icon": "draw"
+    },
+    {
+      "id": "sec-f3-os-t4",
+      "title": "5. ServiceNow",
+      "icon": "sync"
+    },
+    {
+      "id": "sec-f3-os-t5",
+      "title": "6. Homologação e medição",
+      "icon": "task_alt"
+    },
+    {
+      "id": "sec-f3-os-t6",
+      "title": "7. Alterações",
+      "icon": "edit_note"
+    },
+    {
+      "id": "sec-f3-os-t7",
+      "title": "8. Eventos e versões",
+      "icon": "history"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-numero",
+      "label": "Número da OS",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Auto, somente leitura. Ajuste: NNN/AAAA/SIGLA, sequencial por contrato, gerado ao emitir (L 18/09)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "identity",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-ident",
+      "label": "Identificador",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Auto, somente leitura. OS-NNNN, único no sistema, gerado ao salvar."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "highlight",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-_st",
+      "label": "Situação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t0",
+      "options": [
+        "Em preparação",
+        "Em assinatura",
+        "Vigente",
+        "Em execução",
+        "Encerrada",
+        "Substituída",
+        "Cancelada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Muda só pelas ações. Fluxo: Em preparação → Em assinatura → Vigente → Em execução → Encerrada; Em assinatura → Em preparação por ajuste; Vigente/Em execução → Substituída; Em preparação/Em assinatura/Vigente → Cancelada."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-versao",
+      "label": "Versão",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Auto, somente leitura. 1.0 na criação; +0.1 a cada salvamento ou alteração registrada."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-tipo",
+      "label": "Modalidade",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t0",
+      "options": [
+        "OS dedicada",
+        "OS global",
+        "OS de licenciamento"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Na OS do sistema, vem do caminho do orçamento; licenciamento quando a demanda pede licença em OS própria. No protótipo, «Tipo de OS»."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-tipoOS",
+      "label": "Tipo da OS",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t0",
+      "options": [
+        "Delivery",
+        "Sustentação continuada",
+        "Infraestrutura",
+        "Licenciamento"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Novo: (OS-SEPLAG; RAER-MTPREV; TH-SEMA). Lista a validar com o Luiz (EC Q-16)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-emitida",
+      "label": "Emitida em",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Auto, somente leitura. Data e hora da criação."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-emitSis",
+      "label": "Emitida pelo sistema",
+      "type": "boolean",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Auto, somente leitura. Sim quando gerada pela autorização da demanda; então abas 1 a 4 chegam preenchidas e somente leitura."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-contrato",
+      "label": "Contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório. Contratos Vigentes. Somente leitura na OS do sistema."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-cli",
+      "label": "Cliente",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura. Contratante do contrato."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-orgCons",
+      "label": "Organização consumidora",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório na condição da regra. Novo: Órgãos da abrangência do contrato (EC; L 09/09). Exibe se o contrato tem abrangência; padrão o Cliente."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-cob",
+      "label": "Cobertura",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t0",
+      "options": [
+        "Própria",
+        "Patrocinada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Novo: (L 17/09) Vem da qualificação da demanda; na OS manual, Própria. Patrocinada exige as cadeiras do dono na aba 3."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-dem",
+      "label": "Demanda de origem",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura. Vazio na OS manual.",
+      "referenceDisplayFieldId": "f3-dem-numero",
+      "viewValue": "DEM-2026-0024"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-orc",
+      "label": "Orçamento",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-f3-orc",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura. Orçamento autorizado que gerou a OS; o PDF entra como páginas 2 em diante.",
+      "referenceDisplayFieldId": "f3-orc-numero",
+      "viewValue": "ORC-2026-0024"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-projeto",
+      "label": "Projeto",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-f3-proj",
+      "referenceOptionsSource": "class",
+      "spec": "Opcional. Projetos do mesmo cliente. Herdado do bloco de atendimento; obrigatório se houver item de Serviço de projeto.",
+      "referenceDisplayFieldId": "f3-proj-nome",
+      "viewValue": "Exemplo"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-osRel",
+      "label": "OS relacionada",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t0",
+      "linkedFormId": "form-co-ordem-servico",
+      "referenceOptionsSource": "class",
+      "spec": "Opcional. OS do mesmo contrato. Liga OS de licenciamento à OS de serviço e a OS substituta à original.",
+      "referenceDisplayFieldId": "numeroOS",
+      "viewValue": "OS-DEMO-001"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-proc",
+      "label": "Número do processo",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Opcional. Novo: (EC) Processo administrativo ou SIGADOC do cliente."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-catVer",
+      "label": "Versão do catálogo",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Auto, somente leitura. Novo: (EC RN-02) Snapshot na emissão; aditivo de catálogo não muda OS aberta."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-objetivo",
+      "label": "Objetivo",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Obrigatório. Novo: (OS-FIPLAN) Uma linha; vai para o título do documento.",
+      "textLong": true
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-desc",
+      "label": "Descrição resumida",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "textLong": true,
+      "spec": "Obrigatório. Novo: (OS-SEPLAG) Na OS do sistema, vem da descrição da demanda."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-detalhe",
+      "label": "Detalhamento e justificativa",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "textLong": true,
+      "spec": "Obrigatório na condição da regra. Novo: (OS-FIPLAN) Obrigatório na OS manual; na OS do sistema vem do orçamento."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-os-abr",
+      "label": "Abrangência",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "textLong": true,
+      "spec": "Obrigatório na condição da regra. Exibe e é obrigatória se Modalidade = OS global."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-os-recRec",
+      "label": "Recebe consumo recorrente",
+      "type": "boolean",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Opcional. Exibe se OS global; Sim permite descontar itens mensais dela (L 20/10)."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-os-semComp",
+      "label": "Sem compromisso fixo de despesa",
+      "type": "boolean",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Opcional. Novo: (OS-FIPLAN; L 17/09) OS guarda-chuva; o valor é teto, não compromisso. Exibe se OS global."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-vigIni",
+      "label": "Vigência – início",
+      "type": "date",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Obrigatório. Não anterior ao início do contrato. Data de abertura no documento."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-vigFim",
+      "label": "Vigência – fim",
+      "type": "date",
+      "sectionId": "sec-f3-os-t0",
+      "spec": "Obrigatório. Igual ou depois do início; não depois do fim do contrato. Previsão de término no documento."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "highlight",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-valor",
+      "label": "Valor da OS",
+      "type": "decimal",
+      "sectionId": "sec-f3-os-t0",
+      "currency": true,
+      "spec": "Auto, somente leitura. Soma dos itens + acréscimos − supressões registrados."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-saudeOS",
+      "label": "Saúde da OS",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t0",
+      "options": [
+        "Saudável",
+        "Atenção",
+        "Crítico"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Ajuste: Mesma regra do contrato aplicada ao saldo da OS: déficit projetado = (consumo projetado − saldo) ÷ base × 100; até 0% Saudável, até 25% Atenção, acima de 25% Crítico. Em Em preparação mostra a saúde do contrato com a OS incluída (L 15/09). Crítico bloqueia a emissão."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-hom",
+      "label": "Homologado",
+      "type": "decimal",
+      "sectionId": "sec-f3-os-t0",
+      "currency": true,
+      "spec": "Auto, somente leitura. Termos assinados + medições reconhecidas."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-saldo",
+      "label": "Saldo da OS",
+      "type": "decimal",
+      "sectionId": "sec-f3-os-t0",
+      "currency": true,
+      "spec": "Auto, somente leitura. Valor − Homologado; na OS global, menos o saldo aberto das AC não concluídas."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-saldoCt",
+      "label": "Saldo disponível do contrato",
+      "type": "decimal",
+      "sectionId": "sec-f3-os-t0",
+      "currency": true,
+      "spec": "Auto, somente leitura. Novo: Disponível do contrato no momento = Contratado − Provisionado − Executado."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-regraNF",
+      "label": "Regra de nota fiscal",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t0",
+      "options": [
+        "Uma NF por pedido de venda",
+        "Uma NF por OS"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. O cliente escolhe emitir junto ou separado (L 18/09); padrão do contrato."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-condPag",
+      "label": "Condições de pagamento",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "textLong": true,
+      "spec": "Auto, somente leitura. Novo: (OS-FIPLAN) Carregado do contrato: periodicidade, prazo de pagamento, NF com DAR, pro rata, homologação, contestação, retenções e glosas."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-obs",
+      "label": "Observações",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "textLong": true,
+      "spec": "Opcional. Livre; sai no documento."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-itens",
+      "label": "Itens",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t1",
+      "linkedFormId": "form-f3-os-itens",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": true,
+      "embeddedMinInstances": 1,
+      "embeddedTotalFieldIds": [
+        "f3-os-itens-total"
+      ],
+      "spec": "Obrigatório. Editável em Em preparação pela MTI. Na OS do sistema vem do orçamento e é somente leitura. Pelo menos um item. Total no rodapé."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-resp",
+      "label": "Responsáveis",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t2",
+      "linkedFormId": "form-f3-os-resp",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": true,
+      "embeddedMinInstances": 2,
+      "spec": "Obrigatório. Novo: Ao menos um do cliente e um da MTI com Assina = Sim. Patrocinada exige Fiscal geral e Gestor do dono. Item com parceria exige o GP da parceira. Depois de Em preparação, só por alteração «Troca de responsável»."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-os-avisoSis",
+      "label": "Aviso",
+      "type": "alert",
+      "sectionId": "sec-f3-os-t3",
+      "alertVariant": "info",
+      "alertTitle": "OS emitida pelo sistema",
+      "alertMessage": "As assinaturas foram coletadas no documento de autorização e valem para a OS e para os termos de homologação.",
+      "spec": "Opcional. Exibe se Emitida pelo sistema = Sim."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-doc",
+      "label": "Documento da OS",
+      "type": "file",
+      "sectionId": "sec-f3-os-t3",
+      "allowedFileKinds": [
+        "pdf"
+      ],
+      "spec": "Auto, somente leitura. PDF pelo template ativo «Ordem de serviço», gerado ao emitir; provisório até a última assinatura."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-est",
+      "label": "Estado das assinaturas",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t3",
+      "options": [
+        "Não iniciado",
+        "Em andamento",
+        "Ajuste solicitado",
+        "Concluído"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-wf",
+      "label": "Workflow aplicado",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t3",
+      "linkedFormId": "mqebasqyphbwea",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura. Novo: «Ordem de serviço» do contrato; sem um específico, o padrão. OS do sistema: «Autorização de execução»."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-sig",
+      "label": "Signatários da OS",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t3",
+      "linkedFormId": "form-f3-os-sig",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Gerada das linhas com Assina = Sim da aba 3; sem incluir nem excluir linha. Cada signatário age só na própria linha."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-snNum",
+      "label": "Número no ServiceNow",
+      "type": "text",
+      "sectionId": "sec-f3-os-t4",
+      "spec": "Auto, somente leitura. Devolvido no envio."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-snEm",
+      "label": "Enviada em",
+      "type": "text",
+      "sectionId": "sec-f3-os-t4",
+      "spec": "Auto, somente leitura. Data e hora."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-snSit",
+      "label": "Situação no ServiceNow",
+      "type": "textOptions",
+      "sectionId": "sec-f3-os-t4",
+      "options": [
+        "Aberto",
+        "Em execução",
+        "Concluído"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Do último retorno."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-pct",
+      "label": "% de conclusão",
+      "type": "decimal",
+      "sectionId": "sec-f3-os-t4",
+      "decimalPlaces": 0,
+      "spec": "Auto, somente leitura. Percentual de 0 a 100, do último retorno."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-ultRet",
+      "label": "Último retorno",
+      "type": "text",
+      "sectionId": "sec-f3-os-t4",
+      "spec": "Auto, somente leitura. Novo: Data e hora."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-exes",
+      "label": "Execuções",
+      "type": "reference",
+      "sectionId": "sec-f3-os-t4",
+      "linkedFormId": "form-f3-exe",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura. Registros de execução com atividades, sprints e executores."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-ths",
+      "label": "Termos de homologação",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t5",
+      "linkedFormId": "form-f3-os-ths",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Colunas Termo, Tipo, Período, AC, Valor, Situação; com link."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-os-acs",
+      "label": "Autorizações de consumo",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t5",
+      "linkedFormId": "form-f3-os-acs",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Novo: Exibe se OS global; colunas AC, Demanda, Valor, Prazo, Situação."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-meds",
+      "label": "Medições",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t5",
+      "linkedFormId": "form-f3-os-meds",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Exibe se há item mensal; colunas Medição, Competência, Valor reconhecido, Situação."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-avisoAlt",
+      "label": "Aviso",
+      "type": "alert",
+      "sectionId": "sec-f3-os-t6",
+      "alertVariant": "warning",
+      "alertTitle": "Alterações só valem quando Registradas",
+      "alertMessage": "Enquanto uma alteração aguarda aprovação, vale a versão anterior da OS. Acréscimos e supressões acumulados do contrato limitados a 25% do valor inicial atualizado.",
+      "spec": "Opcional."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-alt",
+      "label": "Alterações da OS",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t6",
+      "linkedFormId": "form-f3-os-alt",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": true,
+      "spec": "Opcional. Editável pela MTI em Vigente e Em execução. Rascunho → Em aprovação (assinada) → Registrada ou Recusada."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-eventos",
+      "label": "Eventos",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t7",
+      "linkedFormId": "form-f3-os-eventos",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Data e hora · Evento · De → para · Quem · Detalhe. Toda ação gera uma linha."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-os-versoes",
+      "label": "Versões",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-os-t7",
+      "linkedFormId": "form-f3-os-versoes",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Uma por salvamento ou alteração registrada, com autor, data e campos alterados; consulta sem restaurar."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-os-sit",
+      "label": "Situação",
+      "type": "text",
+      "sectionId": "sec-f3-os-t0",
+      "tooltip": false,
+      "spec": "Espelho calculado da situação. O campo visível é Situação."
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-os-global",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-tipo",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "OS global",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-acs"
+      ]
+    },
+    {
+      "id": "rule-f3-os-aviso-sis",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-emitSis",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "show",
+      "targetFieldIds": [
+        "f3-os-avisoSis"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-sis",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-emitSis",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-pre-oculta",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Em preparação",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-os-avisoSis",
+        "f3-os-doc",
+        "f3-os-est",
+        "f3-os-wf",
+        "f3-os-sig",
+        "f3-os-snNum",
+        "f3-os-snEm",
+        "f3-os-snSit",
+        "f3-os-pct",
+        "f3-os-ultRet",
+        "f3-os-exes",
+        "f3-os-ths",
+        "f3-os-acs",
+        "f3-os-meds",
+        "f3-os-avisoAlt",
+        "f3-os-alt"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ass-oculta",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Em assinatura",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-os-snNum",
+        "f3-os-snEm",
+        "f3-os-snSit",
+        "f3-os-pct",
+        "f3-os-ultRet",
+        "f3-os-exes",
+        "f3-os-ths",
+        "f3-os-acs",
+        "f3-os-meds",
+        "f3-os-avisoAlt",
+        "f3-os-alt"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-1",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Em assinatura",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-2",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Vigente",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-3",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Em execução",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-4",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Encerrada",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-5",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Substituída",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-6",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cancelada",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-tipo",
+        "f3-os-tipoOS",
+        "f3-os-contrato",
+        "f3-os-orgCons",
+        "f3-os-projeto",
+        "f3-os-osRel",
+        "f3-os-proc",
+        "f3-os-objetivo",
+        "f3-os-desc",
+        "f3-os-detalhe",
+        "f3-os-abr",
+        "f3-os-recRec",
+        "f3-os-semComp",
+        "f3-os-vigIni",
+        "f3-os-vigFim",
+        "f3-os-regraNF",
+        "f3-os-obs",
+        "f3-os-itens",
+        "f3-os-resp"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-alt-1",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Encerrada",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-alt"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-alt-2",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Substituída",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-alt"
+      ]
+    },
+    {
+      "id": "rule-f3-os-ro-alt-3",
+      "operator": "eq",
+      "sourceFieldId": "f3-os-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cancelada",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-os-alt"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "meth-f3-os-salvar",
+      "name": "Salvar",
+      "icon": "save",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-os-t0",
+      "spec": "Nova → Em preparação. Quem: MTI. Exige Contrato e Modalidade; gera o Identificador OS-NNNN e a versão 1.0. Cada novo salvamento gera +0.1."
+    },
+    {
+      "id": "meth-f3-os-ass",
+      "name": "Emitir e enviar para assinatura",
+      "icon": "send",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-os-t0",
+      "spec": "Em preparação → Em assinatura. Quem: MTI. Valida abas 1, 2 e 3; bloqueia com Saúde da OS Crítico ou item sem saldo no contrato; gera o Número da OS (NNN/AAAA/SIGLA), os signatários pelo workflow «Ordem de serviço» e o PDF pelo template ativo."
+    },
+    {
+      "id": "meth-f3-os-assinar",
+      "name": "Assinar",
+      "icon": "ink_pen",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-os-t3",
+      "spec": "Em assinatura. Quem: cada signatário, na própria linha (MT Login ou senha). Com todas as assinaturas, passa a Vigente automaticamente e notifica cliente, MTI e parceiro."
+    },
+    {
+      "id": "meth-f3-os-ajuste",
+      "name": "Solicitar ajuste",
+      "icon": "undo",
+      "kind": "menu",
+      "editSectionId": "sec-f3-os-t3",
+      "spec": "Em assinatura → Em preparação. Quem: qualquer signatário. Novo: motivo obrigatório; zera as assinaturas; nova versão."
+    },
+    {
+      "id": "meth-f3-os-sn",
+      "name": "Enviar ao ServiceNow",
+      "icon": "cloud_upload",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-os-t4",
+      "spec": "Vigente → Em execução. Quem: MTI (ou automático na assinatura). Grava número e data no ServiceNow e o log de integração; o ServiceNow consome a API do Atlas (L 18/09)."
+    },
+    {
+      "id": "meth-f3-os-th",
+      "name": "Gerar termo de homologação",
+      "icon": "task",
+      "kind": "menu",
+      "editSectionId": "sec-f3-os-t5",
+      "spec": "Vigente, Em execução. Quem: MTI. Exibe se há item não recorrente com saldo ou item mensal sem termo de entrega inicial; abre o termo já preenchido. Na OS global com AC, o termo nasce na AC."
+    },
+    {
+      "id": "meth-f3-os-med",
+      "name": "Gerar medição do mês",
+      "icon": "calendar_month",
+      "kind": "menu",
+      "editSectionId": "sec-f3-os-t5",
+      "spec": "Vigente, Em execução. Quem: MTI. Ajuste: exibe se há item mensal com termo de entrega inicial assinado; reabre a medição da competência se já existir."
+    },
+    {
+      "id": "meth-f3-os-alt",
+      "name": "Registrar alteração",
+      "icon": "edit_note",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-os-t6",
+      "spec": "Vigente, Em execução. Quem: MTI. Inclui linha na aba 7; segue para aprovação assinada; só tem efeito quando Registrada."
+    },
+    {
+      "id": "meth-f3-os-enc",
+      "name": "Encerrar OS",
+      "icon": "flag",
+      "kind": "menu",
+      "editSectionId": "sec-f3-os-t0",
+      "spec": "Vigente, Em execução → Encerrada. Quem: MTI. Motivo obrigatório; bloqueia com termo, AC ou medição em andamento; libera o saldo não consumido no contrato."
+    },
+    {
+      "id": "meth-f3-os-can",
+      "name": "Cancelar OS",
+      "icon": "cancel",
+      "kind": "menu",
+      "editSectionId": "sec-f3-os-t0",
+      "spec": "Em preparação, Em assinatura, Vigente → Cancelada. Quem: MTI. Motivo obrigatório; só sem termo assinado nem medição reconhecida; libera o provisionado."
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-os-p1",
+      "name": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-os-numero": "001/2026/SEPLAG",
+        "f3-os-ident": "OS-0001",
+        "f3-os-_st": "Em execução",
+        "f3-os-versao": "1.0",
+        "f3-os-tipo": "OS global",
+        "f3-os-tipoOS": "Sustentação continuada",
+        "f3-os-emitida": "20/01/2026 10:00",
+        "f3-os-emitSis": false,
+        "f3-os-contrato": "055/2023/SEPLAG",
+        "f3-os-cli": "SEPLAG",
+        "f3-os-orgCons": "SEPLAG",
+        "f3-os-cob": "Própria",
+        "f3-os-proc": "SEPLAG-PRO-2026/00412",
+        "f3-os-catVer": "C-SIMI002 v1.3",
+        "f3-os-objetivo": "Evoluções do portal SEPLAG",
+        "f3-os-desc": "Demandas evolutivas de baixa complexidade",
+        "f3-os-detalhe": "Atendimento contínuo das evoluções do portal",
+        "f3-os-abr": "Demandas evolutivas do portal SEPLAG",
+        "f3-os-recRec": false,
+        "f3-os-semComp": true,
+        "f3-os-vigIni": "2026-02-01",
+        "f3-os-vigFim": "2026-12-31",
+        "f3-os-valor": 30000,
+        "f3-os-saudeOS": "Saudável",
+        "f3-os-hom": 10000,
+        "f3-os-saldo": 20000,
+        "f3-os-saldoCt": 6020,
+        "f3-os-regraNF": "Uma NF por pedido de venda",
+        "f3-os-condPag": "Mensal e postecipado",
+        "f3-os-obs": "Abertura pela vigência, sem compromisso de despesa",
+        "f3-os-doc": [
+          {
+            "name": "os-001-2026-SEPLAG",
+            "kind": "pdf"
+          }
+        ],
+        "f3-os-est": "Concluído",
+        "f3-os-wf": "OS padrão",
+        "f3-os-snNum": "PRJ0011001",
+        "f3-os-snEm": "01/02/2026 09:00",
+        "f3-os-snSit": "Em execução",
+        "f3-os-pct": 35,
+        "f3-os-ultRet": "03/11/2026 18:00",
+        "f3-os-exes": [
+          "EXE-0001"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-os-itens": [
+          {
+            "f3-os-itens-orig": "MTI",
+            "f3-os-itens-nat": "Serviço avulso",
+            "f3-os-itens-prod": "Serviço por UST",
+            "f3-os-itens-cod": "SIMF007",
+            "f3-os-itens-codP": "32000071",
+            "f3-os-itens-met": "UST",
+            "f3-os-itens-rec": "Conforme homologação",
+            "f3-os-itens-cx": "Média",
+            "f3-os-itens-coef": 1,
+            "f3-os-itens-qtd": 150,
+            "f3-os-itens-unit": 180,
+            "f3-os-itens-total": 27000,
+            "f3-os-itens-qtdHom": 50,
+            "f3-os-itens-saldo": 100
+          },
+          {
+            "f3-os-itens-orig": "Parceiro",
+            "f3-os-itens-parc": "HOST · FacilMova",
+            "f3-os-itens-nat": "Serviço avulso",
+            "f3-os-itens-prod": "Serviço HOST",
+            "f3-os-itens-cod": "HOST003",
+            "f3-os-itens-codP": "32000072",
+            "f3-os-itens-met": "HST",
+            "f3-os-itens-rec": "Única vez",
+            "f3-os-itens-qtd": 6,
+            "f3-os-itens-unit": 500,
+            "f3-os-itens-total": 3000,
+            "f3-os-itens-qtdHom": 2,
+            "f3-os-itens-saldo": 4
+          }
+        ],
+        "f3-os-resp": [
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Gestor do contrato",
+            "f3-os-resp-cargo": "Secretário adjunto SEPLAG",
+            "f3-os-resp-pessoa": "Ricardo Almeida Ferreira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Fiscal requisitante",
+            "f3-os-resp-cargo": "Coordenador CGTD",
+            "f3-os-resp-pessoa": "Beatriz Nogueira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-resp-cargo": "Gerente UGVEN",
+            "f3-os-resp-pessoa": "Roberto Campos",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Sucesso do Cliente (UGEPV)",
+            "f3-os-resp-cargo": "Gerente UGEPV",
+            "f3-os-resp-pessoa": "Cristiani Moraes",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Unidade (DTIC)",
+            "f3-os-resp-cargo": "Gerente UGITI",
+            "f3-os-resp-pessoa": "Fernanda Lima",
+            "f3-os-resp-cond": "Substituto",
+            "f3-os-resp-assina": true
+          }
+        ],
+        "f3-os-sig": [
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Ricardo Almeida Ferreira",
+            "f3-os-sig-cargo": "Gestor",
+            "f3-os-sig-papel": "Gestor do contrato",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "25/01/2026 10:00"
+          },
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Beatriz Nogueira",
+            "f3-os-sig-cargo": "Fiscal",
+            "f3-os-sig-papel": "Fiscal requisitante",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "25/01/2026 10:00"
+          },
+          {
+            "f3-os-sig-org": "MTI",
+            "f3-os-sig-user": "Roberto Campos",
+            "f3-os-sig-cargo": "Gerente UGVEN",
+            "f3-os-sig-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "25/01/2026 10:00"
+          },
+          {
+            "f3-os-sig-org": "MTI",
+            "f3-os-sig-user": "Cristiani Moraes",
+            "f3-os-sig-cargo": "Gerente UGEPV",
+            "f3-os-sig-papel": "Gerente de Sucesso do Cliente (UGEPV)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "25/01/2026 10:00"
+          },
+          {
+            "f3-os-sig-org": "MTI",
+            "f3-os-sig-user": "Fernanda Lima",
+            "f3-os-sig-cargo": "Gerente UGITI",
+            "f3-os-sig-papel": "Gerente de Unidade (DTIC)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "25/01/2026 10:00"
+          }
+        ],
+        "f3-os-ths": [
+          {
+            "f3-os-ths-th": "TH-0001",
+            "f3-os-ths-tipo": "Parcial (por entrega / sprint)",
+            "f3-os-ths-per": "05/2026",
+            "f3-os-ths-valor": 10000,
+            "f3-os-ths-sit": "Assinado"
+          }
+        ],
+        "f3-os-acs": [
+          {
+            "f3-os-acs-ac": "AC-0001",
+            "f3-os-acs-dem": "DEM-2026-0019",
+            "f3-os-acs-valor": 3600,
+            "f3-os-acs-prazo": "2026-04-15",
+            "f3-os-acs-sit": "Concluída"
+          },
+          {
+            "f3-os-acs-ac": "AC-0002",
+            "f3-os-acs-dem": "DEM-2026-0022",
+            "f3-os-acs-valor": 1800,
+            "f3-os-acs-prazo": "2026-07-10",
+            "f3-os-acs-sit": "Concluída"
+          },
+          {
+            "f3-os-acs-ac": "AC-0003",
+            "f3-os-acs-dem": "DEM-2026-0026",
+            "f3-os-acs-valor": 5400,
+            "f3-os-acs-prazo": "2026-12-05",
+            "f3-os-acs-sit": "Em execução"
+          },
+          {
+            "f3-os-acs-ac": "AC-0004",
+            "f3-os-acs-dem": "DEM-2026-0028",
+            "f3-os-acs-valor": 3600,
+            "f3-os-acs-prazo": "2026-12-28",
+            "f3-os-acs-sit": "Gerada"
+          }
+        ],
+        "f3-os-alt": [
+          {
+            "f3-os-alt-tipo": "Acréscimo",
+            "f3-os-alt-itens": {
+              "embeddedDemoInstances": [
+                {
+                  "f3-os-alt-it-item": "Serviço por UST",
+                  "f3-os-alt-it-ant": 150,
+                  "f3-os-alt-it-nova": 200,
+                  "f3-os-alt-it-var": 50
+                }
+              ]
+            },
+            "f3-os-alt-valor": 9000,
+            "f3-os-alt-dem": "DEM-2026-0026",
+            "f3-os-alt-just": "Nova frente de evoluções",
+            "f3-os-alt-aprovs": {
+              "embeddedDemoInstances": [
+                {
+                  "f3-os-alt-ap-lado": "Cliente",
+                  "f3-os-alt-ap-pessoa": "Ricardo Almeida Ferreira",
+                  "f3-os-alt-ap-papel": "Gestor do contrato",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "05/11/2026 11:00"
+                },
+                {
+                  "f3-os-alt-ap-lado": "Cliente",
+                  "f3-os-alt-ap-pessoa": "Beatriz Nogueira",
+                  "f3-os-alt-ap-papel": "Fiscal requisitante",
+                  "f3-os-alt-ap-sit": "Pendente"
+                },
+                {
+                  "f3-os-alt-ap-lado": "MTI",
+                  "f3-os-alt-ap-pessoa": "Roberto Campos",
+                  "f3-os-alt-ap-papel": "UGVEN",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "05/11/2026 14:00"
+                }
+              ]
+            },
+            "f3-os-alt-sit": "Em aprovação"
+          }
+        ],
+        "f3-os-eventos": [
+          {
+            "f3-os-ev-dt": "20/01/2026 10:00",
+            "f3-os-ev-txt": "Criação",
+            "f3-os-ev-de": "→ Em preparação",
+            "f3-os-ev-quem": "Carlos Eduardo Souza"
+          },
+          {
+            "f3-os-ev-dt": "20/01/2026 16:00",
+            "f3-os-ev-txt": "Emitir e enviar para assinatura",
+            "f3-os-ev-de": "Em preparação → Em assinatura",
+            "f3-os-ev-quem": "Carlos Eduardo Souza"
+          },
+          {
+            "f3-os-ev-dt": "26/01/2026 09:00",
+            "f3-os-ev-txt": "OS assinada por todos",
+            "f3-os-ev-de": "Em assinatura → Vigente",
+            "f3-os-ev-quem": "Sistema"
+          },
+          {
+            "f3-os-ev-dt": "01/02/2026 09:00",
+            "f3-os-ev-txt": "Envio ao ServiceNow",
+            "f3-os-ev-de": "Vigente → Em execução",
+            "f3-os-ev-quem": "Lucas dos Santos"
+          },
+          {
+            "f3-os-ev-dt": "05/11/2026 10:00",
+            "f3-os-ev-txt": "Alteração enviada para aprovação: Acréscimo",
+            "f3-os-ev-de": "—",
+            "f3-os-ev-quem": "Carlos Eduardo Souza",
+            "f3-os-ev-det": "Vale a versão anterior até o registro"
+          }
+        ],
+        "f3-os-versoes": [
+          {
+            "f3-os-ver-n": "1.0",
+            "f3-os-ver-dt": "20/01/2026 10:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Criação",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-os-p2",
+      "name": "OS-0007 · 007/2026/SEPLAG · OS dedicada · Em execução",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-os-numero": "007/2026/SEPLAG",
+        "f3-os-ident": "OS-0007",
+        "f3-os-_st": "Em execução",
+        "f3-os-versao": "1.0",
+        "f3-os-tipo": "OS dedicada",
+        "f3-os-tipoOS": "Delivery",
+        "f3-os-emitida": "30/10/2026 16:30",
+        "f3-os-emitSis": true,
+        "f3-os-contrato": "055/2023/SEPLAG",
+        "f3-os-cli": "SEPLAG",
+        "f3-os-orgCons": "SEDEC",
+        "f3-os-cob": "Própria",
+        "f3-os-dem": "DEM-2026-0024",
+        "f3-os-orc": "ORC-2026-0024",
+        "f3-os-projeto": "PRJ-0001",
+        "f3-os-osRel": "OS-0008",
+        "f3-os-proc": "SEPLAG-ORD-2026/00105",
+        "f3-os-catVer": "C-SIMI002 v1.3",
+        "f3-os-objetivo": "Chatbot corporativo",
+        "f3-os-desc": "Chatbot com base de conhecimento do portal",
+        "f3-os-vigIni": "2026-10-30",
+        "f3-os-vigFim": "2026-12-31",
+        "f3-os-valor": 26780,
+        "f3-os-saudeOS": "Saudável",
+        "f3-os-hom": 21780,
+        "f3-os-saldo": 5000,
+        "f3-os-saldoCt": 6020,
+        "f3-os-regraNF": "Uma NF por pedido de venda",
+        "f3-os-condPag": "Pagamento em até 30 dias da NF atestada",
+        "f3-os-obs": "UST-PS remoto",
+        "f3-os-doc": [
+          {
+            "name": "os-007-2026-SEPLAG",
+            "kind": "pdf"
+          }
+        ],
+        "f3-os-est": "Concluído",
+        "f3-os-wf": "Autorização de execução",
+        "f3-os-snNum": "PRJ0012345",
+        "f3-os-snEm": "31/10/2026 08:00",
+        "f3-os-snSit": "Em execução",
+        "f3-os-pct": 40,
+        "f3-os-ultRet": "02/11/2026 18:00",
+        "f3-os-exes": [
+          "EXE-0011"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-os-itens": [
+          {
+            "f3-os-itens-orig": "Parceiro",
+            "f3-os-itens-parc": "MTI SIMPLIFICA · EloGroup",
+            "f3-os-itens-nat": "Serviço de projeto",
+            "f3-os-itens-prod": "Serviço por UST",
+            "f3-os-itens-cod": "SIMF007",
+            "f3-os-itens-codP": "32000071",
+            "f3-os-itens-met": "UST",
+            "f3-os-itens-rec": "Conforme homologação",
+            "f3-os-itens-cx": "Alta",
+            "f3-os-itens-coef": 1.2,
+            "f3-os-itens-qtd": 80,
+            "f3-os-itens-unit": 180,
+            "f3-os-itens-total": 17280,
+            "f3-os-itens-qtdHom": 80,
+            "f3-os-itens-saldo": 0
+          },
+          {
+            "f3-os-itens-orig": "Parceiro",
+            "f3-os-itens-parc": "HOST · FacilMova",
+            "f3-os-itens-nat": "Serviço avulso",
+            "f3-os-itens-prod": "Serviço HOST",
+            "f3-os-itens-cod": "HOST003",
+            "f3-os-itens-codP": "32000072",
+            "f3-os-itens-met": "HST",
+            "f3-os-itens-rec": "Única vez",
+            "f3-os-itens-qtd": 4,
+            "f3-os-itens-unit": 500,
+            "f3-os-itens-total": 2000,
+            "f3-os-itens-qtdHom": 4,
+            "f3-os-itens-saldo": 0
+          },
+          {
+            "f3-os-itens-orig": "MTI",
+            "f3-os-itens-nat": "Licenciamento",
+            "f3-os-itens-prod": "Hospedagem em nuvem",
+            "f3-os-itens-cod": "NUV001",
+            "f3-os-itens-codP": "32000075",
+            "f3-os-itens-met": "USN",
+            "f3-os-itens-rec": "Mensal",
+            "f3-os-itens-qtd": 1,
+            "f3-os-itens-meses": 3,
+            "f3-os-itens-unit": 2500,
+            "f3-os-itens-total": 7500,
+            "f3-os-itens-qtdHom": 1,
+            "f3-os-itens-saldo": 2,
+            "f3-os-itens-iniRec": "2026-10-31"
+          }
+        ],
+        "f3-os-resp": [
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Gestor do contrato",
+            "f3-os-resp-cargo": "Secretário adjunto SEPLAG",
+            "f3-os-resp-pessoa": "Ricardo Almeida Ferreira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Fiscal requisitante",
+            "f3-os-resp-cargo": "Coordenador CGTD",
+            "f3-os-resp-pessoa": "Beatriz Nogueira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-resp-cargo": "Gerente UGVEN",
+            "f3-os-resp-pessoa": "Roberto Campos",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Sucesso do Cliente (UGEPV)",
+            "f3-os-resp-cargo": "Gerente UGEPV",
+            "f3-os-resp-pessoa": "Cristiani Moraes",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Unidade (DTIC)",
+            "f3-os-resp-cargo": "Gerente UGITI",
+            "f3-os-resp-pessoa": "Fernanda Lima",
+            "f3-os-resp-cond": "Substituto",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Parceiro",
+            "f3-os-resp-papel": "GP da parceira",
+            "f3-os-resp-cargo": "Gerente de projetos EloGroup",
+            "f3-os-resp-pessoa": "Helena Ribeiro Lima",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          }
+        ],
+        "f3-os-sig": [
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Beatriz Nogueira",
+            "f3-os-sig-cargo": "Fiscal",
+            "f3-os-sig-papel": "Fiscal requisitante",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "30/10/2026 11:00"
+          },
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Ricardo Almeida Ferreira",
+            "f3-os-sig-cargo": "Gestor",
+            "f3-os-sig-papel": "Gestor do contrato",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "30/10/2026 14:00"
+          },
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Janete Silva",
+            "f3-os-sig-cargo": "Product owner",
+            "f3-os-sig-papel": "Dono do produto (PO)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "30/10/2026 15:00"
+          }
+        ],
+        "f3-os-ths": [
+          {
+            "f3-os-ths-th": "TH-0003",
+            "f3-os-ths-tipo": "Parcial (por entrega / sprint)",
+            "f3-os-ths-per": "10/2026",
+            "f3-os-ths-valor": 19280,
+            "f3-os-ths-sit": "Assinado"
+          },
+          {
+            "f3-os-ths-th": "TH-0005",
+            "f3-os-ths-tipo": "Entrega inicial de recorrente",
+            "f3-os-ths-per": "10/2026",
+            "f3-os-ths-valor": 0,
+            "f3-os-ths-sit": "Assinado"
+          }
+        ],
+        "f3-os-meds": [
+          {
+            "f3-os-meds-med": "MED-0001",
+            "f3-os-meds-comp": "10/2026",
+            "f3-os-meds-valor": 2500,
+            "f3-os-meds-sit": "Reconhecida"
+          },
+          {
+            "f3-os-meds-med": "MED-0002",
+            "f3-os-meds-comp": "11/2026",
+            "f3-os-meds-valor": 0,
+            "f3-os-meds-sit": "Aberta (em apuração)"
+          }
+        ],
+        "f3-os-alt": [
+          {
+            "f3-os-alt-tipo": "Dilatação de prazo",
+            "f3-os-alt-novoFim": "2027-01-31",
+            "f3-os-alt-just": "Atraso na disponibilização de dados",
+            "f3-os-alt-aprovs": {
+              "embeddedDemoInstances": [
+                {
+                  "f3-os-alt-ap-lado": "Cliente",
+                  "f3-os-alt-ap-pessoa": "Ricardo Almeida Ferreira",
+                  "f3-os-alt-ap-papel": "Gestor do contrato",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "05/11/2026 11:00"
+                },
+                {
+                  "f3-os-alt-ap-lado": "MTI",
+                  "f3-os-alt-ap-pessoa": "Roberto Campos",
+                  "f3-os-alt-ap-papel": "UGVEN",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "05/11/2026 14:00"
+                },
+                {
+                  "f3-os-alt-ap-lado": "Parceiro",
+                  "f3-os-alt-ap-pessoa": "Helena Ribeiro Lima",
+                  "f3-os-alt-ap-papel": "GP da parceira",
+                  "f3-os-alt-ap-sit": "Pendente"
+                }
+              ]
+            },
+            "f3-os-alt-sit": "Em aprovação"
+          },
+          {
+            "f3-os-alt-tipo": "Troca de responsável",
+            "f3-os-alt-papel": "Dono do produto (PO)",
+            "f3-os-alt-sai": "Janete Silva",
+            "f3-os-alt-entra": "Tiago Fernandes",
+            "f3-os-alt-just": "PO realocada em outro projeto",
+            "f3-os-alt-aprovs": {
+              "embeddedDemoInstances": [
+                {
+                  "f3-os-alt-ap-lado": "Cliente",
+                  "f3-os-alt-ap-pessoa": "Beatriz Nogueira",
+                  "f3-os-alt-ap-papel": "Fiscal requisitante",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "05/11/2026 09:30"
+                }
+              ]
+            },
+            "f3-os-alt-sit": "Registrada"
+          }
+        ],
+        "f3-os-eventos": [
+          {
+            "f3-os-ev-dt": "30/10/2026 16:30",
+            "f3-os-ev-txt": "Criação pela autorização da demanda DEM-2026-0024",
+            "f3-os-ev-de": "→ Vigente",
+            "f3-os-ev-quem": "Sistema",
+            "f3-os-ev-det": "Assinaturas herdadas da autorização"
+          },
+          {
+            "f3-os-ev-dt": "31/10/2026 08:00",
+            "f3-os-ev-txt": "Envio ao ServiceNow",
+            "f3-os-ev-de": "Vigente → Em execução",
+            "f3-os-ev-quem": "Lucas dos Santos"
+          },
+          {
+            "f3-os-ev-dt": "05/11/2026 09:30",
+            "f3-os-ev-txt": "Alteração registrada: Troca de responsável",
+            "f3-os-ev-de": "—",
+            "f3-os-ev-quem": "Beatriz Nogueira"
+          }
+        ],
+        "f3-os-versoes": [
+          {
+            "f3-os-ver-n": "1.0",
+            "f3-os-ver-dt": "30/10/2026 16:30",
+            "f3-os-ver-autor": "Sistema",
+            "f3-os-ver-campos": "Criação",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-os-p3",
+      "name": "OS-0008 · 008/2026/SEPLAG · Licenciamento · Em execução",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-os-numero": "008/2026/SEPLAG",
+        "f3-os-ident": "OS-0008",
+        "f3-os-_st": "Em execução",
+        "f3-os-versao": "1.0",
+        "f3-os-tipo": "OS de licenciamento",
+        "f3-os-tipoOS": "Licenciamento",
+        "f3-os-emitida": "30/10/2026 16:30",
+        "f3-os-emitSis": true,
+        "f3-os-contrato": "055/2023/SEPLAG",
+        "f3-os-cli": "SEPLAG",
+        "f3-os-orgCons": "SEPLAG",
+        "f3-os-cob": "Própria",
+        "f3-os-dem": "DEM-2026-0024",
+        "f3-os-orc": "ORC-2026-0024",
+        "f3-os-projeto": "PRJ-0001",
+        "f3-os-osRel": "OS-0007",
+        "f3-os-proc": "SEPLAG-ORD-2026/00106",
+        "f3-os-catVer": "C-SIMI002 v1.3",
+        "f3-os-objetivo": "Licenças do chatbot",
+        "f3-os-desc": "31 licenças de usuário",
+        "f3-os-vigIni": "2026-10-30",
+        "f3-os-vigFim": "2026-12-31",
+        "f3-os-valor": 37200,
+        "f3-os-saudeOS": "Saudável",
+        "f3-os-hom": 0,
+        "f3-os-saldo": 37200,
+        "f3-os-saldoCt": 6020,
+        "f3-os-regraNF": "Uma NF por OS",
+        "f3-os-condPag": "Nota única da MTI com DAR",
+        "f3-os-obs": "Licenças em OS própria",
+        "f3-os-doc": [
+          {
+            "name": "os-008-2026-SEPLAG",
+            "kind": "pdf"
+          }
+        ],
+        "f3-os-est": "Concluído",
+        "f3-os-wf": "Autorização de execução",
+        "f3-os-snNum": "PRJ0012345",
+        "f3-os-snEm": "31/10/2026 08:00",
+        "f3-os-snSit": "Em execução",
+        "f3-os-pct": 40,
+        "f3-os-ultRet": "02/11/2026 18:00",
+        "f3-os-exes": [
+          "EXE-0011"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-os-itens": [
+          {
+            "f3-os-itens-orig": "Parceiro",
+            "f3-os-itens-parc": "MTI SIMPLIFICA · EloGroup",
+            "f3-os-itens-nat": "Licenciamento",
+            "f3-os-itens-prod": "Licença por usuário",
+            "f3-os-itens-cod": "SIMF001",
+            "f3-os-itens-codP": "32000073",
+            "f3-os-itens-met": "USN",
+            "f3-os-itens-rec": "Anual",
+            "f3-os-itens-qtd": 31,
+            "f3-os-itens-unit": 1200,
+            "f3-os-itens-total": 37200,
+            "f3-os-itens-qtdHom": 0,
+            "f3-os-itens-saldo": 31
+          }
+        ],
+        "f3-os-resp": [
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Gestor do contrato",
+            "f3-os-resp-cargo": "Secretário adjunto SEPLAG",
+            "f3-os-resp-pessoa": "Ricardo Almeida Ferreira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Fiscal requisitante",
+            "f3-os-resp-cargo": "Coordenador CGTD",
+            "f3-os-resp-pessoa": "Beatriz Nogueira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-resp-cargo": "Gerente UGVEN",
+            "f3-os-resp-pessoa": "Roberto Campos",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Sucesso do Cliente (UGEPV)",
+            "f3-os-resp-cargo": "Gerente UGEPV",
+            "f3-os-resp-pessoa": "Cristiani Moraes",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Unidade (DTIC)",
+            "f3-os-resp-cargo": "Gerente UGITI",
+            "f3-os-resp-pessoa": "Fernanda Lima",
+            "f3-os-resp-cond": "Substituto",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Parceiro",
+            "f3-os-resp-papel": "GP da parceira",
+            "f3-os-resp-cargo": "Gerente de projetos EloGroup",
+            "f3-os-resp-pessoa": "Helena Ribeiro Lima",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          }
+        ],
+        "f3-os-sig": [
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Beatriz Nogueira",
+            "f3-os-sig-cargo": "Fiscal",
+            "f3-os-sig-papel": "Fiscal requisitante",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "30/10/2026 11:00"
+          },
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Ricardo Almeida Ferreira",
+            "f3-os-sig-cargo": "Gestor",
+            "f3-os-sig-papel": "Gestor do contrato",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "30/10/2026 14:00"
+          },
+          {
+            "f3-os-sig-org": "SEPLAG",
+            "f3-os-sig-user": "Janete Silva",
+            "f3-os-sig-cargo": "Product owner",
+            "f3-os-sig-papel": "Dono do produto (PO)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "30/10/2026 15:00"
+          }
+        ],
+        "f3-os-ths": [
+          {
+            "f3-os-ths-th": "TH-0004",
+            "f3-os-ths-tipo": "Licenciamento (entrega)",
+            "f3-os-ths-per": "11/2026",
+            "f3-os-ths-valor": 37200,
+            "f3-os-ths-sit": "Em assinatura"
+          }
+        ],
+        "f3-os-eventos": [
+          {
+            "f3-os-ev-dt": "30/10/2026 16:30",
+            "f3-os-ev-txt": "Criação pela autorização da demanda DEM-2026-0024",
+            "f3-os-ev-de": "→ Vigente",
+            "f3-os-ev-quem": "Sistema",
+            "f3-os-ev-det": "Licença em OS própria"
+          },
+          {
+            "f3-os-ev-dt": "31/10/2026 08:00",
+            "f3-os-ev-txt": "Envio ao ServiceNow",
+            "f3-os-ev-de": "Vigente → Em execução",
+            "f3-os-ev-quem": "Lucas dos Santos"
+          }
+        ],
+        "f3-os-versoes": [
+          {
+            "f3-os-ver-n": "1.0",
+            "f3-os-ver-dt": "30/10/2026 16:30",
+            "f3-os-ver-autor": "Sistema",
+            "f3-os-ver-campos": "Criação",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-os-p4",
+      "name": "OS-0009 · SEDUC · OS dedicada · Em preparação",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-os-ident": "OS-0009",
+        "f3-os-_st": "Em preparação",
+        "f3-os-versao": "1.2",
+        "f3-os-tipo": "OS dedicada",
+        "f3-os-tipoOS": "Delivery",
+        "f3-os-emitida": "05/11/2026 09:10",
+        "f3-os-emitSis": true,
+        "f3-os-contrato": "012/2025/SEDUC",
+        "f3-os-cli": "SEDUC",
+        "f3-os-orgCons": "SEDUC",
+        "f3-os-cob": "Patrocinada",
+        "f3-os-dem": "DEM-2026-0031",
+        "f3-os-orc": "ORC-2026-0031",
+        "f3-os-projeto": "PRJ-0002",
+        "f3-os-catVer": "C-SIMI002 v1.3",
+        "f3-os-objetivo": "Portal de matrículas",
+        "f3-os-desc": "Matrícula on-line da rede estadual",
+        "f3-os-vigIni": "2026-11-16",
+        "f3-os-vigFim": "2027-04-30",
+        "f3-os-valor": 21600,
+        "f3-os-saudeOS": "Atenção",
+        "f3-os-hom": 0,
+        "f3-os-saldo": 21600,
+        "f3-os-saldoCt": 48400,
+        "f3-os-regraNF": "Uma NF por pedido de venda",
+        "f3-os-condPag": "Contestação em até 5 dias úteis",
+        "f3-os-est": "Não iniciado",
+        "f3-os-wf": "OS padrão",
+        "f3-os-pct": 0
+      },
+      "embeddedRowsByFieldId": {
+        "f3-os-itens": [
+          {
+            "f3-os-itens-orig": "MTI",
+            "f3-os-itens-nat": "Serviço de projeto",
+            "f3-os-itens-prod": "Serviço por UST",
+            "f3-os-itens-cod": "SIMF007",
+            "f3-os-itens-codP": "32000071",
+            "f3-os-itens-met": "UST",
+            "f3-os-itens-rec": "Conforme homologação",
+            "f3-os-itens-cx": "Média",
+            "f3-os-itens-coef": 1,
+            "f3-os-itens-qtd": 120,
+            "f3-os-itens-unit": 180,
+            "f3-os-itens-total": 21600,
+            "f3-os-itens-qtdHom": 0,
+            "f3-os-itens-saldo": 120
+          }
+        ],
+        "f3-os-resp": [
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Gestor do contrato",
+            "f3-os-resp-cargo": "Diretora de TI SEDUC",
+            "f3-os-resp-pessoa": "Diretora de TI SEDUC",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Fiscal requisitante",
+            "f3-os-resp-cargo": "Fiscal SEDUC",
+            "f3-os-resp-pessoa": "Fiscal de contrato SEDUC",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Fiscal geral do dono",
+            "f3-os-resp-cargo": "Fiscal geral SEPLAG",
+            "f3-os-resp-pessoa": "Beatriz Nogueira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Gestor do dono",
+            "f3-os-resp-cargo": "Secretário adjunto SEPLAG",
+            "f3-os-resp-pessoa": "Ricardo Almeida Ferreira",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-resp-cargo": "Gerente UGVEN",
+            "f3-os-resp-pessoa": "Roberto Campos",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          }
+        ],
+        "f3-os-eventos": [
+          {
+            "f3-os-ev-dt": "05/11/2026 09:10",
+            "f3-os-ev-txt": "Criação",
+            "f3-os-ev-de": "→ Em preparação",
+            "f3-os-ev-quem": "Carlos Eduardo Souza"
+          },
+          {
+            "f3-os-ev-dt": "05/11/2026 11:00",
+            "f3-os-ev-txt": "Edição salva",
+            "f3-os-ev-de": "—",
+            "f3-os-ev-quem": "Carlos Eduardo Souza"
+          },
+          {
+            "f3-os-ev-dt": "06/11/2026 09:00",
+            "f3-os-ev-txt": "Edição salva",
+            "f3-os-ev-de": "—",
+            "f3-os-ev-quem": "Carlos Eduardo Souza"
+          }
+        ],
+        "f3-os-versoes": [
+          {
+            "f3-os-ver-n": "1.0",
+            "f3-os-ver-dt": "05/11/2026 09:10",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Criação",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          },
+          {
+            "f3-os-ver-n": "1.1",
+            "f3-os-ver-dt": "05/11/2026 11:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Itens; Responsáveis",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.1",
+                "kind": "json"
+              }
+            ]
+          },
+          {
+            "f3-os-ver-n": "1.2",
+            "f3-os-ver-dt": "06/11/2026 09:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Vigência – início; Vigência – fim",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.2",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-os-p5",
+      "name": "OS-0012 · 004/2026/SES · OS global · Substituída",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-os-numero": "004/2026/SES",
+        "f3-os-ident": "OS-0012",
+        "f3-os-_st": "Substituída",
+        "f3-os-versao": "1.3",
+        "f3-os-tipo": "OS global",
+        "f3-os-tipoOS": "Sustentação continuada",
+        "f3-os-emitida": "02/03/2026 14:00",
+        "f3-os-emitSis": false,
+        "f3-os-contrato": "031/2026/SES",
+        "f3-os-cli": "SES",
+        "f3-os-orgCons": "SES",
+        "f3-os-cob": "Própria",
+        "f3-os-osRel": "OS-0015",
+        "f3-os-proc": "SES-PRO-2026/00088",
+        "f3-os-catVer": "C-HOST001 v1.0",
+        "f3-os-objetivo": "Sustentação dos sistemas SES",
+        "f3-os-desc": "Sustentação e correções dos sistemas da SES",
+        "f3-os-detalhe": "Continuidade operacional e correção de inconsistências",
+        "f3-os-abr": "Sistemas de regulação e vigilância",
+        "f3-os-recRec": true,
+        "f3-os-semComp": false,
+        "f3-os-vigIni": "2026-03-01",
+        "f3-os-vigFim": "2027-02-28",
+        "f3-os-valor": 43200,
+        "f3-os-saudeOS": "Saudável",
+        "f3-os-hom": 12960,
+        "f3-os-saldo": 30240,
+        "f3-os-saldoCt": 96000,
+        "f3-os-regraNF": "Uma NF por OS",
+        "f3-os-condPag": "Glosa proporcional por não conformidade",
+        "f3-os-obs": "Item 3 a abrir depois",
+        "f3-os-doc": [
+          {
+            "name": "os-004-2026-SES",
+            "kind": "pdf"
+          }
+        ],
+        "f3-os-est": "Concluído",
+        "f3-os-wf": "OS padrão",
+        "f3-os-snNum": "PRJ0011090",
+        "f3-os-snEm": "02/03/2026 10:00",
+        "f3-os-snSit": "Concluído",
+        "f3-os-pct": 100,
+        "f3-os-ultRet": "28/02/2026 17:00",
+        "f3-os-exes": [
+          "EXE-0004"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-os-itens": [
+          {
+            "f3-os-itens-orig": "MTI",
+            "f3-os-itens-nat": "Serviço avulso",
+            "f3-os-itens-prod": "Serviço por UST",
+            "f3-os-itens-cod": "SIMF007",
+            "f3-os-itens-codP": "32000071",
+            "f3-os-itens-met": "UST",
+            "f3-os-itens-rec": "Conforme homologação",
+            "f3-os-itens-cx": "Baixa",
+            "f3-os-itens-coef": 0.8,
+            "f3-os-itens-qtd": 300,
+            "f3-os-itens-unit": 180,
+            "f3-os-itens-total": 43200,
+            "f3-os-itens-qtdHom": 90,
+            "f3-os-itens-saldo": 210
+          }
+        ],
+        "f3-os-resp": [
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Gestor do contrato",
+            "f3-os-resp-cargo": "Secretário adjunto SES",
+            "f3-os-resp-pessoa": "Gestor do contrato SES",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "Cliente",
+            "f3-os-resp-papel": "Fiscal requisitante",
+            "f3-os-resp-cargo": "Fiscal SES",
+            "f3-os-resp-pessoa": "Fiscal de contrato SES",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-resp-cargo": "Gerente UGVEN",
+            "f3-os-resp-pessoa": "Roberto Campos",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          },
+          {
+            "f3-os-resp-lado": "MTI",
+            "f3-os-resp-papel": "Gerente de Unidade (DTIC)",
+            "f3-os-resp-cargo": "Gerente UGITI",
+            "f3-os-resp-pessoa": "Fernanda Lima",
+            "f3-os-resp-cond": "Titular",
+            "f3-os-resp-assina": true
+          }
+        ],
+        "f3-os-sig": [
+          {
+            "f3-os-sig-org": "SES",
+            "f3-os-sig-user": "Gestor do contrato SES",
+            "f3-os-sig-cargo": "Gestor",
+            "f3-os-sig-papel": "Gestor do contrato",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "04/03/2026 10:00"
+          },
+          {
+            "f3-os-sig-org": "SES",
+            "f3-os-sig-user": "Fiscal de contrato SES",
+            "f3-os-sig-cargo": "Fiscal",
+            "f3-os-sig-papel": "Fiscal requisitante",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "04/03/2026 11:00"
+          },
+          {
+            "f3-os-sig-org": "MTI",
+            "f3-os-sig-user": "Roberto Campos",
+            "f3-os-sig-cargo": "Gerente UGVEN",
+            "f3-os-sig-papel": "Gerente de Relacionamento Comercial (UGVEN)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "05/03/2026 09:00"
+          },
+          {
+            "f3-os-sig-org": "MTI",
+            "f3-os-sig-user": "Fernanda Lima",
+            "f3-os-sig-cargo": "Gerente UGITI",
+            "f3-os-sig-papel": "Gerente de Unidade (DTIC)",
+            "f3-os-sig-cond": "Titular",
+            "f3-os-sig-sit": "Assinada",
+            "f3-os-sig-em": "05/03/2026 10:00"
+          }
+        ],
+        "f3-os-ths": [
+          {
+            "f3-os-ths-th": "TH-0002",
+            "f3-os-ths-tipo": "Parcial (por entrega / sprint)",
+            "f3-os-ths-per": "02/2026",
+            "f3-os-ths-valor": 12960,
+            "f3-os-ths-sit": "Assinado"
+          }
+        ],
+        "f3-os-alt": [
+          {
+            "f3-os-alt-tipo": "Substituição",
+            "f3-os-alt-subst": "OS-0015",
+            "f3-os-alt-just": "Mudança para OS dedicada",
+            "f3-os-alt-aprovs": {
+              "embeddedDemoInstances": [
+                {
+                  "f3-os-alt-ap-lado": "Cliente",
+                  "f3-os-alt-ap-pessoa": "Gestor do contrato SES",
+                  "f3-os-alt-ap-papel": "Gestor do contrato",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "14/11/2026 15:00"
+                },
+                {
+                  "f3-os-alt-ap-lado": "MTI",
+                  "f3-os-alt-ap-pessoa": "Roberto Campos",
+                  "f3-os-alt-ap-papel": "UGVEN",
+                  "f3-os-alt-ap-sit": "Assinada",
+                  "f3-os-alt-ap-em": "15/11/2026 10:00"
+                }
+              ]
+            },
+            "f3-os-alt-sit": "Registrada"
+          }
+        ],
+        "f3-os-eventos": [
+          {
+            "f3-os-ev-dt": "02/03/2026 14:00",
+            "f3-os-ev-txt": "Criação",
+            "f3-os-ev-de": "→ Em preparação",
+            "f3-os-ev-quem": "Carlos Eduardo Souza"
+          },
+          {
+            "f3-os-ev-dt": "05/03/2026 10:00",
+            "f3-os-ev-txt": "OS assinada por todos",
+            "f3-os-ev-de": "Em assinatura → Vigente",
+            "f3-os-ev-quem": "Sistema"
+          },
+          {
+            "f3-os-ev-dt": "05/03/2026 11:00",
+            "f3-os-ev-txt": "Envio ao ServiceNow",
+            "f3-os-ev-de": "Vigente → Em execução",
+            "f3-os-ev-quem": "Lucas dos Santos"
+          },
+          {
+            "f3-os-ev-dt": "15/11/2026 11:00",
+            "f3-os-ev-txt": "Substituição",
+            "f3-os-ev-de": "Em execução → Substituída",
+            "f3-os-ev-quem": "Carlos Eduardo Souza",
+            "f3-os-ev-det": "Substituída pela OS-0015; saldo migrado"
+          }
+        ],
+        "f3-os-versoes": [
+          {
+            "f3-os-ver-n": "1.0",
+            "f3-os-ver-dt": "02/03/2026 14:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Criação",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          },
+          {
+            "f3-os-ver-n": "1.1",
+            "f3-os-ver-dt": "03/03/2026 09:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Itens",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.1",
+                "kind": "json"
+              }
+            ]
+          },
+          {
+            "f3-os-ver-n": "1.2",
+            "f3-os-ver-dt": "03/03/2026 10:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Responsáveis",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.2",
+                "kind": "json"
+              }
+            ]
+          },
+          {
+            "f3-os-ver-n": "1.3",
+            "f3-os-ver-dt": "15/11/2026 11:00",
+            "f3-os-ver-autor": "Carlos Eduardo Souza",
+            "f3-os-ver-campos": "Alteração registrada: Substituição",
+            "f3-os-ver-arq": [
+              {
+                "name": "v1.3",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "form-f3-os-p1"
+}

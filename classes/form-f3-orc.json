@@ -1,0 +1,1507 @@
+{
+  "id": "form-f3-orc",
+  "name": "## Orçamento",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Orçamento da Fase 3 (05/11/2026). Duas origens: Demanda (espelho, sem ações; a demanda conduz) e Oferta proativa (MTI, fluxo próprio, atuação sempre Próprio MTI). Visível para a MTI e para o cliente da organização, a partir de Aguardando cliente. O parceiro não vê esta classe. PDF pelo template ativo do tipo Orçamento, sem campo de template. Sem o presidente nas assinaturas. Proativo não tem Licença em OS própria.",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "sections": [
+    {
+      "id": "sec-f3-orc-t0",
+      "title": "1. Dados gerais",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-orc-t1",
+      "title": "2. Itens",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-orc-t2",
+      "title": "3. Assinaturas",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-orc-t3",
+      "title": "4. Decisão do cliente",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-orc-t4",
+      "title": "5. Eventos e versões",
+      "icon": "history"
+    }
+  ],
+  "fields": [
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-orc-avisoDem",
+      "label": "Aviso",
+      "type": "alert",
+      "sectionId": "sec-f3-orc-t0",
+      "alertVariant": "info",
+      "alertTitle": "Orçamento conduzido pela demanda",
+      "alertMessage": "Itens, assinaturas e decisão são registrados na demanda de origem e copiados para cá. Esta classe não tem ações próprias.",
+      "spec": "Exibe quando a origem é Demanda. O link é o campo Demanda de origem."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "identity",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-numero",
+      "label": "Número",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Auto. Sequencial ORC-ano-0000, gerado ao salvar."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-versao",
+      "label": "Versão",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Auto. 1.0 na criação e +0.1 por edição, recomposição ou revisão."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "highlight",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-_st",
+      "label": "Situação",
+      "type": "textOptions",
+      "options": [
+        "Em elaboração",
+        "Em assinatura MTI",
+        "Aguardando cliente",
+        "Autorizado",
+        "Ajuste solicitado",
+        "Não autorizado",
+        "Cancelado"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "sectionId": "sec-f3-orc-t0",
+      "spec": "Auto. Muda só por ação (proativo) ou pelo espelhamento da demanda: S13 Em assinatura MTI, S14 Aguardando cliente, S12 após ajuste vira Ajuste solicitado, S15 Não autorizado, S16–S18 Autorizado, S23 Cancelado."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-geradoEm",
+      "label": "Gerado em",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Data e hora da criação do registro. Auto."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-orc-sit",
+      "label": "Situação",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Espelho calculado da situação. O campo visível é Situação."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-origem",
+      "label": "Origem",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "options": [
+        "Demanda",
+        "Oferta proativa"
+      ],
+      "textOptionsDisplay": "buttons",
+      "spec": "Auto. Demanda quando nasce em Concluir composição. Oferta proativa quando a MTI cria pelo botão Novo."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-orc-dem",
+      "label": "Demanda de origem",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class",
+      "spec": "Exibe só na origem Demanda. Referência à demanda que conduz o orçamento."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-resp",
+      "label": "Responsável MTI (pós-vendas)",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Exibe e é obrigatório só na oferta proativa. Pessoas da MTI. Assina como Pós-vendas."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-justOf",
+      "label": "Justificativa da oferta proativa",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Exibe e é obrigatória só na oferta proativa."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-contrato",
+      "label": "Contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório. Contratos vigentes. No proativo define cliente, itens, saúde e OS disponíveis. Na demanda vem do contrato da qualificação. Somente leitura quando a origem é Demanda."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-cliente",
+      "label": "Cliente",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "spec": "Auto. Cliente do contrato (proativo) ou da demanda."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-objeto",
+      "label": "Objeto do contrato a debitar",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Auto. Objeto do contrato a debitar.",
+      "textLong": true
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-nats",
+      "label": "Naturezas",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Auto. Naturezas presentes nos itens.",
+      "options": [
+        "Licenciamento",
+        "Serviço avulso",
+        "Serviço de projeto"
+      ],
+      "textOptionsDisplay": "buttons"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-atu",
+      "label": "Atuação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Auto. Vem da demanda. Na oferta proativa é sempre Próprio MTI.",
+      "options": [
+        "Individual",
+        "Coletiva",
+        "Próprio MTI"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-vTot",
+      "label": "Valor total",
+      "type": "decimal",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Soma do valor total dos itens."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-vMen",
+      "label": "Custo mensal",
+      "type": "decimal",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Soma, só dos itens recorrentes, de valor total ÷ meses do ciclo (Mensal 1, Bimestral 2, Trimestral 3, Semestral 6, Anual 12). Única Vez e Conforme Homologação ficam de fora."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-vAno",
+      "label": "Custo anual",
+      "type": "decimal",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Custo mensal × 12."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-saude",
+      "label": "Saúde do contrato após o orçamento",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "options": [
+        "Saudável",
+        "Atenção",
+        "Crítico"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto. Recalculada em Em elaboração, Em assinatura MTI, Aguardando cliente e Ajuste solicitado. Déficit = (valor total − saldo) ÷ base × 100, mínimo 0. Saudável = 0, Atenção até 25%, Crítico acima de 25%. OS dedicada usa saldo e base do contrato; OS global e Vincular usam a OS, descontadas autorizações ainda não homologadas. Congela depois da decisão. Crítico bloqueia Enviar para assinatura MTI."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-caminho",
+      "label": "Caminho de execução",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "options": [
+        "Autorização de consumo em OS global",
+        "Abrir OS dedicada",
+        "Vincular a OS existente"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Na demanda vem da aba 7 e fica somente leitura. OS global e Vincular exibem a OS."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-osRef",
+      "label": "OS global / existente",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class",
+      "spec": "Exibe e é obrigatória em Autorização de consumo em OS global (OS globais vigentes ou em execução do contrato) e em Vincular a OS existente (OS não globais do contrato)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-instrPrev",
+      "label": "Instrumentos previstos",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t0",
+      "tooltip": false,
+      "spec": "Auto. Abrir OS dedicada → Nova OS dedicada. OS global → Autorização de consumo. Vincular → Acréscimo na OS existente."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-itens",
+      "label": "Itens do orçamento",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-orc-t1",
+      "tooltip": false,
+      "linkedFormId": "form-f3-orc-itens",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": true,
+      "embeddedMinInstances": 1,
+      "embeddedTotalFieldIds": [
+        "f3-orc-itens-total"
+      ],
+      "spec": "Pelo menos uma linha. No proativo o + cria a linha com Origem = MTI; editável em Em elaboração e Ajuste solicitado. Na demanda é a cópia da aba 7, somente leitura. Itens e valores só dos itens contratados. Total no rodapé. Valor da linha = unitário × quantidade × fator (coeficiente, peso ou 1)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-wf",
+      "label": "Workflow de assinatura",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t2",
+      "tooltip": false,
+      "spec": "Auto. Workflow «Orçamento de demanda» específico do contrato, ou o padrão.",
+      "linkedFormId": "mqebasqyphbwea",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-est",
+      "label": "Estado das assinaturas",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t2",
+      "tooltip": false,
+      "spec": "Auto. Não iniciado, Em andamento, Concluído ou Ajuste solicitado.",
+      "options": [
+        "Não iniciado",
+        "Em andamento",
+        "Concluído",
+        "Ajuste solicitado"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-docPdf",
+      "label": "Documento",
+      "type": "file",
+      "sectionId": "sec-f3-orc-t2",
+      "tooltip": false,
+      "allowedFileKinds": [
+        "pdf"
+      ],
+      "spec": "Auto. PDF gerado no envio para assinatura (proativo) ou em Concluir composição (demanda), pelo template ativo do tipo Orçamento."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-sig",
+      "label": "Signatários (MTI e parceiros)",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-orc-t2",
+      "tooltip": false,
+      "linkedFormId": "form-f3-orc-sig",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Sem botão +. Proativo: Pós-vendas (Responsável MTI), Gerente de projetos MTI, Gerente de unidade do contrato e Focal do produto quando o contrato exigir. Demanda: signatários da aba 8, com os gerentes de projetos das parcerias. Uma pessoa uma vez. Sem ordem e sem presidente. Cada um assina a própria linha; com todas, o proativo vai sozinho para Aguardando cliente."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-dAut",
+      "label": "Decisão do cliente",
+      "type": "textOptions",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Autorizar",
+        "Solicitar ajuste",
+        "Não autorizar"
+      ],
+      "textOptionsDisplay": "buttons",
+      "spec": "Obrigatório na decisão. No proativo, o cliente registra em Aguardando cliente. Autorizar gera os signatários da autorização. Solicitar ajuste exibe valor proposto e itens questionados. Na demanda a decisão é a cópia da aba 9, somente leitura. Ao escolher, grava Decidido por e Decidido em."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-orc-decPor",
+      "label": "Decidido por",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Auto. Quem registrou a decisão.",
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-decEm",
+      "label": "Decidido em",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "spec": "Data e hora da decisão. Auto."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-orc-vOrc",
+      "label": "Valor orçado",
+      "type": "decimal",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Exibe se Solicitar ajuste. Valor total do orçamento."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-vProp",
+      "label": "Valor proposto pelo cliente",
+      "type": "decimal",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Exibe se Solicitar ajuste. Valor proposto pelo cliente."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-itensQ",
+      "label": "Itens questionados",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Exibe e é obrigatório se Solicitar ajuste."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-motAut",
+      "label": "Motivo",
+      "type": "text",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Exibe e é obrigatório se Solicitar ajuste ou Não autorizar."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-orc-sigAut",
+      "label": "Signatários da autorização",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "linkedFormId": "form-f3-orc-sigAut",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Exibe só no proativo com Autorizar. Linhas pelo workflow «Autorização de execução»: fiscal, gestor e PO do cliente no contrato. Todos assinam, sem ordem. Com a última assinatura o orçamento vai para Autorizado e gera o instrumento. Na demanda a autorização fica na aba 9."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-orc-instrH",
+      "label": "Instrumentos gerados",
+      "type": "reference",
+      "sectionId": "sec-f3-orc-t3",
+      "tooltip": false,
+      "spec": "Auto. Gerados na autorização: OS dedicada, autorização de consumo na OS global ou acréscimo na OS existente. No proativo todos os itens seguem o caminho escolhido (não há Licença em OS própria). A autorização de consumo, quando for o caso, fica citada junto da OS.",
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "f3-os-numero"
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-orc-eventos",
+      "label": "Eventos",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-orc-t4",
+      "linkedFormId": "form-f3-orc-eventos",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto. Toda ação e assinatura gera uma linha. Somente leitura."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-orc-versoes",
+      "label": "Versões",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-orc-t4",
+      "linkedFormId": "form-f3-orc-versoes",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto. Toda edição, recomposição ou revisão gera uma linha, com o retrato do registro. Somente leitura."
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-orc-vOrc-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-vOrc",
+        "f3-orc-vProp",
+        "f3-orc-itensQ"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-vProp-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-vProp"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-itensQ-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-itensQ"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-sigAut-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Autorizar",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-sigAut"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-aviso-dem",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-origem",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Demanda",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-avisoDem",
+        "f3-orc-dem"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-resp-pro",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-origem",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Oferta proativa",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-resp",
+        "f3-orc-justOf"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-os-glob",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Autorização de consumo em OS global",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-osRef"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-os-vinc",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Vincular a OS existente",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-osRef"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-mot-aj",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-motAut"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-mot-nao",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Não autorizar",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-orc-motAut"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-ro-dem",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-origem",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Demanda",
+      "action": "readonly",
+      "targetFieldIds": [
+        "f3-orc-contrato",
+        "f3-orc-caminho",
+        "f3-orc-osRef",
+        "f3-orc-itens",
+        "f3-orc-dAut",
+        "f3-orc-vProp",
+        "f3-orc-itensQ",
+        "f3-orc-motAut",
+        "f3-orc-sig",
+        "f3-orc-sigAut"
+      ]
+    },
+    {
+      "id": "rule-f3-orc-sigAut-dem",
+      "operator": "eq",
+      "sourceFieldId": "f3-orc-origem",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Demanda",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-orc-sigAut"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "meth-f3-orc-ass",
+      "name": "Enviar para assinatura MTI",
+      "icon": "draw",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-orc-t0",
+      "spec": "De Em elaboração. Quem: MTI. Só oferta proativa. Valida as abas 1 e 2. Bloqueia se a saúde for Crítico. Gera os signatários e o PDF. Vai para Em assinatura MTI."
+    },
+    {
+      "id": "meth-f3-orc-dec",
+      "name": "Registrar decisão",
+      "icon": "rule",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-orc-t3",
+      "spec": "De Aguardando cliente. Quem: cliente. Só oferta proativa, para Solicitar ajuste ou Não autorizar. Valida a aba 4. Solicitar ajuste vai para Ajuste solicitado. Não autorizar vai para Não autorizado."
+    },
+    {
+      "id": "meth-f3-orc-rev",
+      "name": "Revisar orçamento",
+      "icon": "edit_note",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-orc-t1",
+      "spec": "De Ajuste solicitado. Quem: MTI. Só oferta proativa. Gera nova versão (+0.1), zera assinaturas e decisão e volta para Em elaboração. Saúde Crítico continua bloqueando o novo envio para assinatura."
+    },
+    {
+      "id": "meth-f3-orc-can",
+      "name": "Cancelar",
+      "icon": "cancel",
+      "kind": "menu",
+      "editSectionId": "sec-f3-orc-t0",
+      "spec": "De Em elaboração, Em assinatura MTI, Aguardando cliente ou Ajuste solicitado. Quem: MTI, com motivo. Só oferta proativa. Vai para Cancelado."
+    },
+    {
+      "id": "meth-f3-orc-assinar",
+      "name": "Assinar",
+      "icon": "ink_pen",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-orc-t2",
+      "spec": "De Em assinatura MTI. Só oferta proativa. Cada signatário assina a própria linha. Sem ordem e sem presidente. Com todas as assinaturas, vai sozinho para Aguardando cliente."
+    },
+    {
+      "id": "meth-f3-orc-aut",
+      "name": "Decidir Autorizar e assinar",
+      "icon": "verified",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-orc-t3",
+      "spec": "De Aguardando cliente. Quem: cliente. Só oferta proativa, com decisão Autorizar. Gera os signatários da autorização (fiscal, gestor e PO). Com a última assinatura, vai para Autorizado e gera o instrumento do caminho."
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-orc-p1",
+      "name": "ORC-2026-0024 · Autorizado",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-orc-numero": "ORC-2026-0024",
+        "f3-orc-versao": "1.0",
+        "f3-orc-_st": "Autorizado",
+        "f3-orc-sit": "Autorizado",
+        "f3-orc-geradoEm": "28/10/2026 15:00",
+        "f3-orc-origem": "Demanda",
+        "f3-orc-dem": "DEM-2026-0024",
+        "f3-orc-contrato": "055/2023/SEPLAG",
+        "f3-orc-cliente": "SEPLAG",
+        "f3-orc-objeto": "Simplificação, licenciamento e hospedagem MTI Simplifica e HOST",
+        "f3-orc-nats": [
+          "Licenciamento",
+          "Serviço avulso",
+          "Serviço de projeto"
+        ],
+        "f3-orc-atu": "Coletiva",
+        "f3-orc-vTot": 58980,
+        "f3-orc-vMen": 5600,
+        "f3-orc-vAno": 67200,
+        "f3-orc-saude": "Saudável",
+        "f3-orc-caminho": "Abrir OS dedicada",
+        "f3-orc-instrPrev": "Nova OS dedicada",
+        "f3-orc-wf": "Orçamento padrão MTI",
+        "f3-orc-est": "Concluído",
+        "f3-orc-docPdf": [
+          {
+            "name": "orcamento-DEM-2026-0024",
+            "kind": "pdf"
+          }
+        ],
+        "f3-orc-dAut": "Autorizar",
+        "f3-orc-decPor": "Ricardo Almeida Ferreira",
+        "f3-orc-decEm": "30/10/2026 14:00",
+        "f3-orc-instrH": [
+          "OS-0007",
+          "OS-0008"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-orc-itens": [
+          {
+            "f3-orc-itens-orig": "Parceiro",
+            "f3-orc-itens-parc": "MTI SIMPLIFICA – EloGroup",
+            "f3-orc-itens-nat": "Serviço de projeto",
+            "f3-orc-itens-prod": "Serviço por UST",
+            "f3-orc-itens-cod": "SIMF007",
+            "f3-orc-itens-met": "UST",
+            "f3-orc-itens-rec": "Conforme Homologação",
+            "f3-orc-itens-cx": "Alta",
+            "f3-orc-itens-coef": 1.2,
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 80,
+            "f3-orc-itens-unit": 180,
+            "f3-orc-itens-total": 17280
+          },
+          {
+            "f3-orc-itens-orig": "Parceiro",
+            "f3-orc-itens-parc": "MTI SIMPLIFICA – EloGroup",
+            "f3-orc-itens-nat": "Licenciamento",
+            "f3-orc-itens-prod": "Licença por usuário",
+            "f3-orc-itens-cod": "SIMF001",
+            "f3-orc-itens-met": "USN",
+            "f3-orc-itens-rec": "Anual",
+            "f3-orc-itens-cx": "",
+            "f3-orc-itens-coef": "",
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 31,
+            "f3-orc-itens-unit": 1200,
+            "f3-orc-itens-total": 37200
+          },
+          {
+            "f3-orc-itens-orig": "Parceiro",
+            "f3-orc-itens-parc": "HOST – FacilMova",
+            "f3-orc-itens-nat": "Serviço avulso",
+            "f3-orc-itens-prod": "Serviço HOST",
+            "f3-orc-itens-cod": "HOST003",
+            "f3-orc-itens-met": "HST",
+            "f3-orc-itens-rec": "Única Vez",
+            "f3-orc-itens-cx": "",
+            "f3-orc-itens-coef": "",
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 4,
+            "f3-orc-itens-unit": 500,
+            "f3-orc-itens-total": 2000
+          },
+          {
+            "f3-orc-itens-orig": "MTI",
+            "f3-orc-itens-parc": "",
+            "f3-orc-itens-nat": "Licenciamento",
+            "f3-orc-itens-prod": "Hospedagem em nuvem",
+            "f3-orc-itens-cod": "NUV001",
+            "f3-orc-itens-met": "USN",
+            "f3-orc-itens-rec": "Mensal",
+            "f3-orc-itens-cx": "",
+            "f3-orc-itens-coef": "",
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 1,
+            "f3-orc-itens-unit": 2500,
+            "f3-orc-itens-total": 2500
+          }
+        ],
+        "f3-orc-sig": [
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Lucas dos Santos",
+            "f3-orc-sig-cargo": "Analista de Pós-vendas",
+            "f3-orc-sig-papel": "Pós-vendas",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 28/10/2026 16:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Carlos Eduardo Souza",
+            "f3-orc-sig-cargo": "Gerente de Pós-vendas",
+            "f3-orc-sig-papel": "Gerente de projetos MTI",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 28/10/2026 17:00"
+          },
+          {
+            "f3-orc-sig-org": "EloGroup",
+            "f3-orc-sig-user": "Helena Ribeiro Lima",
+            "f3-orc-sig-cargo": "Gerente de Projetos (EloGroup)",
+            "f3-orc-sig-papel": "Gerente de projetos parceira",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 29/10/2026 09:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "João Victor",
+            "f3-orc-sig-cargo": "Gerente de Projetos MTI",
+            "f3-orc-sig-papel": "Gerente de unidade",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 29/10/2026 10:30"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Roberto Campos",
+            "f3-orc-sig-cargo": "Gerente de Unidade (DRC)",
+            "f3-orc-sig-papel": "Focal do produto",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 29/10/2026 11:00"
+          }
+        ],
+        "f3-orc-eventos": [
+          {
+            "f3-orc-ev-dt": "28/10/2026 15:00",
+            "f3-orc-ev-user": "Lucas dos Santos",
+            "f3-orc-ev-txt": "Orçamento gerado pela composição da demanda DEM-2026-0024",
+            "f3-orc-ev-sit": "Em assinatura MTI",
+            "f3-orc-ev-mot": "",
+            "f3-orc-ev-perm": "1 d 0 h"
+          }
+        ],
+        "f3-orc-versoes": [
+          {
+            "f3-orc-ver-n": "1.0",
+            "f3-orc-ver-dt": "28/10/2026 15:00",
+            "f3-orc-ver-autor": "Lucas dos Santos",
+            "f3-orc-ver-etapa": "Em assinatura MTI",
+            "f3-orc-ver-just": "Registro criado",
+            "f3-orc-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-orc-p2",
+      "name": "ORC-2026-0028 · Aguardando cliente",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-orc-numero": "ORC-2026-0028",
+        "f3-orc-versao": "1.0",
+        "f3-orc-_st": "Aguardando cliente",
+        "f3-orc-sit": "Aguardando cliente",
+        "f3-orc-geradoEm": "28/10/2026 16:00",
+        "f3-orc-origem": "Demanda",
+        "f3-orc-dem": "DEM-2026-0028",
+        "f3-orc-contrato": "055/2023/SEPLAG",
+        "f3-orc-cliente": "SEPLAG",
+        "f3-orc-objeto": "Simplificação, licenciamento e hospedagem MTI Simplifica e HOST",
+        "f3-orc-nats": [
+          "Serviço avulso"
+        ],
+        "f3-orc-atu": "Próprio MTI",
+        "f3-orc-vTot": 3600,
+        "f3-orc-vMen": 0,
+        "f3-orc-vAno": 0,
+        "f3-orc-saude": "Saudável",
+        "f3-orc-caminho": "Autorização de consumo em OS global",
+        "f3-orc-osRef": "OS-0001",
+        "f3-orc-instrPrev": "Autorização de consumo",
+        "f3-orc-wf": "Orçamento padrão MTI",
+        "f3-orc-est": "Concluído",
+        "f3-orc-docPdf": [
+          {
+            "name": "orcamento-DEM-2026-0028",
+            "kind": "pdf"
+          }
+        ],
+        "f3-orc-dAut": "Pendente"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-orc-itens": [
+          {
+            "f3-orc-itens-orig": "MTI",
+            "f3-orc-itens-parc": "",
+            "f3-orc-itens-nat": "Serviço avulso",
+            "f3-orc-itens-prod": "Serviço por UST",
+            "f3-orc-itens-cod": "SIMF007",
+            "f3-orc-itens-met": "UST",
+            "f3-orc-itens-rec": "Conforme Homologação",
+            "f3-orc-itens-cx": "Média",
+            "f3-orc-itens-coef": 1,
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 20,
+            "f3-orc-itens-unit": 180,
+            "f3-orc-itens-total": 3600
+          }
+        ],
+        "f3-orc-sig": [
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Carlos Eduardo Souza",
+            "f3-orc-sig-cargo": "Gerente de Pós-vendas",
+            "f3-orc-sig-papel": "Pós-vendas",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 29/10/2026 10:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Lucas dos Santos",
+            "f3-orc-sig-cargo": "Gerente de Projetos MTI",
+            "f3-orc-sig-papel": "Gerente de projetos MTI",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 29/10/2026 11:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Roberto Campos",
+            "f3-orc-sig-cargo": "Gerente de Unidade (DRC)",
+            "f3-orc-sig-papel": "Gerente de unidade",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 29/10/2026 12:00"
+          }
+        ],
+        "f3-orc-eventos": [
+          {
+            "f3-orc-ev-dt": "28/10/2026 16:00",
+            "f3-orc-ev-user": "Carlos Eduardo Souza",
+            "f3-orc-ev-txt": "Orçamento gerado pela composição da demanda DEM-2026-0028",
+            "f3-orc-ev-sit": "Em assinatura MTI",
+            "f3-orc-ev-mot": "",
+            "f3-orc-ev-perm": "1 d 22 h"
+          }
+        ],
+        "f3-orc-versoes": [
+          {
+            "f3-orc-ver-n": "1.0",
+            "f3-orc-ver-dt": "28/10/2026 16:00",
+            "f3-orc-ver-autor": "Carlos Eduardo Souza",
+            "f3-orc-ver-etapa": "Em assinatura MTI",
+            "f3-orc-ver-just": "Registro criado",
+            "f3-orc-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-orc-p3",
+      "name": "ORC-2026-0029 · Em elaboração",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-orc-numero": "ORC-2026-0029",
+        "f3-orc-versao": "1.1",
+        "f3-orc-_st": "Em elaboração",
+        "f3-orc-sit": "Em elaboração",
+        "f3-orc-geradoEm": "03/11/2026 10:00",
+        "f3-orc-origem": "Oferta proativa",
+        "f3-orc-resp": "Carlos Eduardo Souza",
+        "f3-orc-justOf": "Aumento de acessos previsto no período de matrículas",
+        "f3-orc-contrato": "055/2023/SEPLAG",
+        "f3-orc-cliente": "SEPLAG",
+        "f3-orc-objeto": "Simplificação, licenciamento e hospedagem MTI Simplifica e HOST",
+        "f3-orc-nats": [
+          "Licenciamento"
+        ],
+        "f3-orc-atu": "Próprio MTI",
+        "f3-orc-vTot": 5000,
+        "f3-orc-vMen": 5000,
+        "f3-orc-vAno": 60000,
+        "f3-orc-saude": "Saudável",
+        "f3-orc-caminho": "Abrir OS dedicada",
+        "f3-orc-instrPrev": "Nova OS dedicada",
+        "f3-orc-wf": "Orçamento padrão MTI",
+        "f3-orc-est": "Não iniciado",
+        "f3-orc-dAut": "Pendente"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-orc-itens": [
+          {
+            "f3-orc-itens-orig": "MTI",
+            "f3-orc-itens-parc": "",
+            "f3-orc-itens-nat": "Licenciamento",
+            "f3-orc-itens-prod": "Hospedagem em nuvem",
+            "f3-orc-itens-cod": "NUV001",
+            "f3-orc-itens-met": "USN",
+            "f3-orc-itens-rec": "Mensal",
+            "f3-orc-itens-cx": "",
+            "f3-orc-itens-coef": "",
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 2,
+            "f3-orc-itens-unit": 2500,
+            "f3-orc-itens-total": 5000
+          }
+        ],
+        "f3-orc-eventos": [
+          {
+            "f3-orc-ev-dt": "03/11/2026 10:00",
+            "f3-orc-ev-user": "Carlos Eduardo Souza",
+            "f3-orc-ev-txt": "Registro criado",
+            "f3-orc-ev-sit": "Em elaboração",
+            "f3-orc-ev-mot": "",
+            "f3-orc-ev-perm": "5 h"
+          }
+        ],
+        "f3-orc-versoes": [
+          {
+            "f3-orc-ver-n": "1.1",
+            "f3-orc-ver-dt": "03/11/2026 11:00",
+            "f3-orc-ver-autor": "Carlos Eduardo Souza",
+            "f3-orc-ver-etapa": "Em elaboração",
+            "f3-orc-ver-just": "Edição salva",
+            "f3-orc-ver-arq": [
+              {
+                "name": "v1.1",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-orc-p4",
+      "name": "ORC-2026-0030 · Em assinatura MTI",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-orc-numero": "ORC-2026-0030",
+        "f3-orc-versao": "1.0",
+        "f3-orc-_st": "Em assinatura MTI",
+        "f3-orc-sit": "Em assinatura MTI",
+        "f3-orc-geradoEm": "04/11/2026 14:00",
+        "f3-orc-origem": "Oferta proativa",
+        "f3-orc-resp": "Lucas dos Santos",
+        "f3-orc-justOf": "Modernização do painel de atendimento antes do novo exercício",
+        "f3-orc-contrato": "012/2025/SES",
+        "f3-orc-cliente": "SES",
+        "f3-orc-objeto": "Painéis e serviços digitais da SES",
+        "f3-orc-nats": [
+          "Serviço avulso"
+        ],
+        "f3-orc-atu": "Próprio MTI",
+        "f3-orc-vTot": 18000,
+        "f3-orc-vMen": 0,
+        "f3-orc-vAno": 0,
+        "f3-orc-saude": "Atenção",
+        "f3-orc-caminho": "Autorização de consumo em OS global",
+        "f3-orc-osRef": "OS-0021",
+        "f3-orc-instrPrev": "Autorização de consumo",
+        "f3-orc-wf": "Orçamento SES",
+        "f3-orc-est": "Em andamento",
+        "f3-orc-docPdf": [
+          {
+            "name": "orcamento-ORC-2026-0030",
+            "kind": "pdf"
+          }
+        ],
+        "f3-orc-dAut": "Solicitar ajuste",
+        "f3-orc-decPor": "Diretora de TI da SES",
+        "f3-orc-decEm": "05/11/2026 11:00",
+        "f3-orc-vOrc": 18000,
+        "f3-orc-vProp": 14400,
+        "f3-orc-itensQ": "Reduzir de 100 para 80 UST",
+        "f3-orc-motAut": "Orçamento acima da dotação do trimestre"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-orc-itens": [
+          {
+            "f3-orc-itens-orig": "MTI",
+            "f3-orc-itens-parc": "",
+            "f3-orc-itens-nat": "Serviço avulso",
+            "f3-orc-itens-prod": "Serviço por UST",
+            "f3-orc-itens-cod": "SIMF007",
+            "f3-orc-itens-met": "UST",
+            "f3-orc-itens-rec": "Conforme Homologação",
+            "f3-orc-itens-cx": "Média",
+            "f3-orc-itens-coef": 1,
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 100,
+            "f3-orc-itens-unit": 180,
+            "f3-orc-itens-total": 18000
+          }
+        ],
+        "f3-orc-sig": [
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Lucas dos Santos",
+            "f3-orc-sig-cargo": "Analista de Pós-vendas",
+            "f3-orc-sig-papel": "Pós-vendas",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 04/11/2026 16:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Carlos Eduardo Souza",
+            "f3-orc-sig-cargo": "Gerente de Unidade (DRC)",
+            "f3-orc-sig-papel": "Gerente de unidade",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 04/11/2026 18:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "João Victor",
+            "f3-orc-sig-cargo": "Gerente de Projetos MTI",
+            "f3-orc-sig-papel": "Gerente de projetos MTI",
+            "f3-orc-sig-cond": "Substituto",
+            "f3-orc-sig-sit": "Pendente"
+          }
+        ],
+        "f3-orc-eventos": [
+          {
+            "f3-orc-ev-dt": "04/11/2026 15:00",
+            "f3-orc-ev-user": "Lucas dos Santos",
+            "f3-orc-ev-txt": "Enviar para assinatura MTI",
+            "f3-orc-ev-sit": "Em assinatura MTI",
+            "f3-orc-ev-mot": "",
+            "f3-orc-ev-perm": "20 h"
+          }
+        ],
+        "f3-orc-versoes": [
+          {
+            "f3-orc-ver-n": "1.0",
+            "f3-orc-ver-dt": "04/11/2026 14:00",
+            "f3-orc-ver-autor": "Lucas dos Santos",
+            "f3-orc-ver-etapa": "Em elaboração",
+            "f3-orc-ver-just": "Registro criado",
+            "f3-orc-ver-arq": [
+              {
+                "name": "v1.0",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-orc-p5",
+      "name": "ORC-2026-0031 · Ajuste solicitado",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-orc-numero": "ORC-2026-0031",
+        "f3-orc-versao": "1.2",
+        "f3-orc-_st": "Ajuste solicitado",
+        "f3-orc-sit": "Ajuste solicitado",
+        "f3-orc-geradoEm": "05/11/2026 09:00",
+        "f3-orc-origem": "Oferta proativa",
+        "f3-orc-resp": "Carlos Eduardo Souza",
+        "f3-orc-justOf": "Licenças para a nova equipe de fiscalização",
+        "f3-orc-contrato": "031/2024/SEFAZ",
+        "f3-orc-cliente": "SEFAZ",
+        "f3-orc-objeto": "Licenciamento e evolução do portal da SEFAZ",
+        "f3-orc-nats": [
+          "Licenciamento"
+        ],
+        "f3-orc-atu": "Próprio MTI",
+        "f3-orc-vTot": 18000,
+        "f3-orc-vMen": 1500,
+        "f3-orc-vAno": 18000,
+        "f3-orc-saude": "Crítico",
+        "f3-orc-caminho": "Vincular a OS existente",
+        "f3-orc-osRef": "OS-0034",
+        "f3-orc-instrPrev": "Acréscimo na OS existente",
+        "f3-orc-wf": "Orçamento padrão MTI",
+        "f3-orc-est": "Não iniciado",
+        "f3-orc-docPdf": [
+          {
+            "name": "orcamento-ORC-2026-0031",
+            "kind": "pdf"
+          }
+        ],
+        "f3-orc-dAut": "Não autorizar",
+        "f3-orc-decPor": "Fiscal de contrato da SEFAZ",
+        "f3-orc-decEm": "05/11/2026 16:00",
+        "f3-orc-motAut": "Licenças já previstas em outra contratação"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-orc-itens": [
+          {
+            "f3-orc-itens-orig": "MTI",
+            "f3-orc-itens-parc": "",
+            "f3-orc-itens-nat": "Licenciamento",
+            "f3-orc-itens-prod": "Licença por usuário",
+            "f3-orc-itens-cod": "SIMF001",
+            "f3-orc-itens-met": "USN",
+            "f3-orc-itens-rec": "Anual",
+            "f3-orc-itens-cx": "",
+            "f3-orc-itens-coef": "",
+            "f3-orc-itens-peso": "",
+            "f3-orc-itens-qtd": 15,
+            "f3-orc-itens-unit": 1200,
+            "f3-orc-itens-total": 18000
+          }
+        ],
+        "f3-orc-sig": [
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Carlos Eduardo Souza",
+            "f3-orc-sig-cargo": "Analista de Pós-vendas",
+            "f3-orc-sig-papel": "Pós-vendas",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 05/11/2026 09:30"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Lucas dos Santos",
+            "f3-orc-sig-cargo": "Gerente de Projetos MTI",
+            "f3-orc-sig-papel": "Gerente de projetos MTI",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 05/11/2026 10:00"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "João Victor",
+            "f3-orc-sig-cargo": "Gerente de Projetos MTI",
+            "f3-orc-sig-papel": "Focal do produto",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 05/11/2026 10:15"
+          },
+          {
+            "f3-orc-sig-org": "MTI",
+            "f3-orc-sig-user": "Roberto Campos",
+            "f3-orc-sig-cargo": "Gerente de Unidade (DRC)",
+            "f3-orc-sig-papel": "Gerente de unidade",
+            "f3-orc-sig-cond": "Titular",
+            "f3-orc-sig-sit": "Assinada 05/11/2026 10:30"
+          }
+        ],
+        "f3-orc-eventos": [
+          {
+            "f3-orc-ev-dt": "05/11/2026 16:00",
+            "f3-orc-ev-user": "Roberto Campos",
+            "f3-orc-ev-txt": "Assinado pela MTI e enviado ao cliente",
+            "f3-orc-ev-sit": "Aguardando cliente",
+            "f3-orc-ev-mot": "",
+            "f3-orc-ev-perm": "2 h"
+          }
+        ],
+        "f3-orc-versoes": [
+          {
+            "f3-orc-ver-n": "1.2",
+            "f3-orc-ver-dt": "05/11/2026 10:00",
+            "f3-orc-ver-autor": "Carlos Eduardo Souza",
+            "f3-orc-ver-etapa": "Ajuste solicitado",
+            "f3-orc-ver-just": "Revisão após ajuste do cliente",
+            "f3-orc-ver-arq": [
+              {
+                "name": "v1.2",
+                "kind": "json"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "form-f3-orc-p1"
+}

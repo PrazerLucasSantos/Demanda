@@ -1,0 +1,105 @@
+{
+  "id": "form-f3-dem-itens",
+  "name": "## Item do atendimento — visão do cliente",
+  "sectionLayout": "none",
+  "defaultCanvasMode": "edit",
+  "metadata": "Colunas da aba 9: item, métrica, recorrência, quantidade, valor unitário e valor total. Sem origem, parceria, coeficiente nem custo do parceiro.",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-itens-prod",
+      "label": "Item do catálogo",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cat-produto",
+      "referenceOptionsSource": "class",
+      "spec": "Filtro de opções: (x,r,root)=>ctProds(ctF(root)).includes(x.id)&&(!r.nat||(r.nat==='Licenciamento')===(x.tipo==='Licença'))"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-itens-met",
+      "label": "Métrica",
+      "type": "text",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-itens-rec",
+      "label": "Recorrência",
+      "type": "text",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-itens-qtd",
+      "label": "Quantidade",
+      "type": "decimal",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-itens-unit",
+      "label": "Valor unitário",
+      "type": "decimal",
+      "tooltip": false,
+      "currency": true
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-itens-total",
+      "label": "Valor total",
+      "type": "decimal",
+      "tooltip": false,
+      "currency": true
+    }
+  ],
+  "fieldVisibilityRules": [],
+  "methods": [],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-itens-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-itens-p1"
+}

@@ -1,0 +1,300 @@
+{
+  "id": "form-f3-dem-aten-itensB",
+  "name": "## Item do atendimento",
+  "sectionLayout": "none",
+  "defaultCanvasMode": "edit",
+  "metadata": "Classe Item do atendimento — colunas completas (abas 5 e 7, e também Orçamento, OS e Autorização de consumo).",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-orig",
+      "label": "Origem",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Parceiro",
+        "MTI"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto: Parceiro quando vem de bloco; MTI quando incluído na aba 3 ou 7.",
+      "viewValue": "MTI"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-parc",
+      "label": "Parceria",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cat-parceria",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório na condição. Auto quando Origem = Parceiro; editável na linha MTI (parcerias do contrato).",
+      "viewValue": "Elogroup",
+      "referenceDisplayFieldId": "form-patlasv4-proto-cat-parceria-identificador"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-nat",
+      "label": "Natureza do atendimento",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Licenciamento",
+        "Serviço avulso",
+        "Serviço de projeto"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Auto quando vem de bloco.",
+      "viewValue": "Licenciamento"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aten-itensB-prod",
+      "label": "Item do catálogo",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cat-produto",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório. Filtro: produtos do contrato na versão do catálogo; Licenciamento só produto do tipo Licença, demais naturezas só Serviço.",
+      "viewValue": "Elaborar plano de projeto"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-cod",
+      "label": "Código Atlas",
+      "type": "text",
+      "tooltip": false,
+      "viewValue": "PROD-001"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aten-itensB-met",
+      "label": "Métrica",
+      "type": "text",
+      "tooltip": false,
+      "viewValue": "UST"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aten-itensB-rec",
+      "label": "Recorrência",
+      "type": "text",
+      "tooltip": false,
+      "spec": "Auto, do produto. Mensal vai para medição; as demais, para termo de homologação.",
+      "viewValue": "Mensal"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-aten-itensB-var",
+      "label": "Variação",
+      "type": "textOptions",
+      "options": [
+        "Sem variação",
+        "Por complexidade",
+        "Por peso"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Do produto. Licença não tem variação.",
+      "viewValue": "Por complexidade"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-cx",
+      "label": "Complexidade",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Muito Baixa",
+        "Baixa",
+        "Média",
+        "Alta",
+        "Muito Alta"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório na condição: Variação = Por complexidade.",
+      "viewValue": "Média"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-coef",
+      "label": "Coeficiente",
+      "type": "decimal",
+      "tooltip": false,
+      "spec": "Auto: coeficiente da faixa; exibe com Complexidade.",
+      "viewValue": "0500"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aten-itensB-peso",
+      "label": "Peso",
+      "type": "decimal",
+      "tooltip": false,
+      "spec": "Obrigatório na condição: Variação = Por peso."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aten-itensB-qtd",
+      "label": "Quantidade",
+      "type": "decimal",
+      "tooltip": false,
+      "spec": "Obrigatório, maior que zero. Avulso = horas; projeto = soma das atividades do item."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aten-itensB-unit",
+      "label": "Valor unitário",
+      "type": "decimal",
+      "tooltip": false,
+      "currency": true,
+      "viewValue": "10000"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aten-itensB-total",
+      "label": "Valor total",
+      "type": "decimal",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Unitário × quantidade × fator; fator = coeficiente (complexidade) ou peso; sem variação, 1 (D22).",
+      "viewValue": "100000"
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-dem-aten-itensB-var-cx",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-aten-itensB-var",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Por complexidade",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-aten-itensB-cx",
+        "f3-dem-aten-itensB-coef"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-aten-itensB-var-peso",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-aten-itensB-var",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Por peso",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-aten-itensB-peso"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-aten-itensB-perfil-cli",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-perfil",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cliente",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-dem-aten-itensB-orig",
+        "f3-dem-aten-itensB-parc",
+        "f3-dem-aten-itensB-cod",
+        "f3-dem-aten-itensB-var",
+        "f3-dem-aten-itensB-cx",
+        "f3-dem-aten-itensB-coef",
+        "f3-dem-aten-itensB-peso"
+      ]
+    }
+  ],
+  "methods": [],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-aten-itensB-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-aten-itensB-p1"
+}

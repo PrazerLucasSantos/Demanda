@@ -1,0 +1,140 @@
+{
+  "id": "form-f3-dem-sigOrc",
+  "name": "## Signatários do orçamento (dem)",
+  "sectionLayout": "none",
+  "defaultCanvasMode": "edit",
+  "metadata": "Movido de Atlas Fase 3 → Atlas V2. Satélite importado do Atlas Fase 3 · dem.sigOrc (tab)",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sigOrc-org",
+      "label": "Organização",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sigOrc-user",
+      "label": "Usuário",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sigOrc-cargo",
+      "label": "Cargo",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cargo",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sigOrc-papel",
+      "label": "Papel",
+      "type": "text",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sigOrc-cond",
+      "label": "Condição",
+      "type": "text",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sigOrc-sit",
+      "label": "Situação",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Assinada",
+        "Ajuste solicitado"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto. Botão Assinar na própria linha; grava data e hora. Ajuste solicitado exige motivo."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-dem-sigOrc-mot",
+      "label": "Motivo do ajuste",
+      "type": "text",
+      "textLong": true,
+      "spec": "Obrigatório na condição da regra. Exibe se Situação = Ajuste solicitado."
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-dem-sigOrc-mot",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-sigOrc-sit",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Ajuste solicitado",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-sigOrc-mot"
+      ]
+    }
+  ],
+  "methods": [],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-sigOrc-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-sigOrc-p1"
+}

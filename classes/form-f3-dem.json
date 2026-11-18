@@ -1,0 +1,4353 @@
+{
+  "id": "form-f3-dem",
+  "name": "Classe  Demanda",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Demanda da Fase 3 alinhada às reuniões em Fontes. Tipo: Consumo ou Cotação. Suporte não é tipo: é o botão Suporte e não cria demanda. Descrição obrigatória; contrato e solução opcionais. Origem: Cliente, Parceiro ou MTI. Pré-aprovação padrão: gestor e fiscal, vindos do contrato. A demanda no via contrato encerra na autorização do cliente, com a ordem de serviço vinculada. Execução, percentual, homologação e conclusão ficam na ordem de serviço. Onde as Fontes não fecham (nome obrigatório, empate de pareceres, recusa que encerra, orçamento ou proposta, indenização, lista de prioridade, nomes literais de situação, quem escolhe o workflow, volta do ajuste), a classe não escolhe um lado.",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "sections": [
+    {
+      "id": "sec-f3-dem-t0",
+      "title": "1. Solicitação",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t0-sla",
+      "title": "SLA",
+      "icon": "schedule",
+      "parentSectionId": "sec-f3-dem-t0"
+    },
+    {
+      "id": "sec-f3-dem-t0-s1",
+      "title": "Identificação",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t0"
+    },
+    {
+      "id": "sec-f3-dem-t0-s2",
+      "title": "Dados da demanda",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t0"
+    },
+    {
+      "id": "sec-f3-dem-t1",
+      "title": "2. Pré-aprovação do cliente",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t2",
+      "title": "3. Qualificação MTI",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t2-s0",
+      "title": "Situação",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t2"
+    },
+    {
+      "id": "sec-f3-dem-t2-s1",
+      "title": "Atendimento",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t2"
+    },
+    {
+      "id": "sec-f3-dem-t2-s2",
+      "title": "Cobertura e contrato",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t2"
+    },
+    {
+      "id": "sec-f3-dem-t2-s3",
+      "title": "Parceria",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t2"
+    },
+    {
+      "id": "sec-f3-dem-t2-s4",
+      "title": "Decisão",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t2"
+    },
+    {
+      "id": "sec-f3-dem-t3",
+      "title": "4. Patrocinador",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t4",
+      "title": "5. Atendimento do parceiro",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t5",
+      "title": "6. Análise do retorno",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t6",
+      "title": "7. Composição MTI",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t6-s0",
+      "title": "Itens",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t6"
+    },
+    {
+      "id": "sec-f3-dem-t6-s1",
+      "title": "Execução",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t6"
+    },
+    {
+      "id": "sec-f3-dem-t7",
+      "title": "8. Assinaturas",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t8",
+      "title": "9. Autorização do cliente",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t8-s0",
+      "title": "Resumo",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t8"
+    },
+    {
+      "id": "sec-f3-dem-t8-s1",
+      "title": "Decisão",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t8"
+    },
+    {
+      "id": "sec-f3-dem-t9",
+      "title": "10. Vínculo da execução",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t9-s0",
+      "title": "ServiceNow",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t9"
+    },
+    {
+      "id": "sec-f3-dem-t9-s1",
+      "title": "Homologação — na ordem de serviço",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t9"
+    },
+    {
+      "id": "sec-f3-dem-t9-s2",
+      "title": "Conclusão — na ordem de serviço",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t9"
+    },
+    {
+      "id": "sec-f3-dem-t10",
+      "title": "11. Encaminhamento e histórico",
+      "icon": "description"
+    },
+    {
+      "id": "sec-f3-dem-t10-s0",
+      "title": "Encaminhamentos",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t10"
+    },
+    {
+      "id": "sec-f3-dem-t10-s1",
+      "title": "Histórico",
+      "icon": "folder",
+      "parentSectionId": "sec-f3-dem-t10"
+    }
+  ],
+  "fields": [
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-sla",
+      "label": "SLA",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t0-sla",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-sla",
+      "embeddedDisplay": "blocks",
+      "embeddedRoot": false,
+      "spec": "Bloco recolhido depois do registro. Todos os campos são automáticos. O prazo da etapa só vale quando o contrato tem Política de SLA."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-numero",
+      "label": "Número",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-cad",
+      "label": "Data e hora de cadastro",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": false,
+      "spec": "Auto, somente leitura. Data e hora do registro."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-tipo",
+      "label": "Tipo",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": true,
+      "spec": "Consumo: já há contrato e a demanda consome item, atividade ou serviço. Cotação: não há contrato; a demanda apresenta proposta para negociar a contratação (20/10). Suporte não entra nesta lista.",
+      "options": [
+        "Consumo",
+        "Cotação"
+      ],
+      "textOptionsDisplay": "buttons"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-origem",
+      "label": "Origem",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": false,
+      "spec": "Cliente, Parceiro ou MTI, conforme quem abre (20/10). Não é texto livre.",
+      "options": [
+        "Cliente",
+        "Parceiro",
+        "MTI"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sit",
+      "label": "Situação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": false,
+      "spec": "Situação de trabalho do protótipo. As Fontes não aceitaram esta lista como os nomes oficiais da demanda. Muda pelas ações. Recusada não encerra: quem recusou pode reabrir (17/09).",
+      "options": [
+        "Aguardando pré-aprovação do cliente",
+        "Ajuste solicitado pelo cliente",
+        "Recusada pelo cliente",
+        "Nova demanda",
+        "Em qualificação",
+        "Ajuste solicitado pela MTI",
+        "Recusada pela MTI",
+        "Aguardando patrocinador",
+        "Não autorizada pelo patrocinador",
+        "Aguardando parceiro",
+        "Retorno do parceiro",
+        "Em composição",
+        "Aguardando assinaturas",
+        "Aguardando autorização do cliente",
+        "Não autorizada pelo cliente",
+        "Encaminhada para execução",
+        "Em atendimento",
+        "Concluída",
+        "Aguardando definição do solicitante",
+        "Encaminhada para proposta",
+        "Encaminhada para indenização",
+        "Desistência do solicitante",
+        "Cancelada"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-respA",
+      "label": "Responsável atual",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": false,
+      "spec": "Auto, somente leitura. S01: aprovador pendente; S02, S06 e S19: quem abriu; S04, S05, S11 e S12: pós-vendas; S08: patrocinador pendente; S10: GP do bloco pendente; S13 e S14: signatário pendente; S16 e S17: gerente do produto ou, sem ele, pós-vendas (L 25/09 49:33).",
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-respAg",
+      "label": "Responsáveis agregados (MTI)",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s1",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Opcional. Filtro: pessoas da MTI. Editável só pela MTI em situação não final, fora da aba da etapa (método Trocar ou agregar responsável); cada inclusão ou troca gera evento (L 20/10 13:42 e 30:51)."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-cliente",
+      "label": "Cliente solicitante",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório. Auto e bloqueado quando quem abre é do perfil Cliente; editável (organizações de perfil Cliente) quando a MTI ou o parceiro abre em nome do cliente. Trocar limpa Contrato e Contatos secundários (L 20/10 43:01)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-abertoPor",
+      "label": "Responsável pela abertura",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-contatos",
+      "label": "Contatos secundários",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Opcional. Filtro: pessoas ativas do Cliente solicitante. Oculto quando Todos acompanham = Sim (L 09/09 48:44).",
+      "viewValue": [
+        "Todos"
+      ],
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-contrato",
+      "label": "Contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": true,
+      "spec": "Opcional. Filtro: contratos Vigentes do Cliente (próprios e de gestão que o abrangem). Preenchido sozinho ao escolher a solução quando só um contrato vigente a tem (L 17/09 28:15 e 33:20).",
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-nivel",
+      "label": "Nível do objeto",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "options": [
+        "N2",
+        "N3"
+      ],
+      "textOptionsDisplay": "buttons",
+      "spec": "Exibe com Contrato preenchido. N2 e N3 são níveis do objeto do contrato, não o nível hierárquico do usuário (09/09)."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-objeto",
+      "label": "Objeto do contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ct-itens",
+      "referenceOptionsSource": "class",
+      "spec": "Exibe com o nível. Se o contrato é N2, o objeto N2 é que libera os itens. Se é N3, o objeto N3 abre as opções. O cliente vê os itens disponíveis daquele objeto (09/09)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-dct",
+      "label": "Dados do contrato",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-dct",
+      "embeddedDisplay": "blocks",
+      "embeddedRoot": false,
+      "spec": "Auto. Exibe com Contrato preenchido. Oculto para o perfil Parceiro e para o demandante setorial (L 09/09 54:45; L 25/09 1:53:18)."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-solucao",
+      "label": "Solução",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "options": [
+        "Selecionar solução",
+        "Outras",
+        "Não sei informar"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-solOutra",
+      "label": "Especifique a solução",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "spec": "Obrigatório na condição: Solução = Outras."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-solReq",
+      "label": "Solução do contrato / corporativa",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cat-solucao",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório na condição: Solução = Selecionar solução. Filtro: soluções dos contratos vigentes do Cliente + soluções corporativas; nunca o catálogo inteiro (L 09/09 42:09)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-titulo",
+      "label": "Título da demanda",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "placeholder": "Opcional — sem título, a lista exibe o início da descrição",
+      "tooltip": false,
+      "spec": "O nome existe na abertura. As Fontes não fecham se ele é obrigatório: em 14/10 só a descrição; em 15/09 descrição e observação; em 20/10 o protótipo lista o nome entre os campos, e Luis pediu o vídeo para cruzar. Não é obrigatório enquanto isso não for fechado."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-desc",
+      "label": "Descrição da necessidade",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatória. É o único campo da abertura que as reuniões repetem como obrigatório (09/09, 17/09 e 14/10)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-obs",
+      "label": "Observações",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false,
+      "textLong": true
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-anexos",
+      "label": "Anexos",
+      "type": "file",
+      "sectionId": "sec-f3-dem-t0-s2",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-preRes",
+      "label": "Resultado",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t1",
+      "tooltip": false,
+      "spec": "Pendente enquanto faltar assinatura. Aprovado só se gestor e fiscal aprovarem. Um pede ajuste: Ajuste solicitado. Um recusa: Recusado. Se um recusar e o outro pedir ajuste, permanece Pendente: as Fontes não dizem quem prevalece (14/10).",
+      "options": [
+        "Pendente",
+        "Aprovado",
+        "Ajuste solicitado",
+        "Recusado"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-abAp",
+      "label": "Aberta por aprovador",
+      "type": "boolean",
+      "sectionId": "sec-f3-dem-t1",
+      "tooltip": false,
+      "spec": "Marca que quem abriu ocupa uma cadeira de aprovador. Não pula a pré-aprovação. Em 20/07 a demanda aberta pelo fiscal gestor ia direto à MTI; em 15/09 qualquer demanda passa por gestor e fiscal. As Fontes não dizem que a segunda frase revoga a primeira."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-preEm",
+      "label": "Concluída em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t1",
+      "tooltip": false,
+      "spec": "Auto. Data e hora do último parecer."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-aprov",
+      "label": "Aprovadores",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t1",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-aprov",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": true,
+      "spec": "Obrigatório. Linhas geradas no registro pelas cadeiras titulares do contrato: Gestor do contrato e Fiscal requisitante (D13); sem contrato, gestor e fiscal padrão da organiza��ão cliente; com demandante setorial, o fiscal da organização do cliente. Titular → substituto → suplente (D14). A MTI só pode incluir linha com Papel «Líder do projeto», se o contrato tiver a cadeira. A linha cujo usuário é quem abriu já entra Aprovar, assinada."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-motC",
+      "label": "Motivos consolidados",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t1",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Auto, texto longo: «Nome: motivo» de cada linha com Solicitar ajuste ou Recusar. Exibe se Resultado = Ajuste solicitado ou Recusado."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-iniPor",
+      "label": "Iniciada por",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s0",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-respPV",
+      "label": "Responsável MTI (pós-vendas)",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s0",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório. Preenchido em Iniciar qualificação pela cadeira Pós-vendas do contrato ou pelo focal de pós-vendas da solução; a MTI pode trocar (L 20/10 25:58 e 30:05)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-gerProd",
+      "label": "Gerente do produto (MTI)",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s0",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório na condição. Exibe e é obrigatório se Contrato de objeto específico = Sim (D09). Pessoas da MTI.",
+      "viewValue": "Ricardo Almeida Ferreira",
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-depto",
+      "label": "Departamento / equipe",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s0",
+      "tooltip": false,
+      "spec": "Auto: unidade da DTIC da solução qualificada (L 20/10 30:05).",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "viewValue": "Empresa Mato-grossense de Tecnologia da Informaç��o",
+      "referenceDisplayFieldId": "patlasv4proto-uo-nome"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-iniEm",
+      "label": "Iniciada em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t2-s0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sitQ",
+      "label": "Situação da qualificação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t2-s0",
+      "tooltip": false,
+      "spec": "Calculado: r=>r._st==='S04'?'Não iniciada':r._st==='S05'?'Em qualificação':'Concluída'",
+      "options": [
+        "Não iniciada",
+        "Em qualificação",
+        "Concluída"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-natPre",
+      "label": "Tipo",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "options": [
+        "Licenciamento",
+        "Serviço"
+      ],
+      "textOptionsDisplay": "buttons",
+      "spec": "Licenciamento ou serviço (20/10). O serviço, no atendimento do parceiro, é avulso ou projeto. Licenciamento pode seguir sozinho ou fazer parte de um projeto."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-prio",
+      "label": "Prioridade",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "spec": "Opcional. O campo foi mostrado na homologação. A lista Crítica, Alta, Moderada, Baixa e Planejada não foi confirmada por Luis. Não há lista oficial."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-cob",
+      "label": "Tipo de cobertura",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "options": [
+        "Contrato próprio do cliente",
+        "Contrato de gestão (patrocinado)",
+        "Sem cobertura contratual"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Trocar limpa Contrato, Organização patrocinadora e Solução qualificada."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-patro",
+      "label": "Organização patrocinadora",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório na condição. Exibe e é obrigatória se Tipo de cobertura = Contrato de gestão (patrocinado). Filtro: donos de contrato de gestão vigente que abrange o Cliente (L 17/09 37:08)."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-ctq",
+      "label": "Contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigat��rio na condição: Tipo de cobertura ≠ Sem cobertura contratual. Filtro: Próprio = contratos vigentes do Cliente que não são de gestão; Patrocinado = contratos de gestão vigentes do dono que abrangem o Cliente. Iniciar qualificação copia o Contrato da aba 1. Trocar gera versão (L 17/09 30:49)."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-solQ",
+      "label": "Solução qualificada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "spec": "Obrigatório com cobertura. Filtro: soluções do contrato da qualificação. Iniciar qualificação copia a Solução da aba 1 (L 20/07 40:56).",
+      "linkedFormId": "form-patlasv4-proto-cat-solucao",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-cat",
+      "label": "Catálogo",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "tooltip": false,
+      "spec": "Auto: catálogo vigente da solução qualificada; oculto sem cobertura (L 17/09 15:04).",
+      "linkedFormId": "form-patlasv4-proto-catalogo-da-solucao",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-csol-nome"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-fab",
+      "label": "Fabricante",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t2-s2",
+      "placeholder": "Nome e contato",
+      "tooltip": false
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-atu",
+      "label": "Tipo de atuação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t2-s3",
+      "tooltip": false,
+      "spec": "Obrigatório com cobertura; oculto sem cobertura. Individual: exatamente 1 escopo. Coletiva: 2 ou mais. Próprio MTI: oculta os escopos, exibe Itens a consumir e dispensa as abas 5 e 6. Trocar limpa a Decisão da qualificação (L 09/09 42:09).",
+      "options": [
+        "Individual",
+        "Coletiva",
+        "Próprio MTI"
+      ],
+      "textOptionsDisplay": "buttons"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-escopos",
+      "label": "Escopos por parceria",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t2-s3",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-escopos",
+      "embeddedDisplay": "blocks",
+      "embeddedRoot": false,
+      "spec": "Obrigatório na condição: Individual (exatamente 1) ou Coletiva (2 ou mais). Cada escopo com organização, parceria e solução.",
+      "embeddedMultipleWhen": {
+        "fieldId": "f3-dem-atu",
+        "equals": [
+          "Coletiva"
+        ]
+      }
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-itensMTI",
+      "label": "Itens a consumir",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t2-s3",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-itensMTI",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "spec": "Obrigatório na condição: Próprio MTI. Linhas com Origem = MTI; viram os Itens do atendimento em Seguir para composição MTI."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-decQ",
+      "label": "Decisão da qualificação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t2-s4",
+      "tooltip": false,
+      "options": [
+        "Enviar ao parceiro",
+        "Seguir para composição MTI",
+        "Sem cobertura — solicitante define",
+        "Solicitar ajuste ao solicitante",
+        "Recusar"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Enviar ao parceiro só com Individual ou Coletiva. Composição MTI só com Próprio MTI. Sem cobertura só com Tipo de cobertura «Sem cobertura contratual». Nas duas primeiras, se a cobertura for patrocinada, a demanda passa antes pela aba Patrocinador.",
+      "optionVisibilityRules": [
+        {
+          "sourceFieldId": "f3-dem-atu",
+          "whenOption": "Próprio MTI",
+          "hideOptions": [
+            "Enviar ao parceiro",
+            "Sem cobertura — solicitante define"
+          ]
+        },
+        {
+          "sourceFieldId": "f3-dem-atu",
+          "whenOption": "Individual",
+          "hideOptions": [
+            "Seguir para composição MTI",
+            "Sem cobertura — solicitante define"
+          ]
+        },
+        {
+          "sourceFieldId": "f3-dem-atu",
+          "whenOption": "Coletiva",
+          "hideOptions": [
+            "Seguir para composição MTI",
+            "Sem cobertura — solicitante define"
+          ]
+        },
+        {
+          "sourceFieldId": "f3-dem-cob",
+          "whenOption": "Sem cobertura contratual",
+          "hideOptions": [
+            "Enviar ao parceiro",
+            "Seguir para composição MTI"
+          ]
+        }
+      ]
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-assQ",
+      "label": "Assinatura do executor",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t2-s4",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Assinada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Botão de assinatura na própria linha. Grava data e hora ao assinar."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-qEm",
+      "label": "Concluída em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t2-s4",
+      "tooltip": false,
+      "spec": "Auto. Data e hora da conclusão da qualificação."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-justQ",
+      "label": "Justificativa",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t2-s4",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatório na condição: Solicitar ajuste ao solicitante ou Recusar (L 20/07 36:43)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-anxQ",
+      "label": "Anexo da justificativa",
+      "type": "file",
+      "sectionId": "sec-f3-dem-t2-s4",
+      "tooltip": false,
+      "spec": "Visível quando: r=>['Solicitar ajuste ao solicitante','Recusar'].includes(r.decQ)"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-patro2",
+      "label": "Organização patrocinadora",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t3",
+      "tooltip": false,
+      "spec": "Calculado: r=>r.patro",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-uo-nome",
+      "viewValue": "Gerência de Parceria e Inovação"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-entidade",
+      "label": "Entidade",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t3",
+      "tooltip": true,
+      "spec": "Obrigatório, padrão Consumidora. Consumidora: NF no CNPJ do dono; Pagadora: NF no CNPJ do pagador. Editável em S08 pela MTI ou pelo dono.",
+      "options": [
+        "Consumidora",
+        "Pagadora"
+      ],
+      "textOptionsDisplay": "buttons"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-pats",
+      "label": "Assinaturas do patrocinador",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t3",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-pats",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Obrigatório. Linhas geradas ao entrar em S08 pelas cadeiras titulares do contrato de gestão: Fiscal geral do dono e Gestor do dono; sem incluir nem excluir. Cada um assina a própria linha."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-patRes",
+      "label": "Resultado",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t3",
+      "tooltip": false,
+      "spec": "Auto: Autorizado com todas as linhas Autorizar assinadas; Não autorizado com uma Não autorizar assinada → S09 (D01).",
+      "options": [
+        "Pendente",
+        "Autorizado",
+        "Não autorizado"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-aten",
+      "label": "Atendimento por parceria",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t4",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-aten",
+      "embeddedDisplay": "form",
+      "embeddedRoot": true,
+      "embeddedAllowAdd": false,
+      "spec": "Obrigatório com Individual ou Coletiva. Um bloco por escopo de parceria, gerado ao entrar em S10 (blocos de escopos removidos por requalificação são excluídos); sem incluir nem excluir bloco pela tela. Título do bloco = parceria · situação do bloco. O parceiro vê e edita só o bloco da própria organização. Com todos os blocos Enviado, S10 → S11."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-gers",
+      "label": "Aprovação dos gerentes",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t5",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-gers",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Obrigatório com Individual ou Coletiva, nas três naturezas (D10). Linhas geradas ao entrar em S11: GP de cada bloco + Gerente responsável (MTI); sem incluir nem excluir. Na devolução, as linhas voltam a Pendente. O parceiro vê só a linha da própria parceria."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-dec2",
+      "label": "Decisão sobre o retorno",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t5",
+      "tooltip": false,
+      "options": [
+        "Aprovar proposição",
+        "Devolver ao parceiro para ajuste",
+        "Solicitar ajuste ao solicitante",
+        "Recusar demanda",
+        "Abrir Proposta Comercial de Cotação",
+        "Abrir Proposta Comercial de Consumo",
+        "Atender via contrato- OS Direta",
+        "Evento de Contrato"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório, editável só pela MTI. «Aprovar proposição» só aparece com todas as linhas da Aprovação dos gerentes em Aprovar e assinadas (L 09/09 45:44). Aprovar: os itens consolidados de todos os blocos substituem as linhas de Origem Parceiro nos Itens do atendimento; as linhas MTI ficam."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-parcDev",
+      "label": "Parceria devolvida",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t5",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cat-parceria",
+      "referenceOptionsSource": "class",
+      "spec": "Obrigatório na condição: Devolver ao parceiro para ajuste. Filtro: parcerias dos blocos (L 20/10 57:58)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-mot2",
+      "label": "Motivo",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t5",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatório quando a decisão não for Aprovar proposição (L 20/07 36:43)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-anx2",
+      "label": "Anexo",
+      "type": "file",
+      "sectionId": "sec-f3-dem-t5",
+      "tooltip": false,
+      "spec": "Visível quando: r=>r.dec2&&r.dec2!=='Aprovar proposição'"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-itens",
+      "label": "Itens do atendimento",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t6-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-aten-itensB",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedTotalFieldIds": [
+        "f3-dem-aten-itensB-total"
+      ],
+      "spec": "Obrigatório. Herdado dos blocos aprovados (ou de Itens a consumir em Próprio MTI). A MTI inclui linhas com Origem MTI; linhas de Origem Parceiro ficam bloqueadas e só linhas MTI podem ser removidas (L 09/09 45:44)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-vTot",
+      "label": "Valor total do atendimento",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t6-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Soma dos valores totais dos itens."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-vMen",
+      "label": "Custo mensal",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t6-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Soma por linha: total ÷ meses do ciclo (Mensal 1, Bimestral 2, Trimestral 3, Semestral 6, Anual 12); Única vez e Conforme homologação = 0 (D21)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-vAno",
+      "label": "Custo anual",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t6-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Custo mensal × 12 (D21)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-nItens",
+      "label": "Quantidade de itens",
+      "type": "number",
+      "sectionId": "sec-f3-dem-t6-s0",
+      "tooltip": false,
+      "spec": "Auto. Inteiro."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-descComp",
+      "label": "Descrição do atendimento (MTI)",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t6-s0",
+      "tooltip": false,
+      "textLong": true
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-caminho",
+      "label": "Execução via Contrato",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "options": [
+        "Autorização de consumo em OS global",
+        "Abrir OS dedicada",
+        "Vincular a OS existente"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Trocar limpa OS global / OS existente (L 25/09; L 20/10 48:11; L 17/09)."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-osRef",
+      "label": "OS global / OS existente",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "spec": "Rótulo de negócio: «OS global» no caminho OS global e «OS existente» ao vincular. Obrigatório nesses dois caminhos. OS global: OS globais vigentes ou em execução do contrato. Vincular: OS não globais do contrato, do mesmo projeto quando houver.",
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-licOS",
+      "label": "Licença em OS própria",
+      "type": "boolean",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "spec": "Obrigatório na condição. Exibe se houver item de licença com recorrência diferente de Mensal. Sim: essas licenças geram OS de licenciamento própria, inclusive no caminho OS global (o restante vira AC); não bloqueia o caminho (D16)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-saudeApl",
+      "label": "Base da saúde",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "spec": "Auto: «Da OS» nos caminhos OS global e Vincular; «Do contrato» em OS dedicada (D20)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-saudeRes",
+      "label": "Resultado da saúde",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "options": [
+        "Saudável",
+        "Atenção",
+        "Crítico"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Saudável, Atenção ou Crítico são os nomes ditos para o aviso. Os percentuais que separam um do outro e a fórmula de cálculo não foram decididos. O campo não calcula sozinho e não bloqueia a composição."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-conf",
+      "label": "Conferência de itens e vigência",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Conforme",
+        "Devolver"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Devolver só existe com Individual ou Coletiva: exige motivo e devolve todos os blocos ao parceiro (S12 → S10). Em Próprio MTI a MTI corrige na própria aba (D17).",
+      "optionVisibilityRules": [
+        {
+          "sourceFieldId": "f3-dem-atu",
+          "whenOption": "Próprio MTI",
+          "hideOptions": [
+            "Devolver"
+          ]
+        }
+      ]
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-motDev",
+      "label": "Motivo da devolução",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatório na condição: Conferência = Devolver (D17)."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-prevBtn",
+      "label": "Prévia",
+      "type": "html",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "htmlContent": "<button type=\"button\">Gerar PDF do orçamento (prévia)</button>"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-prev",
+      "label": "Prévia gerada",
+      "type": "file",
+      "sectionId": "sec-f3-dem-t6-s1",
+      "tooltip": false,
+      "spec": "Auto, gerado pelo método Gerar PDF do orçamento; marcado Provisório (L 25/09 56:06)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-wfO",
+      "label": "Workflow de assinatura",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "linkedFormId": "mqebasqyphbwea",
+      "referenceOptionsSource": "class",
+      "spec": "Não é preenchido nesta classe. Em 25/09 Luis rejeitou o usuário escolher o workflow; em 28/09 o fluxo validado diz que ele escolhe um workflow já cadastrado. A classe não escolhe um dos dois lados e não amarra o documento ao nome orçamento."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-estO",
+      "label": "Estado das assinaturas",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "spec": "Calculado: r=>sigState(r.sigOrc)"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-pdfSit",
+      "label": "Situação do PDF",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "spec": "Calculado: r=>allSigned(r.sigOrc)?'Final — todos assinaram':'Provisório — assinaturas pendentes'"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-sigOrc",
+      "label": "Signatários do orçamento",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-sigOrc",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Linhas de quem assina. As Fontes não fecham a lista. Não há papel FALP: o trecho da transcrição de 09/09 não define um cargo. O presidente não assina a demanda de consumo (09/09). Cada pessoa age só na própria linha."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-pdfOrc",
+      "label": "Documento para assinatura (PDF)",
+      "type": "file",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "spec": "O PDF existe. O nome do artefato não está resolvido: Luis, em 09/09 e 17/09, fala em orçamento que vai ao cliente; em 14/10 João Victor, sem o Luis, disse que não se elabora orçamento e que a proposta é que se assina."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-pdfEm",
+      "label": "Gerado em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "spec": "Auto. Data e hora."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-orc",
+      "label": "Registro do orçamento",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t7",
+      "tooltip": false,
+      "linkedFormId": "form-f3-orc",
+      "referenceOptionsSource": "class",
+      "spec": "Auto. Concluir composição cria o registro ORC-AAAA-NNNN e uma nova versão a cada recomposição; a demanda conduz (D15)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-vTotA",
+      "label": "Valor total do atendimento",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Calculado: r=>r.vTot"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-vMenA",
+      "label": "Custo mensal",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Calculado: r=>r.vMen"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-vAnoA",
+      "label": "Custo anual",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Calculado: r=>r.vAno"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-sauA",
+      "label": "Saúde do contrato após a demanda",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "spec": "Calculado: r=>r.saudeRes",
+      "options": [
+        "Saudável",
+        "Atenção",
+        "Crítico"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-camA",
+      "label": "Caminho de execução",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "spec": "Calculado: r=>r.caminho"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-ctA",
+      "label": "Contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "spec": "Calculado: r=>r.ctq",
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-itensAut",
+      "label": "Itens autorizados",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t8-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-itens",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedTotalFieldIds": [
+        "f3-dem-itens-total"
+      ],
+      "spec": "Visão do cliente: item, métrica, recorrência, quantidade, valor unitário e valor total, com total. Sem origem, parceria, coeficiente nem custo do parceiro."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-dAut",
+      "label": "Decisão do cliente",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Autorizar",
+        "Solicitar ajuste",
+        "Não autorizar"
+      ],
+      "textOptionsDisplay": "buttons",
+      "spec": "Obrigatório, padrão Pendente. Editável só pelo cliente (gestor, fiscal ou PO) em S14 (L 09/09 28:23). Autorizar só vale com todas as assinaturas dos signatários da autorização; então S14 → S16 automático."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-decPor",
+      "label": "Decidido por",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-decEm",
+      "label": "Decidido em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "spec": "Auto. Data e hora."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-motAut",
+      "label": "Motivo",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatório na condição: Solicitar ajuste ou Não autorizar."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-sigAut",
+      "label": "Signatários da autorização",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-sigAut",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Obrigatório na condição. Exibe se Decisão = Autorizar. Linhas geradas pelo workflow «Autorização de execução»: Fiscal (da organização do cliente, quando houver), Gestor e PO do cliente; no patrocinado, também Fiscal geral do dono e Gestor do dono. Sem ordem; cada um assina a própria linha."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-docAut",
+      "label": "Documento de autorização",
+      "type": "file",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "spec": "Auto. Gerado com todas as assinaturas da autorização (L 20/07 1:03:37)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-dem-instrH",
+      "label": "Instrumento gerado",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t8-s1",
+      "tooltip": false,
+      "spec": "Auto. OS dedicada, OS de licenciamento ou OS aditada, gerada quando a autorização é assinada; a autorização de consumo aparece em «Autorização de consumo gerada» (aba 11).",
+      "textLong": false,
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-snNum",
+      "label": "Número no ServiceNow",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "spec": "Número do registro no ServiceNow, depois que a ordem de serviço foi vinculada. A demanda não conduz a execução."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-snEm",
+      "label": "Enviado ao ServiceNow em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-snSit",
+      "label": "Situação no ServiceNow",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "options": [
+        "Aberto",
+        "Em execução",
+        "Concluído"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-pct",
+      "label": "Percentual de conclusão",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-ultRet",
+      "label": "Último retorno do ServiceNow",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-vAut",
+      "label": "Valor autorizado",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-vHom",
+      "label": "Valor homologado (acumulado)",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-vAH",
+      "label": "Valor a homologar",
+      "type": "decimal",
+      "sectionId": "sec-f3-dem-t9-s0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-entregas",
+      "label": "Entregas de licenciamento",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t9-s1",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-entregas",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-_ths",
+      "label": "Termos de homologação",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t9-s1",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem-_ths",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-instr2",
+      "label": "Instrumentos",
+      "type": "html",
+      "sectionId": "sec-f3-dem-t9-s1",
+      "tooltip": false,
+      "htmlContent": "<em>HTML dinâmico</em>",
+      "spec": "Render: r=>instrs(r).map(x=>refLink(x[0],x[1])+' '+stChip(x[0],(R(x[0],x[1])||{})._st)).join(' · ')||'–'"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-declMan",
+      "label": "Declaração manual de finalização",
+      "type": "boolean",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "tooltip": true,
+      "tooltipText": "Usada sem integração ou com a integração fora do ar",
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-dem-finModo",
+      "label": "Modo de finalização",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "options": [
+        "ServiceNow",
+        "Manual"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-declarante",
+      "label": "Declarante",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-declDt",
+      "label": "Data da declaração",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "tooltip": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-declAss",
+      "label": "Assinatura da declaração",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "tooltip": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07).",
+      "options": [
+        "Pendente",
+        "Assinada"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-concEm",
+      "label": "Concluída em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "tooltip": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-exe",
+      "label": "Execução gerada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t9-s2",
+      "tooltip": false,
+      "linkedFormId": "form-f3-exe",
+      "referenceOptionsSource": "class",
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-acGer",
+      "label": "Autorização de consumo gerada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ac",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-osGer",
+      "label": "Ordem de serviço gerada / vinculada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class",
+      "spec": "Ordem de serviço gerada ou vinculada na autorização do cliente. É aqui que o via contrato termina."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-osLic",
+      "label": "OS de licenciamento",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class",
+      "spec": "Auto. Exibe se gerada (D16)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-exe2",
+      "label": "Execução gerada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "spec": "Não é preenchido nesta classe. No via contrato a demanda acaba na autorização do cliente, onde a ordem de serviço é vinculada. Percentual, homologação, entregas e conclusão são da ordem de serviço (20/07).",
+      "linkedFormId": "form-f3-exe",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-defSol",
+      "label": "Definição do solicitante",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "options": [
+        "Nova contratação (proposta)",
+        "Indenização",
+        "Desistência"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Pergunta em aberto quando não há cobertura: desistir, nova contratação ou indenização (17/09). Registrar a resposta não gera proposta nem indenização e não muda a situação para um caminho concluído."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-propGer",
+      "label": "Proposta gerada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-prop",
+      "referenceOptionsSource": "class",
+      "spec": "Visível quando: r=>!!r.propGer"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-indGer",
+      "label": "Indenização gerada",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-inden",
+      "referenceOptionsSource": "class",
+      "spec": "Não é gerada por esta classe. Indenização segue pergunta sem resposta nas Fontes."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-justDef",
+      "label": "Justificativa da definiç��o",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatório na condição. Editável em S19."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-justReab",
+      "label": "Justificativa da reabertura",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Auto, preenchido pelo modal de Reabrir; exibe se houve reabertura (D04)."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-motCanc",
+      "label": "Motivo do cancelamento",
+      "type": "text",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Auto, preenchido pelo modal de Cancelar."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-dem-cancAceite",
+      "label": "Aceite do cliente",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "options": [
+        "Pendente",
+        "Aceito"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Preenchido pelo método Aceitar cancelamento (cliente: gestor ou fiscal). Libera Cancelar demanda para a MTI (D05)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-dem-cancAss",
+      "label": "Assinatura do aceite",
+      "type": "textOptions",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "options": [
+        "Pendente",
+        "Assinada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-dem-cancEm",
+      "label": "Aceite em",
+      "type": "date",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "spec": "Auto, somente leitura. Data e hora."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-subst",
+      "label": "Demanda substituta",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": true,
+      "tooltipText": "Exige aceite do cliente",
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class",
+      "spec": "Editável só em S23, pela MTI. Filtro: demandas do mesmo Cliente (L 21/09 51:12)."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-origemDem",
+      "label": "Demanda de origem",
+      "type": "reference",
+      "sectionId": "sec-f3-dem-t10-s0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class",
+      "spec": "Auto. Exibe se a demanda foi criada por Reaproveitar (D03)."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-eventos",
+      "label": "Eventos",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t10-s1",
+      "linkedFormId": "form-f3-dem-eventos",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto. Uma linha por ação, assinatura e transição automática, com a visão (Cliente, Parceiro, MTI). A lista mostra só eventos cuja visão contenha o perfil do usuário; para o parceiro, só os da própria organização."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-versoes",
+      "label": "Versões",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-dem-t10-s1",
+      "linkedFormId": "form-f3-dem-versoes",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto. Uma linha por edição salva, reenvio ou requalificação. Guardado fora do log padrão de 90 dias."
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-dem-solReq-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-solucao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Selecionar solução",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-solReq"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-solOutra-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-solucao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Outras",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-solOutra"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-itensMTI-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-atu",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Próprio MTI",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-itensMTI"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-parcDev-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dec2",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Devolver ao parceiro para ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-parcDev"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-motDev-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-conf",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Devolver",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-motDev"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-sigAut-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Autorizar",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-sigAut"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-acGer-eq",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Autorização de consumo em OS global",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-acGer"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-dct-contrato",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-contrato",
+      "sourceKind": "reference",
+      "expectedFilled": true,
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-dct"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-cob-0",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-cob",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Contrato próprio do cliente",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-solQ",
+        "f3-dem-ctq",
+        "f3-dem-cat",
+        "f3-dem-atu"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-cob-1",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-cob",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Contrato de gestão (patrocinado)",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-solQ",
+        "f3-dem-ctq",
+        "f3-dem-cat",
+        "f3-dem-atu"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-patro-cob",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-cob",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Contrato de gestão (patrocinado)",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-patro"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-esc-ind",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-atu",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Individual",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-escopos"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-esc-col",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-atu",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Coletiva",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-escopos"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-justQ-aj",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-decQ",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste ao solicitante",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-justQ",
+        "f3-dem-anxQ"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-justQ-rec",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-decQ",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Recusar",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-justQ",
+        "f3-dem-anxQ"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-motC-aj",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-preRes",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Ajuste solicitado",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-motC"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-motC-rec",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-preRes",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Recusado",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-motC"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-mot2-dev",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dec2",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Devolver ao parceiro para ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-mot2",
+        "f3-dem-anx2"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-mot2-aj",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dec2",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste ao solicitante",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-mot2",
+        "f3-dem-anx2"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-mot2-rec",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dec2",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Recusar demanda",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-mot2",
+        "f3-dem-anx2"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-osRef-glob",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Autorização de consumo em OS global",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-osRef"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-osRef-vinc",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Vincular a OS existente",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-osRef"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-motAut-aj",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-motAut"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-motAut-nao",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-dAut",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Não autorizar",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-motAut"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-decl",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-declMan",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-declarante",
+        "f3-dem-declDt",
+        "f3-dem-declAss"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-osGer-ded",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Abrir OS dedicada",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-osGer"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-osGer-vinc",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-caminho",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Vincular a OS existente",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-osGer"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-justDef-1",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-defSol",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Nova contratação (proposta)",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-justDef"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-justDef-2",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-defSol",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Indenização",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-justDef"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-justDef-3",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-defSol",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Desistência",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-justDef"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-propGer",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-defSol",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Nova contratação (proposta)",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-propGer"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-indGer",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-defSol",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Indenização",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-indGer"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-sem-cob",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-cob",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Sem cobertura contratual",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-dem-ctq",
+        "f3-dem-solQ",
+        "f3-dem-cat",
+        "f3-dem-atu",
+        "f3-dem-escopos",
+        "f3-dem-itensMTI",
+        "f3-dem-gerProd"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-patroc-proprio",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-cob",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Contrato próprio do cliente",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-dem-patro2",
+        "f3-dem-entidade",
+        "f3-dem-patRes",
+        "f3-dem-pats"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-patroc-sem",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-cob",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Sem cobertura contratual",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-dem-patro2",
+        "f3-dem-entidade",
+        "f3-dem-patRes",
+        "f3-dem-pats"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-reg-os-lic",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-osLic",
+      "sourceKind": "reference",
+      "expectedFilled": true,
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-osLic"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-demanda-origem",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-origemDem",
+      "sourceKind": "reference",
+      "expectedFilled": true,
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-origemDem"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-proprio-mti",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-atu",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Próprio MTI",
+      "action": "hide",
+      "targetFieldIds": [
+        "f3-dem-escopos",
+        "f3-dem-aten",
+        "f3-dem-gers",
+        "f3-dem-dec2",
+        "f3-dem-parcDev",
+        "f3-dem-mot2",
+        "f3-dem-anx2"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-nivel-ct",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-contrato",
+      "sourceKind": "reference",
+      "expectedFilled": true,
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-nivel"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-objeto-n2",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-nivel",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "N2",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-objeto"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-objeto-n3",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-nivel",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "N3",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-objeto"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "meth-f3-dem-previa",
+      "name": "Gerar PDF (prévia)",
+      "icon": "picture_as_pdf",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t6",
+      "spec": "Gera uma prévia do documento, sem enviar para assinatura. Não chama o arquivo de orçamento: o nome do artefato não está resolvido."
+    },
+    {
+      "id": "meth-f3-dem-descartar",
+      "name": "Descartar",
+      "icon": "delete",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t0",
+      "spec": "Abertura. Descarta a demanda antes do registro. Não existe rascunho."
+    },
+    {
+      "id": "meth-f3-dem-salvar",
+      "name": "Registrar demanda",
+      "icon": "send",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t0",
+      "spec": "Abertura → aguardando pré-aprovação. Quem: cliente, parceiro ou MTI. Valida a descrição. Contrato e solução são opcionais. Gera número e data. As linhas de aprovador vêm das cadeiras do contrato: no padrão, gestor e fiscal. Outro profissional só entra se aquele contrato inserir a cadeira. Não existe rascunho."
+    },
+    {
+      "id": "meth-f3-dem-suporte",
+      "name": "Suporte",
+      "icon": "support_agent",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t0",
+      "spec": "Abertura. Botão do cabeçalho: leva ao ServiceNow; não cria demanda (D06)."
+    },
+    {
+      "id": "meth-f3-dem-parecer",
+      "name": "Registrar parecer",
+      "icon": "how_to_reg",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t1",
+      "spec": "Quem: o usuário da linha. Motivo e assinatura na recusa e no ajuste; na aprovação o motivo não é exigido. Anexo da recusa é opcional. As duas aprovações seguem. Um ajuste devolve ao solicitante. Uma recusa deixa a demanda recusada, e quem recusou pode restituir. Se uma linha recusa e outra pede ajuste, o resultado não é calculado."
+    },
+    {
+      "id": "meth-f3-dem-reenv",
+      "name": "Editar e reenviar",
+      "icon": "edit",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t0",
+      "spec": "Quem pediu o ajuste foi o gestor ou o fiscal, ou foi a MTI. As Fontes não fecham se o reenvio do solicitante volta a gestor e fiscal ou segue direto à MTI (20/07 tem as duas frases). O reenvio grava a nova versão e não escolhe a etapa seguinte."
+    },
+    {
+      "id": "meth-f3-dem-restituir",
+      "name": "Restituir recusa",
+      "icon": "undo",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t10",
+      "spec": "De uma recusa. Quem recusou pode reabrir e aceitar ou pedir ajuste. A MTI, ao recusar, também pode reabrir (17/09). Não fica recusado sem saída."
+    },
+    {
+      "id": "meth-f3-dem-iniQ",
+      "name": "Iniciar qualificação",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t2",
+      "spec": "De: S04 · Quem: [\"mti\"] · Evento: Qualificação iniciada · Efeito: r=>{r.iniPor=ME();r.iniEm=now();if(!r.respPV)r.respPV=(R('sol',r.solReq)||{}).focal||(ctPes(r.contrato,'Pós-vendas')[0]||{}).pes||ME();if(r.contrato&&!r.cob){r.cob=PROP;r.ctq=r.contrato}if(!r.solQ&&r."
+    },
+    {
+      "id": "meth-f3-dem-conQ",
+      "name": "Concluir qualificação",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t2",
+      "spec": "De: S05 · Quem: [\"mti\"] · Evento: (dinâmico) · Efeito: r=>{r.assQ='Assinada';r.qEm=now();const pat=r.cob===PAT;\n  switch(r.decQ){case 'Enviar ao parceiro':if(pat){buildPat(r);return 'S08'}buildAten(r);return 'S10';\n  case 'Seguir para composição MTI':if(p"
+    },
+    {
+      "id": "meth-f3-dem-reQ",
+      "name": "Requalificar",
+      "icon": "replay",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t2",
+      "spec": "De: S08, S10, S11, S12 · Quem: MTI · Pede justificativa · Efeito: nova versão; zera linhas do patrocinador, blocos do parceiro, aprovações dos gerentes e assinaturas; notifica parceiros afetados → S05."
+    },
+    {
+      "id": "meth-f3-dem-trocarResp",
+      "name": "Trocar ou agregar responsável",
+      "icon": "person_add",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t0",
+      "spec": "Toda situação não final · Quem: MTI · Valida: pessoa · Efeito: atualiza Responsáveis agregados (MTI) ou o responsável da etapa; gera evento por inclusão ou troca."
+    },
+    {
+      "id": "meth-f3-dem-assPat",
+      "name": "Assinar como patrocinador",
+      "icon": "draw",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t3",
+      "spec": "De: S08 · Quem: usuário da linha · Valida: Decisão; motivo na condição · Efeito: todas Autorizar assinadas → S10 (gera os blocos) ou S12, conforme a decisão da qualificação. Uma Não autorizar assinada → S09 (D01)."
+    },
+    {
+      "id": "meth-f3-dem-aprovGP",
+      "name": "Aprovar proposição (gerente)",
+      "icon": "task_alt",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t5",
+      "spec": "De: S11 · Quem: usuário da linha (GP de cada bloco e Gerente responsável MTI) · Valida: Decisão; motivo na condição · Efeito: assina a linha."
+    },
+    {
+      "id": "meth-f3-dem-ret",
+      "name": "Registrar decisão do retorno",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t5",
+      "spec": "De: S11 · Quem: [\"mti\"] · Evento: (dinâmico) · Efeito: r=>{switch(r.dec2){\n  case 'Aprovar proposição':{const mti=(r.itens||[]).filter(i=>i.orig==='MTI');r.itens=(r.aten||[]).flatMap(b=>clone(b.itensB||[])).concat(mti);return 'S12'}\n  case 'Devolver ao pa"
+    },
+    {
+      "id": "meth-f3-dem-conC",
+      "name": "Concluir composição",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t6",
+      "spec": "Conclui a composição e segue para as assinaturas do documento. Não calcula bloqueio pela saúde: a fórmula e os percentuais não foram decididos. Não gera um registro chamado orçamento."
+    },
+    {
+      "id": "meth-f3-dem-ajO",
+      "name": "Solicitar ajuste no documento",
+      "icon": "bolt",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t7",
+      "spec": "Pede motivo e devolve o documento para composição. Não trata o arquivo como orçamento decidido."
+    },
+    {
+      "id": "meth-f3-dem-assOrc",
+      "name": "Assinar documento",
+      "icon": "draw",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t7",
+      "spec": "A pessoa da linha assina. A lista de quem assina não está fechada nas Fontes."
+    },
+    {
+      "id": "meth-f3-dem-decA",
+      "name": "Decidir autorização",
+      "icon": "gavel",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t8",
+      "spec": "Quem: o cliente. Autorizar, pedir ajuste ou não autorizar. Sem autorização a demanda não segue para ordem de serviço. Não autorizar não apaga a possibilidade de reabrir (20/07)."
+    },
+    {
+      "id": "meth-f3-dem-assAut",
+      "name": "Assinar autorização",
+      "icon": "draw",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t8",
+      "spec": "Com as assinaturas da autorização, vincula a ordem de serviço (dedicada, global ou já existente) e encerra a demanda neste ponto. Não abre execução, percentual nem termo dentro desta classe."
+    },
+    {
+      "id": "meth-f3-dem-sn",
+      "name": "Enviar ao ServiceNow",
+      "icon": "cloud_upload",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t9",
+      "spec": "Só grava o número no ServiceNow no vínculo da ordem de serviço. Não muda a demanda para em atendimento nem cria execução aqui."
+    },
+    {
+      "id": "meth-f3-dem-defS",
+      "name": "Definir encaminhamento",
+      "icon": "alt_route",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-dem-t10",
+      "spec": "Registra desistência, nova contratação ou indenização como pergunta. Não cria proposta, não cria indenização e não avança para uma situação de caminho concluído."
+    },
+    {
+      "id": "meth-f3-dem-aceiteCanc",
+      "name": "Aceitar cancelamento",
+      "icon": "verified",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t10",
+      "spec": "De: S01, S02, S04 a S06, S08, S10 a S17 · Quem: cliente (gestor ou fiscal) · Efeito: grava e assina o aceite (Aceite do cliente, Assinatura do aceite, Aceite em); libera Cancelar demanda para a MTI (D05)."
+    },
+    {
+      "id": "meth-f3-dem-reab",
+      "name": "Reabrir demanda",
+      "icon": "restart_alt",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t8",
+      "spec": "De: S15 · Quem: quem abriu ou cliente da organização · Valida: justificativa · Efeito: grava a Justificativa da reabertura; mantém a pré-aprovação; limpa decisão, assinaturas e caminho → S04 (D04)."
+    },
+    {
+      "id": "meth-f3-dem-canc",
+      "name": "Cancelar demanda",
+      "icon": "cancel",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t10",
+      "spec": "De: S01, S02, S04 a S06, S08, S10 a S17 · Quem: MTI · Valida: motivo; aceite do cliente assinado; nenhum termo assinado nem medição reconhecida nos instrumentos · Efeito: cancela OS, AC e Execução geradas pela demanda → S23. A substituta segue o fluxo desde S01 (D05)."
+    },
+    {
+      "id": "meth-f3-dem-reap",
+      "name": "Reaproveitar",
+      "icon": "content_copy",
+      "kind": "menu",
+      "editSectionId": "sec-f3-dem-t10",
+      "spec": "Copia solução, descrição, observação e anexos para uma demanda nova. A original permanece. O reaproveitamento da recusada foi aceito em 15/09."
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-p1",
+      "name": "DEM-2026-0024 · Em composição",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-numero": "DEM-2026-0024",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-sit": "Em composição",
+        "f3-dem-cad": "2026-10-25",
+        "f3-dem-respA": "Carlos Eduardo Souza",
+        "f3-dem-respAg": [
+          "Lucas dos Santos"
+        ],
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-titulo": "Atendimento coletivo chatbot + host",
+        "f3-dem-desc": "Integrar a base de conhecimento do chatbot aos dados do portal",
+        "f3-dem-obs": "Prioridade no período de matrículas",
+        "f3-dem-anexos": [
+          {
+            "name": "escopo-chatbot",
+            "kind": "pdf"
+          }
+        ],
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-abAp": false,
+        "f3-dem-preEm": "2026-10-25",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-iniPor": "Carlos Eduardo Souza",
+        "f3-dem-iniEm": "2026-10-25",
+        "f3-dem-prio": "Moderada",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-natPre": "Serviço",
+        "f3-dem-solQ": "MTI Simplifica",
+        "f3-dem-fab": "EloGroup",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "055/2023/SEPLAG",
+        "f3-dem-atu": "Coletiva",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-qEm": "2026-10-25",
+        "f3-dem-caminho": "Abrir OS dedicada",
+        "f3-dem-licOS": true,
+        "f3-dem-saudeApl": "Do contrato",
+        "f3-dem-saudeRes": "Saudável",
+        "f3-dem-conf": "Conforme",
+        "f3-dem-vTot": 58980,
+        "f3-dem-vMen": 5600,
+        "f3-dem-vAno": 67200,
+        "f3-dem-nItens": 4,
+        "f3-dem-descComp": "Composição coletiva: MTI Simplifica, HOST e MTI",
+        "f3-dem-dec2": "Aprovar proposição",
+        "f3-dem-prev": [
+          {
+            "name": "previa-DEM-2026-0024",
+            "kind": "pdf"
+          }
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-sla": [
+          {
+            "f3-dem-sla-ini": "2026-10-25",
+            "f3-dem-sla-etapa": "Aguardando pré-aprovação do cliente",
+            "f3-dem-sla-resp": "Ricardo Almeida Ferreira",
+            "f3-dem-sla-sit": "No prazo",
+            "f3-dem-sla-tEt": "6 h",
+            "f3-dem-sla-tTot": "3 d 1 h",
+            "f3-dem-sla-prazo": "2026-10-27"
+          }
+        ],
+        "f3-dem-dct": [
+          {
+            "f3-dem-dct-sg": 11020,
+            "f3-dem-dct-tp": 57200,
+            "f3-dem-dct-ex": 31780,
+            "f3-dem-dct-pc": 31.78,
+            "f3-dem-dct-df": 0,
+            "f3-dem-dct-vi": "2026-01-01",
+            "f3-dem-dct-vf": "2026-12-31",
+            "f3-dem-dct-ctte": "SEPLAG",
+            "f3-dem-dct-ctda": "MTI",
+            "f3-dem-dct-pa": "SEPLAG-PRO-2025/01459",
+            "f3-dem-dct-fl": "Lei 14.133/2021",
+            "f3-dem-dct-sau": "Saudável"
+          }
+        ],
+        "f3-dem-itens": [
+          {
+            "f3-dem-aten-itensB-orig": "Parceiro",
+            "f3-dem-aten-itensB-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-itensB-nat": "Serviço de projeto",
+            "f3-dem-aten-itensB-prod": "Serviço por UST",
+            "f3-dem-aten-itensB-cod": "SIMF007",
+            "f3-dem-aten-itensB-met": "UST",
+            "f3-dem-aten-itensB-rec": "Conforme Homologação",
+            "f3-dem-aten-itensB-cx": "Alta",
+            "f3-dem-aten-itensB-coef": 1.2,
+            "f3-dem-aten-itensB-qtd": 80,
+            "f3-dem-aten-itensB-unit": 180,
+            "f3-dem-aten-itensB-total": 17280,
+            "f3-dem-aten-itensB-var": "Por complexidade"
+          },
+          {
+            "f3-dem-aten-itensB-orig": "Parceiro",
+            "f3-dem-aten-itensB-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-itensB-nat": "Licenciamento",
+            "f3-dem-aten-itensB-prod": "Licença por usuário",
+            "f3-dem-aten-itensB-cod": "SIMF001",
+            "f3-dem-aten-itensB-met": "USN",
+            "f3-dem-aten-itensB-rec": "Anual",
+            "f3-dem-aten-itensB-qtd": 31,
+            "f3-dem-aten-itensB-unit": 1200,
+            "f3-dem-aten-itensB-total": 37200,
+            "f3-dem-aten-itensB-var": "Sem variação"
+          },
+          {
+            "f3-dem-aten-itensB-orig": "Parceiro",
+            "f3-dem-aten-itensB-parc": "HOST – FacilMova",
+            "f3-dem-aten-itensB-nat": "Serviço avulso",
+            "f3-dem-aten-itensB-prod": "Serviço HOST",
+            "f3-dem-aten-itensB-cod": "HOST003",
+            "f3-dem-aten-itensB-met": "HST",
+            "f3-dem-aten-itensB-rec": "Única Vez",
+            "f3-dem-aten-itensB-qtd": 4,
+            "f3-dem-aten-itensB-unit": 500,
+            "f3-dem-aten-itensB-total": 2000,
+            "f3-dem-aten-itensB-var": "Sem variação"
+          },
+          {
+            "f3-dem-aten-itensB-orig": "MTI",
+            "f3-dem-aten-itensB-nat": "Licenciamento",
+            "f3-dem-aten-itensB-prod": "Hospedagem em nuvem",
+            "f3-dem-aten-itensB-cod": "NUV001",
+            "f3-dem-aten-itensB-met": "USN",
+            "f3-dem-aten-itensB-rec": "Mensal",
+            "f3-dem-aten-itensB-qtd": 1,
+            "f3-dem-aten-itensB-unit": 2500,
+            "f3-dem-aten-itensB-total": 2500,
+            "f3-dem-aten-itensB-var": "Sem variação"
+          }
+        ],
+        "f3-dem-itensAut": [
+          {
+            "f3-dem-itens-prod": "Serviço por UST",
+            "f3-dem-itens-met": "UST",
+            "f3-dem-itens-rec": "Conforme Homologação",
+            "f3-dem-itens-qtd": 80,
+            "f3-dem-itens-unit": 180,
+            "f3-dem-itens-total": 17280
+          },
+          {
+            "f3-dem-itens-prod": "Licença por usuário",
+            "f3-dem-itens-met": "USN",
+            "f3-dem-itens-rec": "Anual",
+            "f3-dem-itens-qtd": 31,
+            "f3-dem-itens-unit": 1200,
+            "f3-dem-itens-total": 37200
+          },
+          {
+            "f3-dem-itens-prod": "Serviço HOST",
+            "f3-dem-itens-met": "HST",
+            "f3-dem-itens-rec": "Única Vez",
+            "f3-dem-itens-qtd": 4,
+            "f3-dem-itens-unit": 500,
+            "f3-dem-itens-total": 2000
+          },
+          {
+            "f3-dem-itens-prod": "Hospedagem em nuvem",
+            "f3-dem-itens-met": "USN",
+            "f3-dem-itens-rec": "Mensal",
+            "f3-dem-itens-qtd": 1,
+            "f3-dem-itens-unit": 2500,
+            "f3-dem-itens-total": 2500
+          }
+        ],
+        "f3-dem-aprov": [
+          {
+            "f3-dem-aprov-user": "Ricardo Almeida Ferreira",
+            "f3-dem-aprov-papel": "Gestor",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Aprovar",
+            "f3-dem-aprov-sit": "Assinada"
+          },
+          {
+            "f3-dem-aprov-user": "Beatriz Nogueira",
+            "f3-dem-aprov-papel": "Fiscal requisitante",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Aprovar",
+            "f3-dem-aprov-sit": "Assinada"
+          }
+        ],
+        "f3-dem-eventos": [
+          {
+            "f3-dem-ev-dt": "2026-10-25",
+            "f3-dem-ev-user": "Marina Souza",
+            "f3-dem-ev-txt": "Demanda registrada",
+            "f3-dem-ev-sit": "Aguardando pré-aprovação do cliente",
+            "f3-dem-ev-perm": "2 h",
+            "f3-dem-ev-visao": [
+              "Cliente",
+              "Parceiro",
+              "MTI"
+            ]
+          },
+          {
+            "f3-dem-ev-dt": "2026-10-25",
+            "f3-dem-ev-user": "Lucas dos Santos",
+            "f3-dem-ev-txt": "Qualificação concluída: Enviar ao parceiro",
+            "f3-dem-ev-sit": "Aguardando parceiro",
+            "f3-dem-ev-perm": "1 d 0 h",
+            "f3-dem-ev-visao": [
+              "MTI"
+            ]
+          },
+          {
+            "f3-dem-ev-dt": "2026-10-28",
+            "f3-dem-ev-user": "Lucas dos Santos",
+            "f3-dem-ev-txt": "Composição concluída, orçamento gerado",
+            "f3-dem-ev-sit": "Aguardando assinaturas",
+            "f3-dem-ev-perm": "19 h",
+            "f3-dem-ev-visao": [
+              "MTI"
+            ]
+          }
+        ],
+        "f3-dem-versoes": [
+          {
+            "f3-dem-ver-n": "1.0",
+            "f3-dem-ver-dt": "2026-10-25",
+            "f3-dem-ver-autor": "Marina Souza",
+            "f3-dem-ver-etapa": "Aguardando pré-aprovação do cliente",
+            "f3-dem-ver-just": "Registro criado"
+          },
+          {
+            "f3-dem-ver-n": "1.1",
+            "f3-dem-ver-dt": "2026-10-25",
+            "f3-dem-ver-autor": "Carlos Eduardo Souza",
+            "f3-dem-ver-aprov": "João Victor",
+            "f3-dem-ver-etapa": "Em qualificação",
+            "f3-dem-ver-just": "Requalificação: contrato corrigido"
+          }
+        ],
+        "f3-dem-aten": [
+          {
+            "f3-dem-aten-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-orgP": "EloGroup",
+            "f3-dem-aten-gp": "Helena Ribeiro Lima",
+            "f3-dem-aten-gerMTI": "Lucas dos Santos",
+            "f3-dem-aten-nat": [
+              "Licenciamento",
+              "Serviço de projeto"
+            ],
+            "f3-dem-aten-desc": "Chatbot integrado à base de conhecimento, com licenças anuais",
+            "f3-dem-aten-decl": "Equipe dedicada; sem conflito de interesse",
+            "f3-dem-aten-iniEm": "2026-10-26",
+            "f3-dem-aten-envEm": "2026-10-27",
+            "f3-dem-aten-bst": "Enviado"
+          }
+        ],
+        "f3-dem-gers": [
+          {
+            "f3-dem-gers-papel": "Gerente de projetos (parceira)",
+            "f3-dem-gers-parc": "MTI SIMPLIFICA",
+            "f3-dem-gers-user": "Helena Ribeiro Lima",
+            "f3-dem-gers-cond": "Titular",
+            "f3-dem-gers-dec": "Aprovar",
+            "f3-dem-gers-sit": "Assinada"
+          },
+          {
+            "f3-dem-gers-papel": "Gerente de projetos (parceira)",
+            "f3-dem-gers-parc": "HOST – FacilMova",
+            "f3-dem-gers-user": "Igor Matos",
+            "f3-dem-gers-cond": "Titular",
+            "f3-dem-gers-dec": "Aprovar",
+            "f3-dem-gers-sit": "Assinada"
+          },
+          {
+            "f3-dem-gers-papel": "Gerente responsável (MTI)",
+            "f3-dem-gers-user": "Lucas dos Santos",
+            "f3-dem-gers-cond": "Titular",
+            "f3-dem-gers-dec": "Aprovar",
+            "f3-dem-gers-sit": "Assinada"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-p2",
+      "name": "DEM-2026-0025 · Nova demanda",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-numero": "DEM-2026-0025",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-origem": "MTI",
+        "f3-dem-sit": "Nova demanda",
+        "f3-dem-cad": "2026-11-02",
+        "f3-dem-respA": "Ricardo Almeida Ferreira",
+        "f3-dem-respAg": [
+          "João Victor",
+          "Carlos Eduardo Souza"
+        ],
+        "f3-dem-cliente": "SEDUC",
+        "f3-dem-abertoPor": "Clara Menezes",
+        "f3-dem-contrato": "060/2024/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "HOST",
+        "f3-dem-titulo": "Painel de indicadores de atendimento",
+        "f3-dem-desc": "Criar painel com tempo médio, satisfação e volume por serviço",
+        "f3-dem-obs": "Entregar antes do fechamento do exercício",
+        "f3-dem-sitQ": "Não iniciada",
+        "f3-dem-prio": "Baixa"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-sla": [
+          {
+            "f3-dem-sla-ini": "2026-11-02",
+            "f3-dem-sla-etapa": "Nova demanda",
+            "f3-dem-sla-resp": "Lucas dos Santos",
+            "f3-dem-sla-sit": "Em risco",
+            "f3-dem-sla-tEt": "45 min",
+            "f3-dem-sla-tTot": "9 d 6 h",
+            "f3-dem-sla-prazo": "2026-11-03"
+          }
+        ],
+        "f3-dem-dct": [
+          {
+            "f3-dem-dct-sg": 70000,
+            "f3-dem-dct-tp": 20000,
+            "f3-dem-dct-ex": 10000,
+            "f3-dem-dct-pc": 10,
+            "f3-dem-dct-df": 0,
+            "f3-dem-dct-vi": "2026-01-01",
+            "f3-dem-dct-vf": "2027-06-30",
+            "f3-dem-dct-ctte": "SEPLAG",
+            "f3-dem-dct-ctda": "MTI",
+            "f3-dem-dct-pa": "SEPLAG-PRO-2024/00877",
+            "f3-dem-dct-fl": "Lei 14.133/2021, art. 75",
+            "f3-dem-dct-sau": "Saudável"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-p3",
+      "name": "DEM-2026-0026 · Aguardando parceiro",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-numero": "DEM-2026-0026",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-origem": "Parceiro",
+        "f3-dem-sit": "Aguardando parceiro",
+        "f3-dem-cad": "2026-10-29",
+        "f3-dem-respA": "Helena Ribeiro Lima",
+        "f3-dem-cliente": "SES",
+        "f3-dem-abertoPor": "Ana Paula Ribeiro",
+        "f3-dem-contatos": [
+          "Tiago Fernandes"
+        ],
+        "f3-dem-contrato": "012/2025/SES",
+        "f3-dem-solucao": "Outras",
+        "f3-dem-solOutra": "Aplicativo de transporte escolar",
+        "f3-dem-titulo": "Simplificação do pedido de transferência escolar",
+        "f3-dem-desc": "Digitalizar o pedido de transferência entre escolas",
+        "f3-dem-obs": "Envolver a ouvidoria",
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-prio": "Alta",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-natPre": "Licenciamento",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "012/2025/SES",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-sla": [
+          {
+            "f3-dem-sla-ini": "2026-10-29",
+            "f3-dem-sla-etapa": "Aguardando parceiro",
+            "f3-dem-sla-resp": "Helena Ribeiro Lima",
+            "f3-dem-sla-sit": "Estourado",
+            "f3-dem-sla-tEt": "1 d 2 h",
+            "f3-dem-sla-tTot": "1 d 0 h",
+            "f3-dem-sla-prazo": "2026-10-31"
+          }
+        ],
+        "f3-dem-dct": [
+          {
+            "f3-dem-dct-sg": 76000,
+            "f3-dem-dct-tp": 0,
+            "f3-dem-dct-ex": 0,
+            "f3-dem-dct-pc": 0,
+            "f3-dem-dct-df": 4.5,
+            "f3-dem-dct-vi": "2025-03-01",
+            "f3-dem-dct-vf": "2027-02-28",
+            "f3-dem-dct-ctte": "SES",
+            "f3-dem-dct-ctda": "MTI",
+            "f3-dem-dct-pa": "SES-PRO-2025/00312",
+            "f3-dem-dct-fl": "Lei 14.133/2021, art. 74",
+            "f3-dem-dct-sau": "Atenção"
+          }
+        ],
+        "f3-dem-aten": [
+          {
+            "f3-dem-aten-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-orgP": "EloGroup",
+            "f3-dem-aten-gp": "Helena Ribeiro Lima",
+            "f3-dem-aten-gerMTI": "Lucas dos Santos",
+            "f3-dem-aten-nat": [
+              "Licenciamento"
+            ],
+            "f3-dem-aten-sugH": "O parceiro faz a proposição",
+            "f3-dem-aten-iniEm": "2026-10-30",
+            "f3-dem-aten-bst": "Em atendimento"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-p4",
+      "name": "DEM-2026-0027 · Concluída",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-numero": "DEM-2026-0027",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-sit": "Concluída",
+        "f3-dem-cad": "2026-10-30",
+        "f3-dem-respA": "Marina Souza",
+        "f3-dem-cliente": "SEFAZ",
+        "f3-dem-abertoPor": "Carlos Eduardo Souza",
+        "f3-dem-contatos": [
+          "Beatriz Nogueira"
+        ],
+        "f3-dem-contrato": "031/2024/SEFAZ",
+        "f3-dem-solucao": "Não sei informar",
+        "f3-dem-titulo": "Ajuste de layout das notificações",
+        "f3-dem-desc": "Ajustar o layout dos e-mails enviados pelo portal",
+        "f3-dem-obs": "Sem urgência",
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "031/2024/SEFAZ",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-caminho": "Abrir OS dedicada",
+        "f3-dem-conf": "Conforme",
+        "f3-dem-saudeRes": "Atenção",
+        "f3-dem-vTot": 1800,
+        "f3-dem-vMen": 0,
+        "f3-dem-vAno": 0,
+        "f3-dem-nItens": 1,
+        "f3-dem-dAut": "Autorizar",
+        "f3-dem-decPor": "Ricardo Almeida Ferreira",
+        "f3-dem-decEm": "2026-11-02",
+        "f3-dem-snNum": "PRJ0012348",
+        "f3-dem-snEm": "2026-11-03",
+        "f3-dem-snSit": "Concluído",
+        "f3-dem-pct": 100,
+        "f3-dem-vAut": 1800,
+        "f3-dem-vHom": 1800,
+        "f3-dem-vAH": 0,
+        "f3-dem-concEm": "2026-11-04",
+        "f3-dem-declMan": true,
+        "f3-dem-finModo": "Manual",
+        "f3-dem-declarante": "Helena Ribeiro Lima",
+        "f3-dem-declDt": "2026-11-04",
+        "f3-dem-declAss": "Assinada",
+        "f3-dem-instrH": [
+          "OS-0007 · 007/2026/SEPLAG · OS dedicada · Em execução"
+        ],
+        "f3-dem-docAut": [
+          {
+            "name": "autorizacao-DEM-2026-0027",
+            "kind": "pdf"
+          }
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-sla": [
+          {
+            "f3-dem-sla-ini": "2026-10-30",
+            "f3-dem-sla-etapa": "Aguardando autorização do cliente",
+            "f3-dem-sla-resp": "Beatriz Nogueira",
+            "f3-dem-sla-sit": "Dilatado",
+            "f3-dem-sla-tEt": "3 d 4 h",
+            "f3-dem-sla-tTot": "5 h",
+            "f3-dem-sla-prazo": "2026-11-04"
+          }
+        ],
+        "f3-dem-dct": [
+          {
+            "f3-dem-dct-sg": 5620,
+            "f3-dem-dct-tp": 62600,
+            "f3-dem-dct-ex": 41060,
+            "f3-dem-dct-pc": 41.06,
+            "f3-dem-dct-df": 18.2,
+            "f3-dem-dct-vi": "2024-07-15",
+            "f3-dem-dct-vf": "2026-07-14",
+            "f3-dem-dct-ctte": "SEFAZ",
+            "f3-dem-dct-ctda": "MTI",
+            "f3-dem-dct-pa": "SEFAZ-PRO-2024/00920",
+            "f3-dem-dct-fl": "Lei 8.666/1993",
+            "f3-dem-dct-sau": "Atenção"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-p5",
+      "name": "DEM-2026-0030 · Cancelada",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-numero": "DEM-2026-0030",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-origem": "MTI",
+        "f3-dem-sit": "Cancelada",
+        "f3-dem-cad": "2026-10-27",
+        "f3-dem-respA": "João Victor",
+        "f3-dem-cliente": "SESP",
+        "f3-dem-abertoPor": "Helena Ribeiro Lima",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "HOST",
+        "f3-dem-titulo": "Novo formulário de solicitação de diárias",
+        "f3-dem-desc": "Criar o formulário simplificado de diárias",
+        "f3-dem-motCanc": "Demanda duplicada",
+        "f3-dem-subst": "DEM-2026-0031",
+        "f3-dem-sitQ": "Não iniciada",
+        "f3-dem-cancAceite": "Aceito",
+        "f3-dem-cancAss": "Assinada",
+        "f3-dem-cancEm": "2026-10-28"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-sla": [
+          {
+            "f3-dem-sla-ini": "2026-10-26",
+            "f3-dem-sla-etapa": "Em atendimento",
+            "f3-dem-sla-resp": "João Victor",
+            "f3-dem-sla-sit": "No prazo",
+            "f3-dem-sla-tEt": "12 h",
+            "f3-dem-sla-tTot": "14 d 2 h",
+            "f3-dem-sla-prazo": "2026-10-29"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p6",
+      "name": "DEM-2026-0032 · Aguardando pré-aprovação · aberta pelo gestor",
+      "fieldValues": {
+        "f3-dem-sit": "Aguardando pré-aprovação do cliente",
+        "f3-dem-numero": "DEM-2026-0032",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-11-05",
+        "f3-dem-abertoPor": "Ricardo Almeida Ferreira",
+        "f3-dem-respA": "Beatriz Nogueira",
+        "f3-dem-titulo": "Agendamento online de atendimento presencial",
+        "f3-dem-desc": "Permitir agendar atendimento nas unidades pelo portal",
+        "f3-dem-preRes": "Pendente",
+        "f3-dem-abAp": true,
+        "f3-dem-sitQ": "Não iniciada"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-aprov": [
+          {
+            "f3-dem-aprov-user": "Ricardo Almeida Ferreira",
+            "f3-dem-aprov-papel": "Gestor",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Aprovar",
+            "f3-dem-aprov-sit": "Assinada"
+          },
+          {
+            "f3-dem-aprov-user": "Beatriz Nogueira",
+            "f3-dem-aprov-papel": "Fiscal requisitante",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Pendente",
+            "f3-dem-aprov-sit": "Pendente"
+          }
+        ],
+        "f3-dem-eventos": [
+          {
+            "f3-dem-ev-dt": "2026-11-05",
+            "f3-dem-ev-user": "Ricardo Almeida Ferreira",
+            "f3-dem-ev-txt": "Demanda registrada · parecer do gestor assinado",
+            "f3-dem-ev-sit": "Aguardando pré-aprovação do cliente",
+            "f3-dem-ev-visao": [
+              "Cliente",
+              "Parceiro",
+              "MTI"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p7",
+      "name": "DEM-2026-0033 · Recusada pelo cliente · recusa restituível",
+      "fieldValues": {
+        "f3-dem-sit": "Recusada pelo cliente",
+        "f3-dem-numero": "DEM-2026-0033",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-11-03",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Beatriz Nogueira",
+        "f3-dem-titulo": "Relatório de atendimentos por canal",
+        "f3-dem-desc": "Consolidar atendimentos de telefone, portal e presencial",
+        "f3-dem-preRes": "Recusado",
+        "f3-dem-preEm": "2026-11-04",
+        "f3-dem-motC": "Beatriz Nogueira: Escopo já atendido pelo painel corporativo",
+        "f3-dem-sitQ": "Não iniciada"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-aprov": [
+          {
+            "f3-dem-aprov-user": "Ricardo Almeida Ferreira",
+            "f3-dem-aprov-papel": "Gestor",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Aprovar",
+            "f3-dem-aprov-sit": "Assinada"
+          },
+          {
+            "f3-dem-aprov-user": "Beatriz Nogueira",
+            "f3-dem-aprov-papel": "Fiscal requisitante",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Recusar",
+            "f3-dem-aprov-sit": "Assinada",
+            "f3-dem-aprov-mot": "Escopo já atendido pelo painel corporativo"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p8",
+      "name": "DEM-2026-0034 · Aguardando patrocinador · hospedagem SEDUC",
+      "fieldValues": {
+        "f3-dem-sit": "Aguardando patrocinador",
+        "f3-dem-numero": "DEM-2026-0034",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEDUC",
+        "f3-dem-contrato": "060/2024/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "HOST",
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato de gestão (patrocinado)",
+        "f3-dem-patro": "SEPLAG",
+        "f3-dem-ctq": "060/2024/SEPLAG",
+        "f3-dem-solQ": "HOST",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-patro2": "SEPLAG",
+        "f3-dem-entidade": "Consumidora",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-11-02",
+        "f3-dem-abertoPor": "Clara Menezes",
+        "f3-dem-respA": "Roberto Campos",
+        "f3-dem-titulo": "Hospedagem do sistema de matrículas",
+        "f3-dem-desc": "Hospedar o sistema de matrículas no período de pico",
+        "f3-dem-patRes": "Pendente"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-pats": [
+          {
+            "f3-dem-pats-user": "Roberto Campos",
+            "f3-dem-pats-papel": "Fiscal geral do dono",
+            "f3-dem-pats-cond": "Titular",
+            "f3-dem-pats-dec": "Pendente",
+            "f3-dem-pats-sit": "Pendente"
+          },
+          {
+            "f3-dem-pats-user": "Fernanda Lima",
+            "f3-dem-pats-papel": "Gestor do dono",
+            "f3-dem-pats-cond": "Titular",
+            "f3-dem-pats-dec": "Pendente",
+            "f3-dem-pats-sit": "Pendente"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p9",
+      "name": "DEM-2026-0035 · Não autorizada pelo patrocinador",
+      "fieldValues": {
+        "f3-dem-sit": "Não autorizada pelo patrocinador",
+        "f3-dem-numero": "DEM-2026-0035",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEDUC",
+        "f3-dem-contrato": "060/2024/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "HOST",
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato de gestão (patrocinado)",
+        "f3-dem-patro": "SEPLAG",
+        "f3-dem-ctq": "060/2024/SEPLAG",
+        "f3-dem-solQ": "HOST",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-patro2": "SEPLAG",
+        "f3-dem-entidade": "Consumidora",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-10-30",
+        "f3-dem-abertoPor": "Clara Menezes",
+        "f3-dem-respA": "Fernanda Lima",
+        "f3-dem-titulo": "Ampliação de armazenamento do repositório escolar",
+        "f3-dem-desc": "Ampliar o armazenamento do repositório de documentos escolares",
+        "f3-dem-patRes": "Não autorizado"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-pats": [
+          {
+            "f3-dem-pats-user": "Roberto Campos",
+            "f3-dem-pats-papel": "Fiscal geral do dono",
+            "f3-dem-pats-cond": "Titular",
+            "f3-dem-pats-dec": "Autorizar",
+            "f3-dem-pats-sit": "Assinada"
+          },
+          {
+            "f3-dem-pats-user": "Fernanda Lima",
+            "f3-dem-pats-papel": "Gestor do dono",
+            "f3-dem-pats-cond": "Titular",
+            "f3-dem-pats-dec": "Não autorizar",
+            "f3-dem-pats-sit": "Assinada",
+            "f3-dem-pats-mot": "Sem saldo no contrato de gestão neste exercício"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p10",
+      "name": "DEM-2026-0036 · Retorno do parceiro",
+      "fieldValues": {
+        "f3-dem-sit": "Retorno do parceiro",
+        "f3-dem-numero": "DEM-2026-0036",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "055/2023/SEPLAG",
+        "f3-dem-solQ": "MTI Simplifica",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-11-01",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Lucas dos Santos",
+        "f3-dem-titulo": "Licenças para o portal do servidor",
+        "f3-dem-desc": "Licenciar o portal do servidor para 31 usuários"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-aten": [
+          {
+            "f3-dem-aten-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-orgP": "EloGroup",
+            "f3-dem-aten-gp": "Helena Ribeiro Lima",
+            "f3-dem-aten-gerMTI": "Lucas dos Santos",
+            "f3-dem-aten-nat": [
+              "Licenciamento"
+            ],
+            "f3-dem-aten-desc": "Licenças anuais por usuário para o portal",
+            "f3-dem-aten-decl": "Sem conflito de interesse",
+            "f3-dem-aten-iniEm": "2026-11-03",
+            "f3-dem-aten-envEm": "2026-11-04",
+            "f3-dem-aten-bst": "Enviado"
+          }
+        ],
+        "f3-dem-gers": [
+          {
+            "f3-dem-gers-papel": "Gerente de projetos (parceira)",
+            "f3-dem-gers-parc": "MTI SIMPLIFICA",
+            "f3-dem-gers-user": "Helena Ribeiro Lima",
+            "f3-dem-gers-cond": "Titular",
+            "f3-dem-gers-dec": "Aprovar",
+            "f3-dem-gers-sit": "Assinada"
+          },
+          {
+            "f3-dem-gers-papel": "Gerente responsável (MTI)",
+            "f3-dem-gers-user": "Lucas dos Santos",
+            "f3-dem-gers-cond": "Titular",
+            "f3-dem-gers-dec": "Pendente",
+            "f3-dem-gers-sit": "Pendente"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p11",
+      "name": "DEM-2026-0037 · Aguardando autorização · uma assinatura pendente",
+      "fieldValues": {
+        "f3-dem-sit": "Aguardando autorização do cliente",
+        "f3-dem-numero": "DEM-2026-0037",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "055/2023/SEPLAG",
+        "f3-dem-solQ": "MTI Simplifica",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-10-28",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Beatriz Nogueira",
+        "f3-dem-titulo": "Licenças anuais e hospedagem do portal",
+        "f3-dem-desc": "Licenças por usuário e hospedagem mensal",
+        "f3-dem-caminho": "Autorização de consumo em OS global",
+        "f3-dem-osRef": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+        "f3-dem-licOS": true,
+        "f3-dem-saudeApl": "Da OS",
+        "f3-dem-saudeRes": "Saudável",
+        "f3-dem-conf": "Conforme",
+        "f3-dem-vTot": 39700,
+        "f3-dem-vMen": 5600,
+        "f3-dem-vAno": 67200,
+        "f3-dem-nItens": 2,
+        "f3-dem-orc": "ORC-2026-0028 · Aguardando cliente",
+        "f3-dem-vTotA": 39700,
+        "f3-dem-vMenA": 5600,
+        "f3-dem-vAnoA": 67200,
+        "f3-dem-sauA": "Saudável",
+        "f3-dem-camA": "Autorização de consumo em OS global",
+        "f3-dem-ctA": "055/2023/SEPLAG",
+        "f3-dem-dAut": "Autorizar",
+        "f3-dem-decPor": "Ricardo Almeida Ferreira",
+        "f3-dem-decEm": "2026-11-04"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-itens": [
+          {
+            "f3-dem-aten-itensB-orig": "Parceiro",
+            "f3-dem-aten-itensB-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-itensB-nat": "Licenciamento",
+            "f3-dem-aten-itensB-prod": "Licença por usuário",
+            "f3-dem-aten-itensB-cod": "SIMF001",
+            "f3-dem-aten-itensB-met": "USN",
+            "f3-dem-aten-itensB-rec": "Anual",
+            "f3-dem-aten-itensB-var": "Sem variação",
+            "f3-dem-aten-itensB-qtd": 31,
+            "f3-dem-aten-itensB-unit": 1200,
+            "f3-dem-aten-itensB-total": 37200
+          },
+          {
+            "f3-dem-aten-itensB-orig": "MTI",
+            "f3-dem-aten-itensB-nat": "Licenciamento",
+            "f3-dem-aten-itensB-prod": "Hospedagem em nuvem",
+            "f3-dem-aten-itensB-met": "USN",
+            "f3-dem-aten-itensB-rec": "Mensal",
+            "f3-dem-aten-itensB-var": "Sem variação",
+            "f3-dem-aten-itensB-qtd": 1,
+            "f3-dem-aten-itensB-unit": 2500,
+            "f3-dem-aten-itensB-total": 2500
+          }
+        ],
+        "f3-dem-sigAut": [
+          {
+            "f3-dem-sigAut-org": "SEPLAG",
+            "f3-dem-sigAut-user": "Ricardo Almeida Ferreira",
+            "f3-dem-sigAut-papel": "Gestor",
+            "f3-dem-sigAut-cond": "Titular",
+            "f3-dem-sigAut-sit": "Assinada"
+          },
+          {
+            "f3-dem-sigAut-org": "SEPLAG",
+            "f3-dem-sigAut-user": "Beatriz Nogueira",
+            "f3-dem-sigAut-papel": "Fiscal",
+            "f3-dem-sigAut-cond": "Titular",
+            "f3-dem-sigAut-sit": "Pendente"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p12",
+      "name": "DEM-2026-0038 · Encaminhada para execução",
+      "fieldValues": {
+        "f3-dem-sit": "Encaminhada para execução",
+        "f3-dem-numero": "DEM-2026-0038",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "055/2023/SEPLAG",
+        "f3-dem-solQ": "MTI Simplifica",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-10-20",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Lucas dos Santos",
+        "f3-dem-titulo": "Evolução do módulo de protocolo",
+        "f3-dem-desc": "Novas telas de protocolo digital",
+        "f3-dem-caminho": "Abrir OS dedicada",
+        "f3-dem-saudeApl": "Do contrato",
+        "f3-dem-saudeRes": "Atenção",
+        "f3-dem-conf": "Conforme",
+        "f3-dem-vTot": 17280,
+        "f3-dem-vMen": 0,
+        "f3-dem-vAno": 0,
+        "f3-dem-nItens": 1,
+        "f3-dem-orc": "ORC-2026-0024 · Autorizado",
+        "f3-dem-dAut": "Autorizar",
+        "f3-dem-decPor": "Ricardo Almeida Ferreira",
+        "f3-dem-decEm": "2026-11-01",
+        "f3-dem-docAut": [
+          {
+            "name": "autorizacao-DEM-2026-0038",
+            "kind": "pdf"
+          }
+        ],
+        "f3-dem-instrH": [
+          "OS-0007 · 007/2026/SEPLAG · OS dedicada · Em execução"
+        ],
+        "f3-dem-osGer": "OS-0007 · 007/2026/SEPLAG · OS dedicada · Em execução",
+        "f3-dem-vAut": 17280,
+        "f3-dem-vHom": 0,
+        "f3-dem-vAH": 17280
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-sigAut": [
+          {
+            "f3-dem-sigAut-org": "SEPLAG",
+            "f3-dem-sigAut-user": "Ricardo Almeida Ferreira",
+            "f3-dem-sigAut-papel": "Gestor",
+            "f3-dem-sigAut-cond": "Titular",
+            "f3-dem-sigAut-sit": "Assinada"
+          },
+          {
+            "f3-dem-sigAut-org": "SEPLAG",
+            "f3-dem-sigAut-user": "Beatriz Nogueira",
+            "f3-dem-sigAut-papel": "Fiscal",
+            "f3-dem-sigAut-cond": "Titular",
+            "f3-dem-sigAut-sit": "Assinada"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p13",
+      "name": "DEM-2026-0039 · Em atendimento · licença com entrega",
+      "fieldValues": {
+        "f3-dem-sit": "Em atendimento",
+        "f3-dem-numero": "DEM-2026-0039",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "055/2023/SEPLAG",
+        "f3-dem-solQ": "MTI Simplifica",
+        "f3-dem-atu": "Individual",
+        "f3-dem-decQ": "Enviar ao parceiro",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-10-15",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Lucas dos Santos",
+        "f3-dem-titulo": "Licenças do portal do servidor",
+        "f3-dem-desc": "Licenciar 31 usuários do portal do servidor",
+        "f3-dem-caminho": "Abrir OS dedicada",
+        "f3-dem-licOS": true,
+        "f3-dem-conf": "Conforme",
+        "f3-dem-vTot": 37200,
+        "f3-dem-vMen": 3100,
+        "f3-dem-vAno": 37200,
+        "f3-dem-nItens": 1,
+        "f3-dem-dAut": "Autorizar",
+        "f3-dem-snNum": "PRJ0012360",
+        "f3-dem-snEm": "2026-10-25",
+        "f3-dem-snSit": "Em execução",
+        "f3-dem-pct": 60,
+        "f3-dem-ultRet": "2026-11-05",
+        "f3-dem-vAut": 37200,
+        "f3-dem-vHom": 0,
+        "f3-dem-vAH": 37200,
+        "f3-dem-osLic": "OS-0008 · 008/2026/SEPLAG · Licenciamento · Em execução",
+        "f3-dem-instrH": [
+          "OS-0008 · 008/2026/SEPLAG · Licenciamento · Em execução"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-itens": [
+          {
+            "f3-dem-aten-itensB-orig": "Parceiro",
+            "f3-dem-aten-itensB-parc": "MTI SIMPLIFICA",
+            "f3-dem-aten-itensB-nat": "Licenciamento",
+            "f3-dem-aten-itensB-prod": "Licença por usuário",
+            "f3-dem-aten-itensB-cod": "SIMF001",
+            "f3-dem-aten-itensB-met": "USN",
+            "f3-dem-aten-itensB-rec": "Anual",
+            "f3-dem-aten-itensB-var": "Sem variação",
+            "f3-dem-aten-itensB-qtd": 31,
+            "f3-dem-aten-itensB-unit": 1200,
+            "f3-dem-aten-itensB-total": 37200
+          }
+        ],
+        "f3-dem-entregas": [
+          {
+            "f3-dem-entregas-item": "Licença por usuário",
+            "f3-dem-entregas-qtd": 20,
+            "f3-dem-entregas-cred": "Usuários criados no console do fabricante",
+            "f3-dem-entregas-comp": [
+              {
+                "name": "comprovante-licencas-lote1",
+                "kind": "pdf"
+              }
+            ],
+            "f3-dem-entregas-em": "2026-11-03"
+          }
+        ]
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p14",
+      "name": "DEM-2026-0029 · Recusada pela MTI",
+      "fieldValues": {
+        "f3-dem-sit": "Recusada pela MTI",
+        "f3-dem-numero": "DEM-2026-0029",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-10-22",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Lucas dos Santos",
+        "f3-dem-titulo": "Aplicativo de ponto eletrônico",
+        "f3-dem-desc": "Aplicativo móvel para registro de ponto",
+        "f3-dem-obs": "Integrar ao RH",
+        "f3-dem-preRes": "Aprovado",
+        "f3-dem-sitQ": "Concluída",
+        "f3-dem-respPV": "Lucas dos Santos",
+        "f3-dem-cob": "Contrato próprio do cliente",
+        "f3-dem-ctq": "055/2023/SEPLAG",
+        "f3-dem-decQ": "Recusar",
+        "f3-dem-justQ": "Objeto fora das soluções do contrato",
+        "f3-dem-assQ": "Assinada",
+        "f3-dem-qEm": "2026-10-24"
+      }
+    },
+    {
+      "iconColor": "#3473c5",
+      "id": "form-f3-dem-p15",
+      "name": "DEM-2026-0040 · Reaproveitada (origem DEM-2026-0029)",
+      "fieldValues": {
+        "f3-dem-sit": "Aguardando pré-aprovação do cliente",
+        "f3-dem-numero": "DEM-2026-0040",
+        "f3-dem-tipo": "Consumo",
+        "f3-dem-cliente": "SEPLAG",
+        "f3-dem-contrato": "055/2023/SEPLAG",
+        "f3-dem-solucao": "Selecionar solução",
+        "f3-dem-solReq": "MTI Simplifica",
+        "f3-dem-contatos": [
+          "Ana Paula Ribeiro"
+        ],
+        "f3-dem-origem": "Cliente",
+        "f3-dem-cad": "2026-11-06",
+        "f3-dem-abertoPor": "Marina Souza",
+        "f3-dem-respA": "Ricardo Almeida Ferreira",
+        "f3-dem-titulo": "Aplicativo de ponto eletrônico",
+        "f3-dem-desc": "Aplicativo móvel para registro de ponto",
+        "f3-dem-obs": "Integrar ao RH",
+        "f3-dem-preRes": "Pendente",
+        "f3-dem-sitQ": "Não iniciada",
+        "f3-dem-origemDem": "DEM-2026-0029 · Recusada pela MTI"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-dem-aprov": [
+          {
+            "f3-dem-aprov-user": "Ricardo Almeida Ferreira",
+            "f3-dem-aprov-papel": "Gestor",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Pendente",
+            "f3-dem-aprov-sit": "Pendente"
+          },
+          {
+            "f3-dem-aprov-user": "Beatriz Nogueira",
+            "f3-dem-aprov-papel": "Fiscal requisitante",
+            "f3-dem-aprov-cond": "Titular",
+            "f3-dem-aprov-dec": "Pendente",
+            "f3-dem-aprov-sit": "Pendente"
+          }
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-p1"
+}

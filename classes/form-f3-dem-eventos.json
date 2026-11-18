@@ -1,0 +1,250 @@
+{
+  "id": "form-f3-dem-eventos",
+  "name": "## Evento",
+  "sectionLayout": "none",
+  "defaultCanvasMode": "edit",
+  "metadata": "Uma linha por ação, assinatura e transição automática da Demanda. Somente leitura.",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-dt",
+      "label": "Data e hora",
+      "type": "date"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-user",
+      "label": "Usuário",
+      "type": "reference",
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-txt",
+      "label": "Evento",
+      "type": "text"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-sit",
+      "label": "Situação resultante",
+      "type": "textOptions",
+      "options": [
+        "Aguardando pré-aprovação do cliente",
+        "Ajuste solicitado pelo cliente",
+        "Recusada pelo cliente",
+        "Nova demanda",
+        "Em qualificação",
+        "Ajuste solicitado pela MTI",
+        "Recusada pela MTI",
+        "Aguardando patrocinador",
+        "Não autorizada pelo patrocinador",
+        "Aguardando parceiro",
+        "Retorno do parceiro",
+        "Em composição",
+        "Aguardando assinaturas",
+        "Aguardando autorização do cliente",
+        "Não autorizada pelo cliente",
+        "Encaminhada para execução",
+        "Em atendimento",
+        "Concluída",
+        "Aguardando definição do solicitante",
+        "Encaminhada para proposta",
+        "Encaminhada para indenização",
+        "Desistência do solicitante",
+        "Cancelada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto. Opções S01 a S23 (S01 = Aguardando pré-aprovação do cliente; S02 = Ajuste solicitado pelo cliente; S03 = Recusada pelo cliente; S04 = Nova demanda; S05 = Em qualificação; S06 = Ajuste solicitado pela MTI; S07 = Recusada pela MTI; S08 = Aguardando patrocinador; S09 = Não autorizada pelo patrocinador; S10 = Aguardando parceiro; S11 = Retorno do parceiro; S12 = Em composição; S13 = Aguardando assinaturas; S14 = Aguardando autorização do cliente; S15 = Não autorizada pelo cliente; S16 = Encaminhada para execução; S17 = Em atendimento; S18 = Concluída; S19 = Aguardando definição do solicitante; S20 = Encaminhada para proposta; S21 = Encaminhada para indenização; S22 = Desistência do solicitante; S23 = Cancelada)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-visao",
+      "label": "Visão",
+      "type": "textOptions",
+      "options": [
+        "Cliente",
+        "Parceiro",
+        "MTI"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Gravada por cada método; a lista mostra só eventos cuja visão contenha o perfil do usuário."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-org",
+      "label": "Organização",
+      "type": "reference",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura. Parceiro do bloco, quando houver."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-mot",
+      "label": "Motivo / observação",
+      "type": "text",
+      "textLong": true
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-ev-perm",
+      "label": "Permanência na etapa",
+      "type": "text"
+    }
+  ],
+  "methods": [],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-eventos-p1",
+      "name": "Evento 1",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-ev-txt": "Demanda registrada",
+        "f3-dem-ev-sit": "Aguardando pré-aprovação do cliente",
+        "f3-dem-ev-dt": "2026-10-25",
+        "f3-dem-ev-user": "Marina Souza",
+        "f3-dem-ev-mot": "",
+        "f3-dem-ev-perm": "2 h",
+        "f3-dem-ev-visao": [
+          "Cliente",
+          "Parceiro",
+          "MTI"
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-eventos-p2",
+      "name": "Evento 2",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-ev-txt": "Pré-aprovação concluída",
+        "f3-dem-ev-sit": "Nova demanda",
+        "f3-dem-ev-dt": "2026-10-25",
+        "f3-dem-ev-user": "Beatriz Nogueira",
+        "f3-dem-ev-mot": "",
+        "f3-dem-ev-perm": "3 h",
+        "f3-dem-ev-visao": [
+          "Cliente",
+          "Parceiro",
+          "MTI"
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-eventos-p3",
+      "name": "Evento 3",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-ev-txt": "Qualificação concluída: Enviar ao parceiro",
+        "f3-dem-ev-sit": "Aguardando parceiro",
+        "f3-dem-ev-dt": "2026-10-25",
+        "f3-dem-ev-user": "Lucas dos Santos",
+        "f3-dem-ev-mot": "",
+        "f3-dem-ev-perm": "1 d 0 h",
+        "f3-dem-ev-visao": [
+          "Cliente",
+          "Parceiro",
+          "MTI"
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-eventos-p4",
+      "name": "Evento 4",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-ev-txt": "Composição concluída, orçamento gerado",
+        "f3-dem-ev-sit": "Aguardando assinaturas",
+        "f3-dem-ev-dt": "2026-10-28",
+        "f3-dem-ev-user": "Lucas dos Santos",
+        "f3-dem-ev-mot": "",
+        "f3-dem-ev-perm": "19 h",
+        "f3-dem-ev-visao": [
+          "Cliente",
+          "Parceiro",
+          "MTI"
+        ]
+      }
+    },
+    {
+      "id": "form-f3-dem-eventos-p5",
+      "name": "Evento 5",
+      "iconColor": "#3473c5",
+      "fieldValues": {
+        "f3-dem-ev-txt": "Autorização assinada, instrumentos gerados",
+        "f3-dem-ev-sit": "Encaminhada para execução",
+        "f3-dem-ev-dt": "2026-10-30",
+        "f3-dem-ev-user": "Tiago Fernandes",
+        "f3-dem-ev-mot": "OS-0007, OS-0008",
+        "f3-dem-ev-perm": "15 h",
+        "f3-dem-ev-visao": [
+          "Cliente",
+          "Parceiro",
+          "MTI"
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-eventos-p1",
+  "fieldVisibilityRules": []
+}

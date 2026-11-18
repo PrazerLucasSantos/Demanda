@@ -1,0 +1,466 @@
+{
+  "origem": "atlas-v2/forms.json",
+  "classe": {
+    "id": "form-f3-dem",
+    "nome": "Classe  Demanda"
+  },
+  "criterio": "Campos type reference e embeddedReference da Classe Demanda, sem fechar o grafo das classes citadas.",
+  "classes": [
+    {
+      "id": "form-f3-dem",
+      "nome": "Classe  Demanda",
+      "arquivo": "classes/form-f3-dem.json",
+      "usadaEm": []
+    },
+    {
+      "id": "form-f3-dem-sla",
+      "nome": "SLA",
+      "arquivo": "classes/form-f3-dem-sla.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-sla",
+          "rotulo": "SLA",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-patlasv4-proto-pessoa",
+      "nome": "Pessoa",
+      "arquivo": "classes/form-patlasv4-proto-pessoa.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-respA",
+          "rotulo": "Responsável atual",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-respAg",
+          "rotulo": "Responsáveis agregados (MTI)",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-abertoPor",
+          "rotulo": "Responsável pela abertura",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-contatos",
+          "rotulo": "Contatos secundários",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-iniPor",
+          "rotulo": "Iniciada por",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-respPV",
+          "rotulo": "Responsável MTI (pós-vendas)",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-gerProd",
+          "rotulo": "Gerente do produto (MTI)",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-decPor",
+          "rotulo": "Decidido por",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-declarante",
+          "rotulo": "Declarante",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-patlasv4-proto-unidade-organizacional",
+      "nome": "Organização — Principal",
+      "arquivo": "classes/form-patlasv4-proto-unidade-organizacional.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-cliente",
+          "rotulo": "Cliente solicitante",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-depto",
+          "rotulo": "Departamento / equipe",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-patro",
+          "rotulo": "Organização patrocinadora",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-patro2",
+          "rotulo": "Organização patrocinadora",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-ct",
+      "nome": "## Contrato",
+      "arquivo": "classes/form-f3-ct.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-contrato",
+          "rotulo": "Contrato",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-ctq",
+          "rotulo": "Contrato",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-ctA",
+          "rotulo": "Contrato",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-ct-itens",
+      "nome": "## Itens contratados (ct)",
+      "arquivo": "classes/form-f3-ct-itens.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-objeto",
+          "rotulo": "Objeto do contrato",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-dct",
+      "nome": " Dados do contrato",
+      "arquivo": "classes/form-f3-dem-dct.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-dct",
+          "rotulo": "Dados do contrato",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao",
+      "nome": "Solução",
+      "arquivo": "classes/form-patlasv4-proto-cat-solucao.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-solReq",
+          "rotulo": "Solução do contrato / corporativa",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-solQ",
+          "rotulo": "Solução qualificada",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-aprov",
+      "nome": "## Aprovadores (dem)",
+      "arquivo": "classes/form-f3-dem-aprov.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-aprov",
+          "rotulo": "Aprovadores",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-patlasv4-proto-catalogo-da-solucao",
+      "nome": "Catálogo de Solução",
+      "arquivo": "classes/form-patlasv4-proto-catalogo-da-solucao.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-cat",
+          "rotulo": "Catálogo",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-escopos",
+      "nome": "Parceiras",
+      "arquivo": "classes/form-f3-dem-escopos.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-escopos",
+          "rotulo": "Escopos por parceria",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-itensMTI",
+      "nome": "## Itens a consumir (dem)",
+      "arquivo": "classes/form-f3-dem-itensMTI.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-itensMTI",
+          "rotulo": "Itens a consumir",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-pats",
+      "nome": "## Assinaturas do patrocinador (dem)",
+      "arquivo": "classes/form-f3-dem-pats.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-pats",
+          "rotulo": "Assinaturas do patrocinador",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-aten",
+      "nome": "Classe Atendimento do Parceiro - Demanda",
+      "arquivo": "classes/form-f3-dem-aten.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-aten",
+          "rotulo": "Atendimento por parceria",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-gers",
+      "nome": "## Aprovação dos gerentes (dem)",
+      "arquivo": "classes/form-f3-dem-gers.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-gers",
+          "rotulo": "Aprovação dos gerentes",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-patlasv4-proto-cat-parceria",
+      "nome": "Parceria",
+      "arquivo": "classes/form-patlasv4-proto-cat-parceria.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-parcDev",
+          "rotulo": "Parceria devolvida",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-aten-itensB",
+      "nome": "## Item do atendimento",
+      "arquivo": "classes/form-f3-dem-aten-itensB.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-itens",
+          "rotulo": "Itens do atendimento",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-os",
+      "nome": "## Ordem de serviço",
+      "arquivo": "classes/form-f3-os.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-osRef",
+          "rotulo": "OS global / OS existente",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-instrH",
+          "rotulo": "Instrumento gerado",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-osGer",
+          "rotulo": "Ordem de serviço gerada / vinculada",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-osLic",
+          "rotulo": "OS de licenciamento",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "mqebasqyphbwea",
+      "nome": "Workflow de Assinatura — Principal 🟢",
+      "arquivo": "classes/mqebasqyphbwea.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-wfO",
+          "rotulo": "Workflow de assinatura",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-sigOrc",
+      "nome": "## Signatários do orçamento (dem)",
+      "arquivo": "classes/form-f3-dem-sigOrc.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-sigOrc",
+          "rotulo": "Signatários do orçamento",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-orc",
+      "nome": "## Orçamento",
+      "arquivo": "classes/form-f3-orc.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-orc",
+          "rotulo": "Registro do orçamento",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-itens",
+      "nome": "## Item do atendimento — visão do cliente",
+      "arquivo": "classes/form-f3-dem-itens.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-itensAut",
+          "rotulo": "Itens autorizados",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-sigAut",
+      "nome": "## Signatários da autorização (dem)",
+      "arquivo": "classes/form-f3-dem-sigAut.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-sigAut",
+          "rotulo": "Signatários da autorização",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-entregas",
+      "nome": "## Entregas de licenciamento (dem)",
+      "arquivo": "classes/form-f3-dem-entregas.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-entregas",
+          "rotulo": "Entregas de licenciamento",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-_ths",
+      "nome": "## Termos de homologação (dem)",
+      "arquivo": "classes/form-f3-dem-_ths.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-_ths",
+          "rotulo": "Termos de homologação",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-exe",
+      "nome": "## Execução",
+      "arquivo": "classes/form-f3-exe.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-exe",
+          "rotulo": "Execução gerada",
+          "tipo": "referencia"
+        },
+        {
+          "campo": "f3-dem-exe2",
+          "rotulo": "Execução gerada",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-ac",
+      "nome": "## Autorização de consumo",
+      "arquivo": "classes/form-f3-ac.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-acGer",
+          "rotulo": "Autorização de consumo gerada",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-prop",
+      "nome": "Classe Proposta",
+      "arquivo": "classes/form-f3-prop.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-propGer",
+          "rotulo": "Proposta gerada",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-inden",
+      "nome": "## Indenização",
+      "arquivo": "classes/form-f3-inden.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-indGer",
+          "rotulo": "Indenização gerada",
+          "tipo": "referencia"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-eventos",
+      "nome": "## Evento",
+      "arquivo": "classes/form-f3-dem-eventos.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-eventos",
+          "rotulo": "Eventos",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    },
+    {
+      "id": "form-f3-dem-versoes",
+      "nome": "## Versão",
+      "arquivo": "classes/form-f3-dem-versoes.json",
+      "usadaEm": [
+        {
+          "campo": "f3-dem-versoes",
+          "rotulo": "Versões",
+          "tipo": "referenciaEmbutida"
+        }
+      ]
+    }
+  ]
+}

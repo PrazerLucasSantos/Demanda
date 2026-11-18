@@ -1,0 +1,387 @@
+{
+  "id": "form-patlasv4-proto-cat-parceria",
+  "name": "Parceria",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Parceria comercial: nome, organização parceira, catálogo, código, vertical, índice e descrição. Soluções como lista relacionada; itens do catálogo em aba própria.",
+  "sections": [
+    {
+      "id": "tab-par-dados",
+      "title": "Dados Principais",
+      "icon": "info"
+    },
+    {
+      "id": "tab-par-itens",
+      "title": "Itens do Catálogo da Parceria",
+      "icon": "inventory_2"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "identity",
+      "id": "form-patlasv4-proto-cat-parceria-identificador",
+      "label": "Nome",
+      "type": "text",
+      "sectionId": "tab-par-dados"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "highlight",
+      "id": "form-patlasv4-proto-cat-parceria-parceiro",
+      "label": "Parceiro",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class",
+      "referenceFilterValueFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "referenceFilterEquals": "Parceiro",
+      "spec": "Organização com perfil Parceiro."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "form-patlasv4-proto-cat-parceria-catalogo",
+      "label": "Catálogo da parceria",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "linkedFormId": "form-patlasv4-proto-cat-catalogo",
+      "referenceOptionsSource": "class",
+      "spec": "Catálogo vinculado à parceria (somente leitura)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-cat-parceria-codigo",
+      "label": "Código da parceria",
+      "type": "text",
+      "sectionId": "tab-par-dados",
+      "spec": "Código gerado (ex.: PARC034)."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-cat-parceria-vertical",
+      "label": "Vertical de serviço de TI",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "linkedFormId": "form-patlasv4-proto-cat-categoria",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-cat-parceria-indice",
+      "label": "Índice de reajuste",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "linkedFormId": "form-co-indice-reajuste",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "nome"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "mvsoffmpmrz91i",
+      "label": "Gerente da Parceira",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-pes-nome"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "form-patlasv4-proto-cat-parceria-descricao",
+      "label": "Descrição",
+      "type": "text",
+      "textLong": true,
+      "sectionId": "tab-par-dados"
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-par-solucoes",
+      "label": "Soluções",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "spec": "Lista relacionada: Código da solução, Nome, Vertical de serviço de TI.",
+      "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;font-size:13px;color:#334155\"><strong>Soluções</strong><div style=\"color:#94a3b8;margin-top:4px\">Lista relacionada — Código da solução · Nome · Vertical de serviço de TI</div></div>",
+      "referenceOptionsSource": "class",
+      "linkedFormId": "form-patlasv4-proto-cat-solucao",
+      "viewValue": [
+        "MTI SIMPLIFICA"
+      ]
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-par-itens",
+      "label": "Itens do Catálogo da Parceria",
+      "type": "reference",
+      "sectionId": "tab-par-itens",
+      "spec": "Painel dos itens do catálogo da parceria.",
+      "htmlContent": "<div style=\"font-family:Segoe UI,Arial,sans-serif;font-size:13px;color:#94a3b8\">Itens do catálogo da parceria</div>",
+      "referenceOptionsSource": "class",
+      "linkedFormId": "form-patlasv4-proto-cat-produto",
+      "referenceDisplayFieldId": "form-patlasv4-proto-cat-produto-identificador",
+      "viewValue": "Licença plataforma Simplifica"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-par-prefixo",
+      "label": "Prefixo das soluções",
+      "type": "text",
+      "sectionId": "tab-par-dados",
+      "spec": "Máximo 4 caracteres."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "form-patlasv4-proto-cat-parceria-ativo",
+      "label": "Ativo?",
+      "type": "boolean",
+      "sectionId": "tab-par-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "form-patlasv4-proto-cat-parceria-solucoes-ref",
+      "label": "Soluções ref",
+      "type": "reference",
+      "sectionId": "tab-par-dados",
+      "linkedFormId": "form-patlasv4-proto-cat-solucao",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-cat-parceria-sequencia",
+      "label": "Sequência",
+      "type": "reference",
+      "sectionId": "tab-par-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-cat-parceria-sequencia-filha",
+      "label": "Sequência filha",
+      "type": "reference",
+      "sectionId": "tab-par-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-cat-parceria-tag",
+      "label": "Tag",
+      "type": "reference",
+      "sectionId": "tab-par-dados"
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "evp-parceria-elogroup",
+      "name": "Elogroup",
+      "iconColor": "#7c3aed",
+      "fieldValues": {
+        "patlasv4proto-cat-parceria-codigo": "PAR067",
+        "form-patlasv4-proto-cat-parceria-identificador": "Elogroup",
+        "form-patlasv4-proto-cat-parceria-parceiro": "EloGroup",
+        "patlasv4proto-cat-parceria-vertical": "Desenvolvimento",
+        "form-patlasv4-proto-cat-parceria-catalogo": "Catálogo Elogroup",
+        "form-patlasv4-proto-cat-parceria-ativo": true,
+        "patlasv4proto-cat-parceria-tag": "Ativo",
+        "form-patlasv4-proto-cat-parceria-solucoes-ref": "MTI Simplifica",
+        "patlasv4proto-cat-parceria-indice": "CPI"
+      },
+      "embeddedRowsByFieldId": {}
+    },
+    {
+      "id": "form-patlasv4-proto-cat-parceria-p-simplifica",
+      "name": "MTI SIMPLIFICA · EloGroup",
+      "iconColor": "#7c3aed",
+      "fieldValues": {
+        "patlasv4proto-cat-parceria-codigo": "PAR001",
+        "form-patlasv4-proto-cat-parceria-identificador": "MTI SIMPLIFICA",
+        "form-patlasv4-proto-cat-parceria-parceiro": "EloGroup",
+        "patlasv4proto-cat-parceria-vertical": "Desenvolvimento",
+        "form-patlasv4-proto-cat-parceria-catalogo": "Catálogo MTI Simplifica",
+        "form-patlasv4-proto-cat-parceria-ativo": true,
+        "patlasv4proto-cat-parceria-tag": "Ativo",
+        "form-patlasv4-proto-cat-parceria-solucoes-ref": "MTI Simplifica",
+        "patlasv4proto-cat-parceria-indice": "CPI"
+      },
+      "embeddedRowsByFieldId": {}
+    },
+    {
+      "id": "evp-parceria-facilmova",
+      "name": "FacilMova Host",
+      "iconColor": "#0F6CBD",
+      "fieldValues": {
+        "patlasv4proto-cat-parceria-codigo": "PAR068",
+        "form-patlasv4-proto-cat-parceria-identificador": "FacilMova Host",
+        "form-patlasv4-proto-cat-parceria-parceiro": "FacilMova",
+        "patlasv4proto-cat-parceria-vertical": "Desenvolvimento",
+        "form-patlasv4-proto-cat-parceria-catalogo": "Catálogo MTI Host",
+        "form-patlasv4-proto-cat-parceria-ativo": true,
+        "patlasv4proto-cat-parceria-tag": "Ativo",
+        "form-patlasv4-proto-cat-parceria-solucoes-ref": "MTI Host",
+        "patlasv4proto-cat-parceria-indice": "CPI"
+      },
+      "embeddedRowsByFieldId": {}
+    },
+    {
+      "id": "evp-parceria-apple",
+      "name": "APPLE",
+      "iconColor": "#272727",
+      "fieldValues": {
+        "patlasv4proto-cat-parceria-codigo": "PARC034",
+        "form-patlasv4-proto-cat-parceria-identificador": "APPLE",
+        "form-patlasv4-proto-cat-parceria-parceiro": "Elogroup Consultoria / Parceiro",
+        "patlasv4proto-cat-parceria-vertical": "Desenvolvimento",
+        "patlasv4proto-cat-parceria-indice": "CPI",
+        "form-patlasv4-proto-cat-parceria-catalogo": "Catálogo — APPLE",
+        "form-patlasv4-proto-cat-parceria-descricao": "TESTE",
+        "form-patlasv4-proto-cat-parceria-ativo": true
+      }
+    },
+    {
+      "id": "evp-parceria-saas",
+      "name": "MTI SAAS",
+      "iconColor": "#0c1ba8",
+      "fieldValues": {
+        "patlasv4proto-cat-parceria-codigo": "PARC015",
+        "form-patlasv4-proto-cat-parceria-identificador": "MTI SAAS",
+        "form-patlasv4-proto-cat-parceria-parceiro": "EloGroup / Parceiro",
+        "patlasv4proto-cat-parceria-vertical": "Nuvem",
+        "patlasv4proto-cat-parceria-indice": "IGPM",
+        "form-patlasv4-proto-cat-parceria-ativo": true
+      }
+    },
+    {
+      "id": "evp-parceria-sydle",
+      "name": "SYDLE SISTEMAS LTDA",
+      "iconColor": "#0c1ba8",
+      "fieldValues": {
+        "patlasv4proto-cat-parceria-codigo": "PARC003",
+        "form-patlasv4-proto-cat-parceria-identificador": "SYDLE SISTEMAS LTDA",
+        "form-patlasv4-proto-cat-parceria-parceiro": "SYDLE SISTEMAS LTDA / Parceiro",
+        "patlasv4proto-cat-parceria-vertical": "Vertifical - Homologação",
+        "patlasv4proto-cat-parceria-indice": "CPI",
+        "form-patlasv4-proto-cat-parceria-ativo": true
+      }
+    }
+  ],
+  "activeExamplePresetId": "evp-parceria-elogroup",
+  "methods": [
+    {
+      "id": "patlasv4proto-cat-parceria-meth-criar-solucao",
+      "name": "Criar solução",
+      "icon": "add_circle",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-cat-solucao"
+    },
+    {
+      "id": "patlasv4proto-par-meth-casulo",
+      "name": "Gerar catálogo rascunho",
+      "icon": "note_add",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-metodo-cat-gerar-casulo"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-parceria-ativar-inativar",
+      "name": "Ativar/Inativar",
+      "icon": "toggle_on",
+      "kind": "destaque"
+    },
+    {
+      "id": "patlasv4proto-par-meth-obs",
+      "name": "Adicionar Observação",
+      "icon": "add_notes",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-par-meth-status",
+      "name": "Alterar Status",
+      "icon": "sync_alt",
+      "kind": "destaque"
+    },
+    {
+      "id": "patlasv4proto-par-meth-criar-sol",
+      "name": "Criar Solução",
+      "icon": "add",
+      "kind": "destaque"
+    }
+  ],
+  "listedHidden": false,
+  "iconColor": "#2B9CBF",
+  "iconColors": [
+    "#2B9CBF"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "form-f3-dem-entregas",
+  "name": "## Entregas de licenciamento (dem)",
+  "sectionLayout": "none",
+  "defaultCanvasMode": "edit",
+  "metadata": "Movido de Atlas Fase 3 → Atlas V2. Satélite importado do Atlas Fase 3 · dem.entregas (tab)",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-entregas-item",
+      "label": "Item",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Licença por usuário",
+        "Hospedagem em nuvem"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Opções: itens de licença da demanda."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-dem-entregas-qtd",
+      "label": "Quantidade",
+      "type": "decimal",
+      "spec": "Obrigatório. Soma por item não acima da autorizada (entrega parcial permitida)."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-entregas-cred",
+      "label": "Credencial de acesso",
+      "type": "text",
+      "tooltip": false,
+      "spec": "Obrigatório na condição: entregável do item = Credenciais."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-entregas-appl",
+      "label": "Identificador de appliance",
+      "type": "text",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-entregas-comp",
+      "label": "Comprovação",
+      "type": "file",
+      "tooltip": false,
+      "spec": "Obrigatório."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-entregas-em",
+      "label": "Entregue em",
+      "type": "date",
+      "tooltip": false
+    }
+  ],
+  "fieldVisibilityRules": [],
+  "methods": [],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-entregas-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-entregas-p1"
+}

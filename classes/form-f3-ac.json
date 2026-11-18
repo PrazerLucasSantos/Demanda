@@ -1,0 +1,729 @@
+{
+  "id": "form-f3-ac",
+  "name": "## Autorização de consumo",
+  "sectionLayout": "accordion",
+  "defaultCanvasMode": "edit",
+  "metadata": "Movido de Atlas Fase 3 → Atlas V2. Importado de Atlas Fase 3.html · chave ac · Lista: Autorizações de consumo · Grupo: Demanda e execução · Estados: GER→Gerada, EXE→Em execução, CON→Concluída, CAN→Cancelada · Ações: 4 Correções de 07/11/2026 (D19): nasce Gerada pela demanda, sem rodada própria de assinaturas, prazo de execução de 30 dias; não é criada pelo «+ novo», só pela demanda.",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "sections": [
+    {
+      "id": "sec-f3-ac-t0",
+      "title": "1. Autorização",
+      "icon": "description"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "identity",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-_st",
+      "label": "Situação",
+      "type": "textOptions",
+      "options": [
+        "Gerada",
+        "Em execução",
+        "Concluída",
+        "Cancelada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "sectionId": "sec-f3-ac-t0",
+      "spec": "Auto. Gerada · Em execução · Concluída · Cancelada (GER, EXE, CON, CAN). Nasce Gerada pelo método Assinar autorização da demanda, já com as assinaturas do documento de autorização, e reserva o saldo da OS global (D19). Não é criada pelo «+ novo»."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-numero",
+      "label": "Número",
+      "type": "text",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Auto. AC-NNNN, gerado na criação."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-sit",
+      "label": "Situação",
+      "type": "textOptions",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Auto, somente leitura. Espelho do campo Situação da classe (`stName('ac', r._st)`); muda só pelas ações.",
+      "options": [
+        "Gerada",
+        "Em execução",
+        "Concluída",
+        "Cancelada"
+      ],
+      "textOptionsDisplay": "dropdown"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-os",
+      "label": "OS global",
+      "type": "reference",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class",
+      "spec": "Auto, somente leitura: OS global escolhida na demanda."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-dem",
+      "label": "Demanda de origem",
+      "type": "reference",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-orc",
+      "label": "Orçamento",
+      "type": "reference",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-orc",
+      "referenceOptionsSource": "class",
+      "spec": "Auto."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-contrato",
+      "label": "Contrato",
+      "type": "reference",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ct",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-geradaEm",
+      "label": "Gerada em",
+      "type": "date",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Auto. Data e hora."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-prazo",
+      "label": "Prazo de execução",
+      "type": "date",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Obrigatório. Padrão: gerada em + 30 dias; editável pela MTI em Gerada."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-projeto",
+      "label": "Projeto",
+      "type": "reference",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-proj",
+      "referenceOptionsSource": "class",
+      "spec": "Auto: do bloco, quando houver."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-valor",
+      "label": "Valor autorizado",
+      "type": "decimal",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto. Soma dos itens autorizados (exceto as licenças que foram para OS de licenciamento)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-ac-saldoAntes",
+      "label": "Saldo da OS global (antes)",
+      "type": "decimal",
+      "sectionId": "sec-f3-ac-t0",
+      "currency": true,
+      "spec": "Auto, somente leitura. Saldo da OS global antes da reserva."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-saldoOS",
+      "label": "Saldo da OS global (depois)",
+      "type": "decimal",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto: saldo da OS global depois da reserva."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-ac-saudeOS",
+      "label": "Saúde da OS global",
+      "type": "textOptions",
+      "sectionId": "sec-f3-ac-t0",
+      "options": [
+        "Saudável",
+        "Atenção",
+        "Crítico"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Auto, somente leitura. Congelada na criação (D20)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-hom",
+      "label": "Homologado",
+      "type": "decimal",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "currency": true,
+      "spec": "Auto: termos assinados da AC."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-ac-itens",
+      "label": "Itens autorizados",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ac-itens",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "spec": "Auto. Cópia dos itens autorizados, exceto as licenças que foram para OS de licenciamento."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "f3-ac-sigs",
+      "label": "Signatários",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-ac-t0",
+      "linkedFormId": "form-f3-ac-sigs",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false,
+      "embeddedAllowAdd": false,
+      "spec": "Auto, somente leitura. Cópia dos signatários da autorização, todos Assinada; sem nova rodada."
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-doc",
+      "label": "Documento de autorização",
+      "type": "file",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Auto: documento de autorização da demanda."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-snNum",
+      "label": "Número no ServiceNow",
+      "type": "text",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Auto."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-ac-snEm",
+      "label": "Enviada em",
+      "type": "date",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "spec": "Auto. Data e hora."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-ac-ths",
+      "label": "Termos de homologação",
+      "type": "html",
+      "sectionId": "sec-f3-ac-t0",
+      "tooltip": false,
+      "htmlContent": "<em>HTML dinâmico</em>",
+      "spec": "Auto: termos de homologação da AC (## Termo de homologação)."
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "tooltip": false,
+      "id": "f3-ac-motCanc",
+      "label": "Motivo do cancelamento",
+      "type": "text",
+      "sectionId": "sec-f3-ac-t0",
+      "textLong": true,
+      "spec": "Auto, somente leitura. Obrigatório ao cancelar; preenchido pelo modal de Cancelar."
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-ac-motCanc",
+      "operator": "eq",
+      "sourceFieldId": "f3-ac-_st",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cancelada",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-ac-motCanc"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "meth-f3-ac-sn",
+      "name": "Enviar ao ServiceNow",
+      "icon": "cloud_upload",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-ac-t0",
+      "spec": "De: Gerada · Quem: MTI ou automático com o envio da demanda · Efeito: grava número e data → Em execução."
+    },
+    {
+      "id": "meth-f3-ac-th",
+      "name": "Gerar termo de homologação",
+      "icon": "description",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-ac-t0",
+      "spec": "De: Em execução · Quem: MTI · Efeito: abre o ## Termo de homologação com os itens da AC e os signatários da OS global."
+    },
+    {
+      "id": "meth-f3-ac-con",
+      "name": "Concluir autorização",
+      "icon": "check_circle",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-ac-t0",
+      "spec": "De: Em execução · Quem: MTI · Exibe só com homologado ≥ valor · Efeito: → Concluída."
+    },
+    {
+      "id": "meth-f3-ac-can",
+      "name": "Cancelar",
+      "icon": "cancel",
+      "kind": "menu",
+      "editSectionId": "sec-f3-ac-t0",
+      "spec": "De: Gerada, Em execução · Quem: MTI · Pede motivo · Valida: nenhum termo assinado · Efeito: devolve a reserva à OS global → Cancelada."
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-ac-p1",
+      "name": "AC-0001 · Gerada",
+      "fieldValues": {
+        "f3-ac-_st": "Gerada",
+        "f3-ac-sit": "Gerada",
+        "f3-ac-numero": "AC-0001",
+        "f3-ac-os": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+        "f3-ac-contrato": "055/2023/SEPLAG",
+        "f3-ac-doc": [
+          {
+            "name": "autorizacao-DEM-2026-0037",
+            "kind": "pdf"
+          }
+        ],
+        "f3-ac-dem": "DEM-2026-0037",
+        "f3-ac-orc": "ORC-2026-0028 · Aguardando cliente",
+        "f3-ac-geradaEm": "2026-11-05",
+        "f3-ac-prazo": "2026-12-05",
+        "f3-ac-valor": 2500,
+        "f3-ac-saldoAntes": 60000,
+        "f3-ac-saldoOS": 57500,
+        "f3-ac-saudeOS": "Saudável",
+        "f3-ac-hom": 0
+      },
+      "embeddedRowsByFieldId": {
+        "f3-ac-itens": [
+          {
+            "f3-ac-itens-orig": "Parceiro",
+            "f3-ac-itens-parc": "MTI SIMPLIFICA",
+            "f3-ac-itens-nat": "Licenciamento",
+            "f3-ac-itens-prod": "Hospedagem em nuvem",
+            "f3-ac-itens-rec": "Mensal",
+            "f3-ac-itens-var": "Sem variação",
+            "f3-ac-itens-qtd": 1,
+            "f3-ac-itens-unit": 2500,
+            "f3-ac-itens-total": 2500
+          }
+        ],
+        "f3-ac-sigs": [
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Ricardo Almeida Ferreira",
+            "f3-ac-sigs-papel": "Gestor",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          },
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Beatriz Nogueira",
+            "f3-ac-sigs-papel": "Fiscal",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-ac-p2",
+      "name": "AC-0002 · Em execução",
+      "fieldValues": {
+        "f3-ac-_st": "Em execução",
+        "f3-ac-sit": "Em execução",
+        "f3-ac-numero": "AC-0002",
+        "f3-ac-os": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+        "f3-ac-contrato": "055/2023/SEPLAG",
+        "f3-ac-doc": [
+          {
+            "name": "autorizacao-DEM-2026-0024",
+            "kind": "pdf"
+          }
+        ],
+        "f3-ac-dem": "DEM-2026-0024",
+        "f3-ac-orc": "ORC-2026-0024 · Autorizado",
+        "f3-ac-geradaEm": "2026-10-29",
+        "f3-ac-prazo": "2026-11-28",
+        "f3-ac-valor": 17280,
+        "f3-ac-saldoAntes": 57500,
+        "f3-ac-saldoOS": 40220,
+        "f3-ac-saudeOS": "Saudável",
+        "f3-ac-hom": 0,
+        "f3-ac-snNum": "PRJ0012352",
+        "f3-ac-snEm": "2026-10-30"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-ac-itens": [
+          {
+            "f3-ac-itens-orig": "Parceiro",
+            "f3-ac-itens-parc": "MTI SIMPLIFICA",
+            "f3-ac-itens-nat": "Serviço de projeto",
+            "f3-ac-itens-prod": "Serviço por UST",
+            "f3-ac-itens-rec": "Conforme Homologação",
+            "f3-ac-itens-var": "Sem variação",
+            "f3-ac-itens-qtd": 80,
+            "f3-ac-itens-unit": 216,
+            "f3-ac-itens-total": 17280
+          }
+        ],
+        "f3-ac-sigs": [
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Ricardo Almeida Ferreira",
+            "f3-ac-sigs-papel": "Gestor",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          },
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Beatriz Nogueira",
+            "f3-ac-sigs-papel": "Fiscal",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-ac-p3",
+      "name": "AC-0004 · Concluída",
+      "fieldValues": {
+        "f3-ac-_st": "Concluída",
+        "f3-ac-sit": "Concluída",
+        "f3-ac-numero": "AC-0004",
+        "f3-ac-os": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+        "f3-ac-contrato": "055/2023/SEPLAG",
+        "f3-ac-doc": [
+          {
+            "name": "autorizacao-DEM-2026-0021",
+            "kind": "pdf"
+          }
+        ],
+        "f3-ac-dem": "DEM-2026-0021",
+        "f3-ac-orc": "ORC-2026-0024 · Autorizado",
+        "f3-ac-geradaEm": "2026-09-10",
+        "f3-ac-prazo": "2026-10-10",
+        "f3-ac-valor": 2000,
+        "f3-ac-saldoAntes": 42220,
+        "f3-ac-saldoOS": 40220,
+        "f3-ac-saudeOS": "Saudável",
+        "f3-ac-hom": 2000,
+        "f3-ac-snNum": "PRJ0012301",
+        "f3-ac-snEm": "2026-09-11"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-ac-itens": [
+          {
+            "f3-ac-itens-orig": "Parceiro",
+            "f3-ac-itens-parc": "MTI SIMPLIFICA",
+            "f3-ac-itens-nat": "Serviço de projeto",
+            "f3-ac-itens-prod": "Serviço HOST",
+            "f3-ac-itens-rec": "Única Vez",
+            "f3-ac-itens-var": "Sem variação",
+            "f3-ac-itens-qtd": 4,
+            "f3-ac-itens-unit": 500,
+            "f3-ac-itens-total": 2000
+          }
+        ],
+        "f3-ac-sigs": [
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Ricardo Almeida Ferreira",
+            "f3-ac-sigs-papel": "Gestor",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          },
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Beatriz Nogueira",
+            "f3-ac-sigs-papel": "Fiscal",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-ac-p4",
+      "name": "AC-0005 · Cancelada",
+      "fieldValues": {
+        "f3-ac-_st": "Cancelada",
+        "f3-ac-sit": "Cancelada",
+        "f3-ac-numero": "AC-0005",
+        "f3-ac-os": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+        "f3-ac-contrato": "055/2023/SEPLAG",
+        "f3-ac-doc": [
+          {
+            "name": "autorizacao-DEM-2026-0022",
+            "kind": "pdf"
+          }
+        ],
+        "f3-ac-dem": "DEM-2026-0022",
+        "f3-ac-geradaEm": "2026-10-01",
+        "f3-ac-prazo": "2026-10-31",
+        "f3-ac-valor": 3600,
+        "f3-ac-saldoAntes": 43820,
+        "f3-ac-saldoOS": 40220,
+        "f3-ac-saudeOS": "Atenção",
+        "f3-ac-hom": 0,
+        "f3-ac-motCanc": "Demanda cancelada com aceite do cliente; reserva devolvida à OS global"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-ac-itens": [
+          {
+            "f3-ac-itens-orig": "Parceiro",
+            "f3-ac-itens-parc": "MTI SIMPLIFICA",
+            "f3-ac-itens-nat": "Serviço de projeto",
+            "f3-ac-itens-prod": "Serviço por UST",
+            "f3-ac-itens-rec": "Conforme Homologação",
+            "f3-ac-itens-var": "Sem variação",
+            "f3-ac-itens-qtd": 20,
+            "f3-ac-itens-unit": 180,
+            "f3-ac-itens-total": 3600
+          }
+        ],
+        "f3-ac-sigs": [
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Ricardo Almeida Ferreira",
+            "f3-ac-sigs-papel": "Gestor",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          },
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Beatriz Nogueira",
+            "f3-ac-sigs-papel": "Fiscal",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form-f3-ac-p5",
+      "name": "AC-0003 · Em execução",
+      "fieldValues": {
+        "f3-ac-_st": "Em execução",
+        "f3-ac-sit": "Em execução",
+        "f3-ac-numero": "AC-0003",
+        "f3-ac-os": "OS-0001 · 001/2026/SEPLAG · OS global · Em execução",
+        "f3-ac-contrato": "055/2023/SEPLAG",
+        "f3-ac-doc": [
+          {
+            "name": "autorizacao-DEM-2026-0023",
+            "kind": "pdf"
+          }
+        ],
+        "f3-ac-dem": "DEM-2026-0023",
+        "f3-ac-orc": "ORC-2026-0024 · Autorizado",
+        "f3-ac-geradaEm": "2026-10-15",
+        "f3-ac-prazo": "2026-11-14",
+        "f3-ac-valor": 9000,
+        "f3-ac-saldoAntes": 49220,
+        "f3-ac-saldoOS": 40220,
+        "f3-ac-saudeOS": "Saudável",
+        "f3-ac-hom": 4500,
+        "f3-ac-snNum": "PRJ0012340",
+        "f3-ac-snEm": "2026-10-16"
+      },
+      "embeddedRowsByFieldId": {
+        "f3-ac-itens": [
+          {
+            "f3-ac-itens-orig": "Parceiro",
+            "f3-ac-itens-parc": "MTI SIMPLIFICA",
+            "f3-ac-itens-nat": "Serviço de projeto",
+            "f3-ac-itens-prod": "Serviço por UST",
+            "f3-ac-itens-rec": "Conforme Homologação",
+            "f3-ac-itens-var": "Sem variação",
+            "f3-ac-itens-qtd": 50,
+            "f3-ac-itens-unit": 180,
+            "f3-ac-itens-total": 9000
+          }
+        ],
+        "f3-ac-sigs": [
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Ricardo Almeida Ferreira",
+            "f3-ac-sigs-papel": "Gestor",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          },
+          {
+            "f3-ac-sigs-org": "SEPLAG",
+            "f3-ac-sigs-user": "Beatriz Nogueira",
+            "f3-ac-sigs-papel": "Fiscal",
+            "f3-ac-sigs-cond": "Titular",
+            "f3-ac-sigs-sit": "Assinada"
+          }
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "form-f3-ac-p1"
+}

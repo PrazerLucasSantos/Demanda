@@ -1,0 +1,182 @@
+{
+  "id": "form-f3-dem-aprov",
+  "name": "## Aprovadores (dem)",
+  "sectionLayout": "none",
+  "defaultCanvasMode": "edit",
+  "metadata": "Movido de Atlas Fase 3 → Atlas V2. Satélite importado do Atlas Fase 3 · dem.aprov (tab)",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aprov-user",
+      "label": "Usuário",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class",
+      "spec": "A cadeira aponta a pessoa. Se o titular está inativo, a linha pode ser o substituto ou o suplente (apresentação de 20/10). Se o substituto recebe junto com o titular ou só na ausência não está fechado: a classe não escolhe essa ordem."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aprov-cargo",
+      "label": "Cargo",
+      "type": "reference",
+      "tooltip": false,
+      "linkedFormId": "form-patlasv4-proto-cargo",
+      "referenceOptionsSource": "class",
+      "spec": "Auto."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aprov-papel",
+      "label": "Papel na etapa",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Gestor",
+        "Fiscal requisitante",
+        "Líder do projeto"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "No padrão, Gestor e Fiscal requisitante, as duas cadeiras, antes da MTI. Líder do projeto não é papel fixo de toda demanda: entra só quando aquele contrato inserir essa cadeira na etapa (20/10)."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aprov-cond",
+      "label": "Condição",
+      "type": "text",
+      "tooltip": false,
+      "spec": "Auto: Titular, Substituto ou Suplente."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aprov-dec",
+      "label": "Decisão",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Aprovar",
+        "Solicitar ajuste",
+        "Recusar"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Obrigatório. Editável só pelo usuário da linha até assinar."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": true,
+      "id": "f3-dem-aprov-mot",
+      "label": "Motivo",
+      "type": "text",
+      "tooltip": false,
+      "textLong": true,
+      "spec": "Obrigatório na recusa e na devolução para correção. Na aprovação não é exigido. O anexo, na recusa, é opcional."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": true,
+      "id": "f3-dem-aprov-anx",
+      "label": "Anexo",
+      "type": "file",
+      "tooltip": false,
+      "spec": "Exibe com Solicitar ajuste ou Recusar."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-dem-aprov-sit",
+      "label": "Assinatura",
+      "type": "textOptions",
+      "tooltip": false,
+      "options": [
+        "Pendente",
+        "Assinada"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "spec": "Botão de assinatura na própria linha. Grava data e hora ao assinar."
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-f3-dem-aprov-mot-aj",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-aprov-dec",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Solicitar ajuste",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-aprov-mot",
+        "f3-dem-aprov-anx"
+      ]
+    },
+    {
+      "id": "rule-f3-dem-aprov-mot-rec",
+      "operator": "eq",
+      "sourceFieldId": "f3-dem-aprov-dec",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Recusar",
+      "action": "show",
+      "targetFieldIds": [
+        "f3-dem-aprov-mot",
+        "f3-dem-aprov-anx"
+      ]
+    }
+  ],
+  "methods": [],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-dem-aprov-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-dem-aprov-p1"
+}

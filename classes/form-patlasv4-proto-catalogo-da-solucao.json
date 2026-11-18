@@ -1,0 +1,533 @@
+{
+  "id": "form-patlasv4-proto-catalogo-da-solucao",
+  "name": "Catálogo de Solução",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Dados Principais (identificação, classificação, variação/métricas, responsáveis, códigos N2/N3, ativo) + Catálogo de Produtos.",
+  "iconColor": "#2B9CBF",
+  "sections": [
+    {
+      "id": "tab-csol-dados",
+      "title": "Dados Principais",
+      "icon": "info"
+    },
+    {
+      "id": "sec-csol-id",
+      "title": "Identificação",
+      "icon": "badge",
+      "parentSectionId": "tab-csol-dados"
+    },
+    {
+      "id": "sec-csol-class",
+      "title": "Classificação de oferta",
+      "icon": "category",
+      "parentSectionId": "tab-csol-dados"
+    },
+    {
+      "id": "sec-csol-var",
+      "title": "Variação e métricas",
+      "icon": "tune",
+      "parentSectionId": "tab-csol-dados"
+    },
+    {
+      "id": "sec-csol-resp",
+      "title": "Responsáveis MTI",
+      "icon": "group",
+      "parentSectionId": "tab-csol-dados"
+    },
+    {
+      "id": "sec-csol-cod",
+      "title": "Códigos N2/N3",
+      "icon": "qr_code_2",
+      "parentSectionId": "tab-csol-dados"
+    },
+    {
+      "id": "sec-csol-status",
+      "title": "Status e Versão",
+      "icon": "flag",
+      "parentSectionId": "tab-csol-dados"
+    },
+    {
+      "id": "tab-csol-prod",
+      "title": "Catálogo de Produtos",
+      "icon": "inventory_2"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-codigo",
+      "label": "Código do catálogo",
+      "type": "text",
+      "sectionId": "sec-csol-id"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-parceria",
+      "label": "Parceria",
+      "type": "reference",
+      "sectionId": "sec-csol-id",
+      "linkedFormId": "form-patlasv4-proto-cat-parceria",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-solucao",
+      "label": "Solução",
+      "type": "reference",
+      "sectionId": "sec-csol-id",
+      "linkedFormId": "form-patlasv4-proto-cat-solucao",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "mvrj85htdio7w5",
+      "label": "Tipo de Oferta",
+      "type": "textOptions",
+      "sectionId": "sec-csol-id",
+      "options": [
+        "Universal",
+        "Individualizada"
+      ]
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "identity",
+      "id": "patlasv4proto-csol-nome",
+      "label": "Nome do catálogo",
+      "type": "text",
+      "sectionId": "sec-csol-id"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-vertical",
+      "label": "Vertical de serviço de TI",
+      "type": "reference",
+      "sectionId": "sec-csol-id",
+      "linkedFormId": "form-patlasv4-proto-cat-categoria",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-descricao",
+      "label": "Descrição",
+      "type": "text",
+      "textLong": true,
+      "sectionId": "sec-csol-id"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-universal",
+      "label": "Catálogo universal",
+      "type": "boolean",
+      "sectionId": "sec-csol-class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-individualizado",
+      "label": "Catálogo individualizado",
+      "type": "boolean",
+      "sectionId": "sec-csol-class"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-faixas",
+      "label": "Faixas de complexidade",
+      "type": "embeddedReference",
+      "sectionId": "sec-csol-var",
+      "linkedFormId": "form-patlasv4-proto-cat-faixa-complexidade",
+      "embeddedDisplay": "table",
+      "embeddedMinInstances": 5,
+      "embeddedMaxInstances": 5
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-metricas",
+      "label": "Métricas permitidas",
+      "type": "embeddedReference",
+      "sectionId": "sec-csol-var",
+      "linkedFormId": "form-patlasv4-proto-cat-catalogo-metrica",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-focal-vendas",
+      "label": "Focal de vendas",
+      "type": "reference",
+      "sectionId": "sec-csol-resp",
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-focal-pos",
+      "label": "Focal de pós-vendas",
+      "type": "reference",
+      "sectionId": "sec-csol-resp",
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-dtic",
+      "label": "Unidade DTIC",
+      "type": "reference",
+      "sectionId": "sec-csol-resp",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-n2-siag",
+      "label": "Código N2 - SIAG",
+      "type": "text",
+      "sectionId": "sec-csol-cod"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-n2-protheus",
+      "label": "Código N2 - Protheus",
+      "type": "text",
+      "sectionId": "sec-csol-cod"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-n3-siag",
+      "label": "Código N3 - SIAG",
+      "type": "text",
+      "sectionId": "sec-csol-cod"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-n3-protheus",
+      "label": "Código N3 - Protheus",
+      "type": "text",
+      "sectionId": "sec-csol-cod"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-ativo",
+      "label": "Ativo?",
+      "type": "boolean",
+      "sectionId": "sec-csol-status"
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-csol-produtos",
+      "label": "Catálogos de Produtos",
+      "type": "embeddedReference",
+      "sectionId": "tab-csol-prod",
+      "linkedFormId": "form-patlasv4-proto-catsol-produto-linha",
+      "embeddedDisplay": "table"
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "p-csol-sol3",
+      "name": "Catálogo — sol 3",
+      "fieldValues": {
+        "patlasv4proto-csol-codigo": "C-PARX001",
+        "patlasv4proto-csol-parceria": "Parceira 2",
+        "patlasv4proto-csol-solucao": "sol 3",
+        "patlasv4proto-csol-nome": "Catálogo — sol 3",
+        "patlasv4proto-csol-vertical": "MTI Autonomy - Serviços de Solução de Robotização e Automação Inteligente",
+        "patlasv4proto-csol-descricao": "teste",
+        "patlasv4proto-csol-universal": true,
+        "patlasv4proto-csol-individualizado": false,
+        "patlasv4proto-csol-ativo": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-csol-faixas": [
+          {
+            "patlasv4proto-faixa-nome": "Muito Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Média",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Muito Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          }
+        ],
+        "patlasv4proto-csol-metricas": [
+          {
+            "form-patlasv4-proto-cat-cmet-metrica": "UST",
+            "form-patlasv4-proto-cat-cmet-valor": 2,
+            "form-patlasv4-proto-cat-cmet-exige-qtde": false
+          }
+        ],
+        "patlasv4proto-csol-produtos": [
+          {
+            "patlasv4proto-csprod-codigo": "PHS0001",
+            "patlasv4proto-csprod-nome": "HML PROD",
+            "patlasv4proto-csprod-solucao": "HML PARC",
+            "patlasv4proto-csprod-vertical": "Conectividade e Rede",
+            "patlasv4proto-csprod-grupo": "HML GP / HML PARC",
+            "patlasv4proto-csprod-oferta": "Universal",
+            "patlasv4proto-csprod-tipo": "Licença",
+            "patlasv4proto-csprod-modelo": "Custo por mensagem"
+          },
+          {
+            "patlasv4proto-csprod-codigo": "TESS001",
+            "patlasv4proto-csprod-nome": "TESTESTESTESTETS",
+            "patlasv4proto-csprod-solucao": "Teste Simulado de Solução",
+            "patlasv4proto-csprod-vertical": "Conectividade e Rede",
+            "patlasv4proto-csprod-grupo": "HML GP / HML PARC",
+            "patlasv4proto-csprod-oferta": "Universal",
+            "patlasv4proto-csprod-tipo": "Licença",
+            "patlasv4proto-csprod-modelo": "Por HST"
+          }
+        ]
+      }
+    },
+    {
+      "id": "p-csol-demo-2",
+      "name": "Catálogo solução demo 2",
+      "fieldValues": {
+        "patlasv4proto-csol-codigo": "C-SOL002",
+        "patlasv4proto-csol-nome": "Catálogo solução demo 2",
+        "patlasv4proto-csol-ativo": true,
+        "patlasv4proto-csol-universal": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-csol-faixas": [
+          {
+            "patlasv4proto-faixa-nome": "Muito Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Média",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Muito Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "p-csol-demo-3",
+      "name": "Catálogo solução demo 3",
+      "fieldValues": {
+        "patlasv4proto-csol-codigo": "C-SOL003",
+        "patlasv4proto-csol-nome": "Catálogo solução demo 3",
+        "patlasv4proto-csol-ativo": true,
+        "patlasv4proto-csol-universal": false
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-csol-faixas": [
+          {
+            "patlasv4proto-faixa-nome": "Muito Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Média",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Muito Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "p-csol-demo-4",
+      "name": "Catálogo solução demo 4",
+      "fieldValues": {
+        "patlasv4proto-csol-codigo": "C-SOL004",
+        "patlasv4proto-csol-nome": "Catálogo solução demo 4",
+        "patlasv4proto-csol-ativo": true,
+        "patlasv4proto-csol-universal": true
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-csol-faixas": [
+          {
+            "patlasv4proto-faixa-nome": "Muito Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Média",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Muito Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "p-csol-demo-5",
+      "name": "Catálogo solução demo 5",
+      "fieldValues": {
+        "patlasv4proto-csol-codigo": "C-SOL005",
+        "patlasv4proto-csol-nome": "Catálogo solução demo 5",
+        "patlasv4proto-csol-ativo": true,
+        "patlasv4proto-csol-universal": false
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-csol-faixas": [
+          {
+            "patlasv4proto-faixa-nome": "Muito Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Baixa",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Média",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          },
+          {
+            "patlasv4proto-faixa-nome": "Muito Alta",
+            "patlasv4proto-faixa-coeficiente": null
+          }
+        ]
+      }
+    }
+  ],
+  "activeExamplePresetId": "p-csol-sol3",
+  "iconColors": [
+    "#2B9CBF"
+  ]
+}

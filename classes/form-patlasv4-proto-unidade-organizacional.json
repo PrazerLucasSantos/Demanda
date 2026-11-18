@@ -1,0 +1,2151 @@
+{
+  "id": "form-patlasv4-proto-unidade-organizacional",
+  "name": "Organização — Principal",
+  "sectionLayout": "tabs",
+  "defaultCanvasMode": "edit",
+  "metadata": "Perfil obrigatório. CNPJ validado no salvar. Organização raiz controla Dados Empresariais, Contábeis e Documentação. Layout alinhado à UI Sydle.",
+  "sections": [
+    {
+      "id": "tab-org-dados",
+      "title": "Dados Principais",
+      "icon": "domain"
+    },
+    {
+      "id": "sec-org-id",
+      "title": "Identificação",
+      "icon": "badge",
+      "parentSectionId": "tab-org-dados"
+    },
+    {
+      "id": "sec-org-est",
+      "title": "Estrutura Hierárquica",
+      "icon": "account_tree",
+      "parentSectionId": "tab-org-dados"
+    },
+    {
+      "id": "sec-org-emp",
+      "title": "Dados Empresariais",
+      "icon": "business",
+      "parentSectionId": "tab-org-dados"
+    },
+    {
+      "id": "sec-org-contato",
+      "title": "Contato",
+      "icon": "contact_mail",
+      "parentSectionId": "tab-org-dados"
+    },
+    {
+      "id": "tab-org-cont",
+      "title": "Dados Contábeis",
+      "icon": "account_balance"
+    },
+    {
+      "id": "sec-org-trib",
+      "title": "Tributos e Encargos",
+      "icon": "percent",
+      "parentSectionId": "tab-org-cont"
+    },
+    {
+      "id": "tab-org-doc",
+      "title": "Documentação",
+      "icon": "folder"
+    },
+    {
+      "id": "sec-org-hab",
+      "title": "Habilitação Documental",
+      "icon": "fact_check",
+      "parentSectionId": "tab-org-doc"
+    },
+    {
+      "id": "sec-org-exec",
+      "title": "Documentos de Execução da Parceria",
+      "icon": "description",
+      "parentSectionId": "tab-org-doc"
+    },
+    {
+      "id": "tab-org-parc",
+      "title": "Parceiras",
+      "icon": "handshake"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-codigo-cliente-parceiro",
+      "label": "Código da organização",
+      "type": "text",
+      "sectionId": "sec-org-id",
+      "spec": "Código gerado (ex.: ORGA035)."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "identity",
+      "id": "patlasv4proto-uo-nome",
+      "label": "Nome",
+      "type": "text",
+      "sectionId": "sec-org-id"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "highlight",
+      "id": "patlasv4proto-uo-sigla",
+      "label": "Sigla",
+      "type": "text",
+      "sectionId": "sec-org-id"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-cnpj",
+      "label": "CNPJ",
+      "type": "text",
+      "sectionId": "sec-org-id"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-ativo",
+      "label": "Ativo?",
+      "type": "boolean",
+      "sectionId": "sec-org-id"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-empresa",
+      "label": "Organização raiz",
+      "type": "boolean",
+      "sectionId": "sec-org-est",
+      "spec": "Se Sim: org raiz (exibe dados empresariais, contábeis e documentação). Se Não: exige Organização pai."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "highlight",
+      "id": "patlasv4proto-uo-tipo-organizacao",
+      "label": "Perfil de organização",
+      "type": "textOptions",
+      "sectionId": "sec-org-est",
+      "textOptionsDisplay": "buttons",
+      "options": [
+        "MTI",
+        "Parceiro",
+        "Cliente"
+      ]
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-unidade-pai",
+      "label": "Organização pai",
+      "type": "reference",
+      "sectionId": "sec-org-est",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "spec": "Obrigatório quando Organização raiz = Não."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-poder",
+      "label": "Poder da organização",
+      "type": "textOptions",
+      "sectionId": "sec-org-est",
+      "textOptionsDisplay": "dropdown",
+      "options": [
+        "Executivo",
+        "Legislativo",
+        "Judiciário",
+        "Independente / Fiscalizador"
+      ],
+      "spec": "Visível e obrigatório quando Perfil = Cliente."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-org-parcerias",
+      "label": "Parcerias",
+      "type": "reference",
+      "sectionId": "sec-org-est",
+      "linkedFormId": "form-patlasv4-proto-cat-parceria",
+      "spec": "Preenchida pela extensão da parceria. Visível quando Perfil = Parceiro."
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-responsavel",
+      "label": "Responsável",
+      "type": "reference",
+      "sectionId": "sec-org-est",
+      "linkedFormId": "form-patlasv4-proto-pessoa",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-nivel",
+      "label": "Nível",
+      "type": "number",
+      "sectionId": "sec-org-est"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-substituta",
+      "label": "Substituída por",
+      "type": "reference",
+      "sectionId": "sec-org-est",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional"
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-filhas",
+      "label": "Organizações filhas",
+      "type": "html",
+      "sectionId": "sec-org-est"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-razao-social",
+      "label": "Razão social",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-nome-fantasia",
+      "label": "Nome fantasia",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-natureza-juridica",
+      "label": "Natureza jurídica",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-inscricao-municipal",
+      "label": "Inscrição municipal",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-inscricao-estadual",
+      "label": "Inscrição estadual",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-cnae",
+      "label": "CNAE (atividade principal)",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-cnae-secundaria",
+      "label": "CNAE (atividade secundária)",
+      "type": "text",
+      "sectionId": "sec-org-emp"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-contas-bancarias",
+      "label": "Contas bancárias",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-emp",
+      "linkedFormId": "form-patlasv4-proto-uo-conta-bancaria",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-emails",
+      "label": "E-mails",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-contato",
+      "linkedFormId": "form-patlasv4-proto-org-email",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-telefones",
+      "label": "Telefones",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-contato",
+      "linkedFormId": "form-patlasv4-proto-org-telefone",
+      "embeddedDisplay": "table",
+      "spec": "Órgãos abrangidos: Organizações com perfil Cliente.\nPodem ser unidades filhas do Contratante ou organizações externas (09/09).\nAlimentam a coluna Organização das Dotações orçamentárias (aba Itens e Valores)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-enderecos",
+      "label": "Endereços",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-contato",
+      "linkedFormId": "form-patlasv4-proto-org-endereco",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-redes-sociais",
+      "label": "Redes sociais",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-contato",
+      "linkedFormId": "form-patlasv4-proto-org-rede-social",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-isento-icms",
+      "label": "Isento de ICMS",
+      "type": "boolean",
+      "sectionId": "sec-org-trib"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-isento-icms-doc",
+      "label": "Documento comprobat����������������������������������������������������������������rio - Inserção ICMS",
+      "type": "file",
+      "sectionId": "sec-org-trib"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-isento-inscricao-estadual",
+      "label": "Isento de inscrição estadual",
+      "type": "boolean",
+      "sectionId": "sec-org-trib"
+    },
+    {
+      "size": "small",
+      "readOnly": false,
+      "hidden": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-isento-ie-doc",
+      "label": "Documento comprobatório - Inscrição estadual",
+      "type": "file",
+      "sectionId": "sec-org-trib"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-regime-tributacao",
+      "label": "Regime de tributação",
+      "type": "textOptions",
+      "sectionId": "sec-org-trib",
+      "options": [
+        "Simples Nacional",
+        "Lucro Real",
+        "Imune / Isento",
+        "Lucro Presumido",
+        "MEI"
+      ]
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "mqmdvi11ofo8m3",
+      "label": "Tributos e encargos",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-trib",
+      "linkedFormId": "form-patlasv4-proto-uo-tributo-linha",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-etapas-selecao",
+      "label": "Etapas a incluir",
+      "type": "reference",
+      "sectionId": "sec-org-hab",
+      "linkedFormId": "form-patlasv4-proto-cat-etapa-documentacional",
+      "referenceOptionsSource": "class",
+      "spec": "Lista as etapas da classe Etapa de Documentação (presets da classe)."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-etapas-documentacionais",
+      "label": "Etapas incluídas",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-hab",
+      "linkedFormId": "form-patlasv4-proto-uo-etapa-documentacional",
+      "embeddedDisplay": "form"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-status-habilitacao",
+      "label": "Status de habilitação documental",
+      "type": "text",
+      "sectionId": "sec-org-hab",
+      "spec": "Ex.: Em apresentação, Aprovada, Em ajuste."
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-progresso",
+      "label": "Progresso",
+      "type": "alert",
+      "sectionId": "sec-org-hab",
+      "alertVariant": "info",
+      "alertTitle": "Progresso",
+      "alertMessage": "Etapa em preenchimento, análise ou ajuste não segue se algum documento do grupo estiver sem arquivo."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-uo-docs-execucao",
+      "label": "Documentos de execução da parceria",
+      "type": "embeddedReference",
+      "sectionId": "sec-org-exec",
+      "linkedFormId": "form-patlasv4-proto-uo-doc-execucao",
+      "embeddedDisplay": "table"
+    },
+    {
+      "size": "large",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "identity",
+      "id": "patlasv4proto-org-lista-parceiras",
+      "label": "Parcerias",
+      "type": "reference",
+      "sectionId": "tab-org-parc",
+      "linkedFormId": "form-patlasv4-proto-cat-parceria",
+      "spec": "Lista: Código da parceria, Nome, Parceiro, Índice de reajuste."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-org-obs",
+      "label": "Observações",
+      "type": "embeddedReference",
+      "sectionId": "tab-org-dados",
+      "linkedFormId": "form-patlasv4-proto-observacao",
+      "embeddedDisplay": "form"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "id": "patlasv4proto-org-modulos",
+      "label": "Módulos visíveis",
+      "type": "textOptions",
+      "sectionId": "tab-org-dados",
+      "options": [
+        "Administração",
+        "Catálogo e Proposta",
+        "Workflow de Assinatura",
+        "Integrações",
+        "Publicações",
+        "Relatórios"
+      ]
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-catalogo",
+      "label": "Catálogo da MTI",
+      "type": "reference",
+      "sectionId": "tab-org-dados",
+      "linkedFormId": "form-patlasv4-proto-catalogo-mti"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-idpai",
+      "label": "ID do pai",
+      "type": "text",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-codpai",
+      "label": "Código do pai",
+      "type": "text",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-unidade",
+      "label": "Unidade organizacional",
+      "type": "text",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-caminho",
+      "label": "Caminho hierárquico",
+      "type": "text",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-nivel-org",
+      "label": "Nível organizacional",
+      "type": "text",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-status",
+      "label": "Status",
+      "type": "textOptions",
+      "sectionId": "tab-org-dados",
+      "options": []
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-tag",
+      "label": "Tag de status",
+      "type": "reference",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-seq",
+      "label": "Sequência",
+      "type": "reference",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-seqf",
+      "label": "Sequência filha",
+      "type": "reference",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-prefixo",
+      "label": "Prefixo",
+      "type": "text",
+      "sectionId": "tab-org-dados"
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "id": "patlasv4proto-org-criado",
+      "label": "Objeto criado?",
+      "type": "boolean",
+      "sectionId": "tab-org-dados"
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-uo-hide-pai-quando-raiz",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-empresa",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-unidade-pai"
+      ]
+    },
+    {
+      "id": "rule-uo-show-pai-quando-nao-raiz",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-empresa",
+      "sourceKind": "boolean",
+      "expectedBoolean": false,
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-uo-unidade-pai"
+      ]
+    },
+    {
+      "id": "rule-uo-show-poder-cliente",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cliente",
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-uo-poder"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-poder-mti",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "MTI",
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-poder"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-poder-parceiro",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Parceiro",
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-poder"
+      ]
+    },
+    {
+      "id": "rule-uo-show-parcerias-parceiro",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Parceiro",
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-org-parcerias"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-parcerias-mti",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "MTI",
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-org-parcerias"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-parcerias-cliente",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-tipo-organizacao",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cliente",
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-org-parcerias"
+      ]
+    },
+    {
+      "id": "rule-uo-show-doc-isento-icms",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-isento-icms",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-uo-isento-icms-doc"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-doc-isento-icms",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-isento-icms",
+      "sourceKind": "boolean",
+      "expectedBoolean": false,
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-isento-icms-doc"
+      ]
+    },
+    {
+      "id": "rule-uo-show-doc-isento-ie",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-isento-inscricao-estadual",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-uo-isento-ie-doc"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-doc-isento-ie",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-isento-inscricao-estadual",
+      "sourceKind": "boolean",
+      "expectedBoolean": false,
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-isento-ie-doc"
+      ]
+    },
+    {
+      "id": "rule-uo-show-emp-cont-quando-raiz",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-empresa",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-uo-razao-social",
+        "patlasv4proto-uo-nome-fantasia",
+        "patlasv4proto-uo-natureza-juridica",
+        "patlasv4proto-uo-inscricao-municipal",
+        "patlasv4proto-uo-inscricao-estadual",
+        "patlasv4proto-uo-cnae",
+        "patlasv4proto-uo-cnae-secundaria",
+        "patlasv4proto-uo-contas-bancarias",
+        "patlasv4proto-uo-isento-icms",
+        "patlasv4proto-uo-isento-icms-doc",
+        "patlasv4proto-uo-isento-inscricao-estadual",
+        "patlasv4proto-uo-isento-ie-doc",
+        "patlasv4proto-uo-regime-tributacao",
+        "mqmdvi11ofo8m3"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-emp-cont-quando-nao-raiz",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-empresa",
+      "sourceKind": "boolean",
+      "expectedBoolean": false,
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-razao-social",
+        "patlasv4proto-uo-nome-fantasia",
+        "patlasv4proto-uo-natureza-juridica",
+        "patlasv4proto-uo-inscricao-municipal",
+        "patlasv4proto-uo-inscricao-estadual",
+        "patlasv4proto-uo-cnae",
+        "patlasv4proto-uo-cnae-secundaria",
+        "patlasv4proto-uo-contas-bancarias",
+        "patlasv4proto-uo-isento-icms",
+        "patlasv4proto-uo-isento-icms-doc",
+        "patlasv4proto-uo-isento-inscricao-estadual",
+        "patlasv4proto-uo-isento-ie-doc",
+        "patlasv4proto-uo-regime-tributacao",
+        "mqmdvi11ofo8m3"
+      ]
+    },
+    {
+      "id": "rule-uo-show-doc-quando-raiz",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-empresa",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-uo-etapas-selecao",
+        "patlasv4proto-uo-etapas-documentacionais",
+        "patlasv4proto-uo-status-habilitacao",
+        "patlasv4proto-uo-docs-execucao"
+      ]
+    },
+    {
+      "id": "rule-uo-hide-doc-quando-nao-raiz",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-uo-empresa",
+      "sourceKind": "boolean",
+      "expectedBoolean": false,
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-uo-etapas-selecao",
+        "patlasv4proto-uo-etapas-documentacionais",
+        "patlasv4proto-uo-status-habilitacao",
+        "patlasv4proto-uo-docs-execucao"
+      ]
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "patlasv4proto-p-unidade-organizacional-mti",
+      "name": "Exemplo MTI (raiz)",
+      "iconColor": "#0c4a6e",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-uo-sigla": "MTI",
+        "patlasv4proto-uo-cnpj": "13.674.369/0001-21",
+        "patlasv4proto-uo-responsavel": "Lucas Santos / lucas.santos@elogroup.com.br",
+        "patlasv4proto-uo-tipo-organizacao": "MTI",
+        "patlasv4proto-uo-empresa": true,
+        "patlasv4proto-uo-regime-tributacao": "Simples Nacional",
+        "patlasv4proto-uo-isento-icms": true,
+        "patlasv4proto-uo-isento-inscricao-estadual": true,
+        "patlasv4proto-uo-etapas-selecao": [
+          "Habilitação documental",
+          "Execução da parceria"
+        ],
+        "patlasv4proto-uo-codigo-cliente-parceiro": "ORGA015",
+        "patlasv4proto-uo-razao-social": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-uo-nome-fantasia": "MTI",
+        "patlasv4proto-uo-natureza-juridica": "Empresa Pública",
+        "patlasv4proto-uo-status-habilitacao": "Em apresentação"
+      },
+      "embeddedRowsByFieldId": {
+        "mqmdvi11ofo8m3": [
+          {
+            "patlasv4proto-uotribl-tipo": "ISS",
+            "patlasv4proto-uotribl-aliquota": 5
+          },
+          {
+            "patlasv4proto-uotribl-tipo": "PIS",
+            "patlasv4proto-uotribl-aliquota": 1.65
+          },
+          {
+            "patlasv4proto-uotribl-tipo": "COFINS",
+            "patlasv4proto-uotribl-aliquota": 7.6
+          },
+          {
+            "patlasv4proto-uotribl-tipo": "IRRF",
+            "patlasv4proto-uotribl-aliquota": 1.5
+          }
+        ],
+        "patlasv4proto-uo-etapas-documentacionais": [
+          {
+            "patlasv4proto-uoetapa-nome": "Habilitação documental",
+            "patlasv4proto-uoetapa-ordem": 1,
+            "patlasv4proto-uoetapa-ativo": true,
+            "patlasv4proto-uoetapa-grupos": {
+              "embeddedDemoInstances": [
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Habilitação Jurídica",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Habilitação Jurídica",
+                        "patlasv4proto-uodoc-tipo": "Ato constitutivo e ata de elei��ão de administradores (S.A.)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Habilitação Jurídica",
+                        "patlasv4proto-uodoc-tipo": "Ato constitutivo, estatuto ou contrato social em vigor (sociedade empresária)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Habilitação Jurídica",
+                        "patlasv4proto-uodoc-tipo": "Inscrição do ato constitutivo no Registro Mercantil (sociedade simples) + diretoria",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Qualificação Técnica",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Técnica",
+                        "patlasv4proto-uodoc-tipo": "Atestado de capacidade técnica e qualificação de equipe",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Técnica",
+                        "patlasv4proto-uodoc-tipo": "Comprovação de aptidão para desempenho de atividade pertinente",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Técnica",
+                        "patlasv4proto-uodoc-tipo": "Histórico de negócios com a Administração Pública",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Qualificação Econômica e Financeira",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Econômica e Financeira",
+                        "patlasv4proto-uodoc-tipo": "Balanço Patrimonial (último exercício)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Econômica e Financeira",
+                        "patlasv4proto-uodoc-tipo": "Demonstração do Resultado do Exercício (DRE)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Econômica e Financeira",
+                        "patlasv4proto-uodoc-tipo": "Demonstração das Mutações do Patrimônio Líquido (DMPL)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Compliance (adendo)",
+                  "patlasv4proto-uogrpetapa-progresso": "0/—",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": []
+                  }
+                }
+              ]
+            },
+            "patlasv4proto-uoetapa-progresso": "0/9"
+          },
+          {
+            "patlasv4proto-uoetapa-nome": "Execução da parceria",
+            "patlasv4proto-uoetapa-ordem": 2,
+            "patlasv4proto-uoetapa-ativo": true,
+            "patlasv4proto-uoetapa-grupos": {
+              "embeddedDemoInstances": [
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Documentos de execução",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Documentos de execução",
+                        "patlasv4proto-uodoc-tipo": "Contrato de Parceria",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Documentos de execução",
+                        "patlasv4proto-uodoc-tipo": "Plano de Negócio",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Documentos de execução",
+                        "patlasv4proto-uodoc-tipo": "Plano de Operação",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "patlasv4proto-uoetapa-progresso": "0/3"
+          }
+        ],
+        "patlasv4proto-uo-contas-bancarias": [
+          {
+            "patlasv4proto-uoban-tipo-conta": "Corrente",
+            "patlasv4proto-uoban-tipo-chave-pix": "CNPJ",
+            "patlasv4proto-uoban-nome-banco": "Banco do Brasil / 001",
+            "patlasv4proto-uoban-numero-agencia": "1234-5",
+            "patlasv4proto-uoban-numero-conta": "123456-7",
+            "patlasv4proto-uoban-cpf-cnpj": "13.674.369/0001-21",
+            "patlasv4proto-uoban-chave-pix": "13674369000121"
+          }
+        ],
+        "patlasv4proto-uo-emails": [
+          {
+            "patlasv4proto-orgeml-tipo": "Principal",
+            "patlasv4proto-orgeml-email": "contato@mti.mt.gov.br"
+          }
+        ],
+        "patlasv4proto-uo-telefones": [
+          {
+            "patlasv4proto-orgtel-tipo": "Atendimento",
+            "patlasv4proto-orgtel-pais": "Brasil",
+            "patlasv4proto-orgtel-ddi": "+55",
+            "patlasv4proto-orgtel-numero": "(65) 3613-7100"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-i-1",
+      "name": "MTI — I.1 Conselho de Administração",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Conselho de Administração",
+        "patlasv4proto-uo-unidade-pai": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-i-2",
+      "name": "MTI — I.2 Conselho Fiscal",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Conselho Fiscal",
+        "patlasv4proto-uo-unidade-pai": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-i-3",
+      "name": "MTI — I.3 Diretoria Executiva",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Diretoria Executiva",
+        "patlasv4proto-uo-unidade-pai": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-ii-1",
+      "name": "MTI — II.1 Gabinete do Diretor-Presidente",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-sigla": "GDP",
+        "patlasv4proto-uo-unidade-pai": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-ii-1-1",
+      "name": "MTI — II.1.1 Gabinete da Diretoria Administrativa",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gabinete da Diretoria Administrativa",
+        "patlasv4proto-uo-sigla": "DIRADM",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-ii-1-2",
+      "name": "MTI — II.1.2 Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-sigla": "DTIC",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-ii-1-3",
+      "name": "MTI — II.1.3 Gabinete da Diretoria de Relacionamento com o Cliente",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gabinete da Diretoria de Relacionamento com o Cliente",
+        "patlasv4proto-uo-sigla": "DIRC",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-1",
+      "name": "MTI — III.1 Unidade de Assessoria Jurídica",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Assessoria Jurídica",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-2",
+      "name": "MTI — III.2 Unidade de Gestão de Conformidade, Riscos e Segurança da Informação",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Conformidade, Riscos e Segurança da Informação",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-3",
+      "name": "MTI — III.3 Unidade Setorial de Controle Interno",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade Setorial de Controle Interno",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-4",
+      "name": "MTI — III.4 Ouvidoria e Transparência",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Ouvidoria e Transparência",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-5",
+      "name": "MTI — III.5 Assessoria de Comunicação",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Assessoria de Comunicação",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-6",
+      "name": "MTI — III.6 Unidade de Gestão de Projetos",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Projetos",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-sigla": "UGP",
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-7",
+      "name": "MTI — III.7 Unidade de Gestão de Apoio à Governança",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Apoio à Governança",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-7-1",
+      "name": "MTI — III.7.1 Gerência de Escritório de Processos e Planejamento",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Escritório de Processos e Planejamento",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Apoio à Governança",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iii-7-2",
+      "name": "MTI — III.7.2 Gerência de Gestão Estratégica",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Gestão Estratégica",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Apoio à Governança",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-iv-1",
+      "name": "MTI — IV.1 Unidade de Assessoria",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Assessoria",
+        "patlasv4proto-uo-unidade-pai": "Gabinete do Diretor-Presidente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-1",
+      "name": "MTI — V.1 Unidade de Gestão Administrativa",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão Administrativa",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-1-1",
+      "name": "MTI — V.1.1 Gerência de Transporte e Servi��os",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Transporte e Serviços",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-1-2",
+      "name": "MTI — V.1.2 Gerência de Patrimônio e Materiais",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Patrimônio e Materiais",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-2",
+      "name": "MTI — V.2 Unidade de Gestão Orçamentária, Financeira e Faturamento",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão Orçamentária, Financeira e Faturamento",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-2-1",
+      "name": "MTI — V.2.1 Gerência de Execução Orçamentária",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Execução Orçamentária",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Orçamentária, Financeira e Faturamento",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-2-2",
+      "name": "MTI — V.2.2 Gerência de Execução Financeira",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Execução Financeira",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Orçamentária, Financeira e Faturamento",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-2-3",
+      "name": "MTI — V.2.3 Gerência de Faturamento e Cobrança",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Faturamento e Cobrança",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Orçamentária, Financeira e Faturamento",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-3",
+      "name": "MTI — V.3 Unidade de Gestão Contábil e Fiscal",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão Contábil e Fiscal",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-3-1",
+      "name": "MTI — V.3.1 Gerência de Informações Contábeis e Gestão Fiscal",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Informações Contábeis e Gestão Fiscal",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Contábil e Fiscal",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-3-2",
+      "name": "MTI — V.3.2 Gerência de Custos, Conformidade e Prestação de Contas",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Custos, Conformidade e Prestação de Contas",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão Contábil e Fiscal",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-4",
+      "name": "MTI — V.4 Unidade de Gestão de Pessoas",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Pessoas",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-4-1",
+      "name": "MTI — V.4.1 Gerência de Aplicação, Conhecimento e Desenvolvimento",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Aplicação, Conhecimento e Desenvolvimento",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Pessoas",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-4-2",
+      "name": "MTI — V.4.2 Gerência de Provimento, Manutenção e Monitoramento",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Provimento, Manutenção e Monitoramento",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Pessoas",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-5",
+      "name": "MTI — V.5 Unidade de Gestão de Aquisições e Contratos",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Aquisições e Contratos",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria Administrativa",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-5-1",
+      "name": "MTI — V.5.1 Gerência de Contratos",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Contratos",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Aquisições e Contratos",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-v-5-2",
+      "name": "MTI — V.5.2 Gerência de Aquisições",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Aquisições",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Aquisições e Contratos",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-1",
+      "name": "MTI — VI.1 Unidade de Gestão de Soluções Digitais de Governo",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Soluções Digitais de Governo",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-1-1",
+      "name": "MTI — VI.1.1 Gerência de Soluções Digitais de Planejamento, Finanças, Tributação, Controle e Gestão",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Soluções Digitais de Planejamento, Finanças, Tributação, Controle e Gestão",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Soluções Digitais de Governo",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-1-2",
+      "name": "MTI — VI.1.2 Gerência de Soluções Digitais de Segurança Pública, Regulação e Trânsito",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Soluções Digitais de Segurança Pública, Regulação e Trânsito",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Soluç��es Digitais de Governo",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-1-3",
+      "name": "MTI — VI.1.3 Gerência de Soluções Digitais Agroambientais, Ordenamento Territorial e Infraestrutura",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Soluções Digitais Agroambientais, Ordenamento Territorial e Infraestrutura",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Soluções Digitais de Governo",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-1-4",
+      "name": "MTI — VI.1.4 Gerência de Soluções Digitais Sociais, Previdência, Desenvolvimento, Educação e Saúde",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Soluções Digitais Sociais, Previdência, Desenvolvimento, Educação e Saúde",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Soluções Digitais de Governo",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-1-5",
+      "name": "MTI — VI.1.5 Gerência de Soluções Digitais de Comunicação, Transparência e outros Serviços",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Soluções Digitais de Comunicação, Transparência e outros Serviços",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Soluções Digitais de Governo",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-2",
+      "name": "MTI — VI.2 Unidade de Gestão de Governo Digital",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Governo Digital",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-2-1",
+      "name": "MTI — VI.2.1 Gerência de Plataforma de Governo Digital",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Plataforma de Governo Digital",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Governo Digital",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-3",
+      "name": "MTI — VI.3 Unidade de Gestão de Arquitetura Tecnológica",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Arquitetura Tecnológica",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-3-1",
+      "name": "MTI — VI.3.1 Gerência de Arquitetura de Soluções e Interoperabilidade",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Arquitetura de Soluções e Interoperabilidade",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Arquitetura Tecnológica",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-3-2",
+      "name": "MTI — VI.3.2 Gerência de Processos Automatizados e IA",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Processos Automatizados e IA",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Arquitetura Tecnológica",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-4",
+      "name": "MTI — VI.4 Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-4-1",
+      "name": "MTI — VI.4.1 Gerência de Central de Serviços",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Central de Serviços",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-4-2",
+      "name": "MTI — VI.4.2 Gerência de Soluções Internas e Colaboração",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Soluções Internas e Colaboração",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-4-3",
+      "name": "MTI — VI.4.3 Gerência de Suporte Técnico",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Suporte Técnico",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Serviços de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-5",
+      "name": "MTI — VI.5 Unidade de Gestão de Governança de Dados e Defesa Cibernética",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Governança de Dados e Defesa Cibernética",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-5-1",
+      "name": "MTI — VI.5.1 Gerência de Gestão de Dados",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Gestão de Dados",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Governança de Dados e Defesa Cibernética",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-5-2",
+      "name": "MTI — VI.5.2 Gerência de Defesa Cibernética",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Defesa Cibernética",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Governança de Dados e Defesa Cibernética",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-6",
+      "name": "MTI — VI.6 Unidade de Gestão de Infraestrutura de Tecnologia da Informação e Comunicação",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Infraestrutura de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-6-1",
+      "name": "MTI — VI.6.1 Gerência de Parque Computacional",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Parque Computacional",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Infraestrutura de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-6-2",
+      "name": "MTI — VI.6.2 Gerência de Rede Corporativa",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Rede Corporativa",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Infraestrutura de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-6-3",
+      "name": "MTI — VI.6.3 Gerência de Aplicações e Banco de Dados",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Aplicações e Banco de Dados",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Infraestrutura de Tecnologia da Informação e Comunicação",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-7",
+      "name": "MTI — VI.7 Unidade de Gestão de Vendas",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Vendas",
+        "patlasv4proto-uo-sigla": "UGVEN",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Relacionamento com o Cliente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-8",
+      "name": "MTI — VI.8 Unidade de Gestão de Pós Venda",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Pós Venda",
+        "patlasv4proto-uo-sigla": "UGEPV",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Relacionamento com o Cliente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-9",
+      "name": "MTI — VI.9 Unidade de Gestão de Parcerias e Novos Negócios",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Unidade de Gestão de Parcerias e Novos Negócios",
+        "patlasv4proto-uo-sigla": "UGENP",
+        "patlasv4proto-uo-unidade-pai": "Gabinete da Diretoria de Relacionamento com o Cliente",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-mti-vi-9-1",
+      "name": "MTI — VI.9.1 Gerência de Parceria e Inovação",
+      "iconColor": "#0369a1",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Gerência de Parceria e Inovação",
+        "patlasv4proto-uo-sigla": "GPIN",
+        "patlasv4proto-uo-unidade-pai": "Unidade de Gestão de Parcerias e Novos Negócios",
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-tipo-organizacao": "MTI"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-unidade-organizacional-parceiro",
+      "name": "Exemplo Parceiro",
+      "iconColor": "#7c3aed",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "EloGroup",
+        "patlasv4proto-uo-sigla": "ELO",
+        "patlasv4proto-uo-tipo-organizacao": "Parceiro",
+        "patlasv4proto-uo-empresa": true,
+        "patlasv4proto-uo-etapas-selecao": [
+          "Habilitação documental",
+          "Execução da parceria"
+        ]
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-uo-etapas-documentacionais": [
+          {
+            "patlasv4proto-uoetapa-nome": "Habilitação documental",
+            "patlasv4proto-uoetapa-ordem": 1,
+            "patlasv4proto-uoetapa-ativo": true,
+            "patlasv4proto-uoetapa-grupos": {
+              "embeddedDemoInstances": [
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Habilitação Jurídica",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Habilitação Jurídica",
+                        "patlasv4proto-uodoc-tipo": "Ato constitutivo e ata de eleição de administradores (S.A.)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Habilitação Jurídica",
+                        "patlasv4proto-uodoc-tipo": "Ato constitutivo, estatuto ou contrato social em vigor (sociedade empresária)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Habilitação Jurídica",
+                        "patlasv4proto-uodoc-tipo": "Inscrição do ato constitutivo no Registro Mercantil (sociedade simples) + diretoria",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Qualificação Técnica",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Técnica",
+                        "patlasv4proto-uodoc-tipo": "Atestado de capacidade técnica e qualificação de equipe",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Técnica",
+                        "patlasv4proto-uodoc-tipo": "Comprovação de aptidão para desempenho de atividade pertinente",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Técnica",
+                        "patlasv4proto-uodoc-tipo": "Histórico de negócios com a Administração Pública",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Qualificação Econômica e Financeira",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Econômica e Financeira",
+                        "patlasv4proto-uodoc-tipo": "Balanço Patrimonial (último exercício)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Econômica e Financeira",
+                        "patlasv4proto-uodoc-tipo": "Demonstração do Resultado do Exercício (DRE)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Qualificação Econômica e Financeira",
+                        "patlasv4proto-uodoc-tipo": "Demonstração das Mutações do Patrimônio Líquido (DMPL)",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Compliance (adendo)",
+                  "patlasv4proto-uogrpetapa-progresso": "0/—",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": []
+                  }
+                }
+              ]
+            },
+            "patlasv4proto-uoetapa-progresso": "0/9"
+          },
+          {
+            "patlasv4proto-uoetapa-nome": "Execução da parceria",
+            "patlasv4proto-uoetapa-ordem": 2,
+            "patlasv4proto-uoetapa-ativo": true,
+            "patlasv4proto-uoetapa-grupos": {
+              "embeddedDemoInstances": [
+                {
+                  "patlasv4proto-uogrpetapa-grupo": "Documentos de execução",
+                  "patlasv4proto-uogrpetapa-progresso": "0/3",
+                  "patlasv4proto-uogrpetapa-tipos": {
+                    "embeddedDemoInstances": [
+                      {
+                        "mqlh6yafch5jzb": "Documentos de execução",
+                        "patlasv4proto-uodoc-tipo": "Contrato de Parceria",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Documentos de execução",
+                        "patlasv4proto-uodoc-tipo": "Plano de Negócio",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      },
+                      {
+                        "mqlh6yafch5jzb": "Documentos de execução",
+                        "patlasv4proto-uodoc-tipo": "Plano de Operação",
+                        "patlasv4proto-uodoc-status-validacao": "Pendente"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "patlasv4proto-uoetapa-progresso": "0/3"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-unidade-organizacional-cliente",
+      "name": "SEPLAG (Cliente)",
+      "iconColor": "#0d9488",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "SEPLAG - Secretaria de Estado de Planejamento e Gestao",
+        "patlasv4proto-uo-sigla": "SEPLAG",
+        "patlasv4proto-uo-tipo-organizacao": "Cliente",
+        "patlasv4proto-uo-empresa": true,
+        "patlasv4proto-uo-responsavel": "Ricardo Almeida Ferreira"
+      },
+      "embeddedRowsByFieldId": {}
+    },
+    {
+      "id": "preset-uo-filha-nao-raiz",
+      "name": "Unidade filha (raiz = Não)",
+      "fieldValues": {
+        "patlasv4proto-uo-empresa": false,
+        "patlasv4proto-uo-unidade-pai": "Empresa Mato-grossense de Tecnologia da Informação"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-uo-parceiro-facilmova",
+      "name": "FacilMova",
+      "iconColor": "#0F6CBD",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "FacilMova",
+        "patlasv4proto-uo-sigla": "FMV",
+        "patlasv4proto-uo-tipo-organizacao": "Parceiro",
+        "patlasv4proto-uo-empresa": true
+      },
+      "embeddedRowsByFieldId": {}
+    },
+    {
+      "id": "patlasv4proto-p-uo-cliente-secel",
+      "name": "Secel (Cliente)",
+      "iconColor": "#23796f",
+      "fieldValues": {
+        "patlasv4proto-uo-nome": "Secel",
+        "patlasv4proto-uo-tipo-organizacao": "Cliente",
+        "patlasv4proto-uo-sigla": "SECEL"
+      }
+    }
+  ],
+  "activeExamplePresetId": "patlasv4proto-p-unidade-organizacional-mti",
+  "methods": [
+    {
+      "id": "patlasv4proto-uo-meth-cadastrar-pessoa",
+      "name": "Cadastrar Pessoa",
+      "icon": "person_add",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-pessoa",
+      "spec": "Abre a classe Pessoa para cadastro."
+    },
+    {
+      "id": "patlasv4proto-uo-meth-criar-cargo",
+      "name": "Criar Cargo",
+      "icon": "work",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-cargo",
+      "spec": "Abre a classe Cargo para cadastro."
+    },
+    {
+      "id": "patlasv4proto-uo-meth-criar-parceira",
+      "name": "Criar Parceira",
+      "icon": "handshake",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-cat-parceria",
+      "spec": "Abre a classe Parceria para cadastro."
+    },
+    {
+      "id": "patlasv4proto-uo-meth-disponibilizar",
+      "name": "Disponibilizar",
+      "icon": "play_circle",
+      "kind": "destaque",
+      "spec": "Envia o cadastro da organização para o parceiro preencher. O status da habilitação documental passa para Em apresentação."
+    },
+    {
+      "id": "patlasv4proto-uo-meth-editar",
+      "name": "Editar",
+      "icon": "edit",
+      "kind": "destaque",
+      "editSectionId": "tab-org-dados",
+      "spec": "Edita o cadastro da organização."
+    },
+    {
+      "id": "patlasv4proto-uo-meth-criar",
+      "name": "Novo Cadastro",
+      "icon": "add",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-nova-versao",
+      "name": "Nova Versão",
+      "icon": "content_copy",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-ativar-desativar",
+      "name": "Ativar / Desativar",
+      "icon": "toggle_on",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-salvar",
+      "name": "Salvar",
+      "icon": "save",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-disponibilizar-parceiro",
+      "name": "Disponibilizar para parceiro finalizar",
+      "icon": "person_add_alt",
+      "kind": "menu",
+      "inputFormId": "form-patlasv4-proto-metodo-disponibilizar-parceiro-org"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-aprovar-cadastro",
+      "name": "Aprovar cadastro",
+      "icon": "check_circle",
+      "kind": "menu",
+      "inputFormId": "form-patlasv4-proto-metodo-aprovar-cadastro-org"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-solicitar-ajuste",
+      "name": "Solicitar ajuste",
+      "icon": "edit_note",
+      "kind": "menu",
+      "inputFormId": "form-patlasv4-proto-metodo-solicitar-ajuste-org"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-migrar-cargos",
+      "name": "Migrar cargos",
+      "icon": "swap_horiz",
+      "kind": "menu",
+      "inputFormId": "form-patlasv4-proto-metodo-migrar-cargos-uo"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-reprovar-cadastro",
+      "name": "Reprovar cadastro",
+      "icon": "cancel",
+      "kind": "menu",
+      "inputFormId": "form-patlasv4-proto-metodo-reprovar-cadastro-org"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-substituir-unidade",
+      "name": "Substituir unidade",
+      "icon": "swap_horiz",
+      "kind": "menu",
+      "inputFormId": "form-patlasv4-proto-metodo-substituir-unidade"
+    },
+    {
+      "id": "patlasv4proto-uo-meth-suspender",
+      "name": "Suspender processo",
+      "icon": "pause_circle",
+      "kind": "menu",
+      "spec": "Interrompe a habilitação documental. O processo fica suspenso até ser retomado."
+    },
+    {
+      "id": "patlasv4proto-uo-meth-retomar",
+      "name": "Retomar processo",
+      "icon": "play_circle",
+      "kind": "menu",
+      "spec": "Retoma o processo suspenso na etapa em que parou."
+    },
+    {
+      "id": "patlasv4proto-org-meth-obs",
+      "name": "Adicionar Observação",
+      "icon": "add_notes",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-org-meth-dup",
+      "name": "Duplicar",
+      "icon": "content_copy",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-org-meth-sub",
+      "name": "Substituir Organização",
+      "icon": "swap_horiz",
+      "kind": "menu"
+    }
+  ],
+  "iconColor": "#2B9CBF",
+  "iconColors": [
+    "#2B9CBF"
+  ]
+}

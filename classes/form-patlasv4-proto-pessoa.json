@@ -1,0 +1,939 @@
+{
+  "id": "form-patlasv4-proto-pessoa",
+  "name": "Pessoa",
+  "sectionLayout": "accordion",
+  "defaultCanvasMode": "edit",
+  "metadata": "Protótipo Atlas — Pessoa alinhada ao Sydle. Acordeões: Dados Pessoais, Informações Complementares, Profissional e Contato.",
+  "sections": [
+    {
+      "id": "sec-pes-dados-pessoais",
+      "title": "Dados Pessoais",
+      "icon": "badge"
+    },
+    {
+      "id": "sec-pes-profissional",
+      "title": "Profissional",
+      "icon": "work"
+    },
+    {
+      "id": "sec-pes-info-complementares",
+      "title": "Informações Complementares",
+      "icon": "info"
+    },
+    {
+      "id": "sec-pes-contato",
+      "title": "Contato",
+      "icon": "contact_mail"
+    }
+  ],
+  "fields": [
+    {
+      "id": "patlasv4proto-pes-nome",
+      "label": "Nome",
+      "type": "text",
+      "size": "small",
+      "readOnly": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "identity",
+      "sectionId": "sec-pes-dados-pessoais",
+      "spec": "Nome completo. Obrigatório."
+    },
+    {
+      "id": "patlasv4proto-pes-outros-nomes",
+      "label": "Outros nomes",
+      "type": "text",
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-dados-pessoais",
+      "spec": "Lista de outros nomes (adicionar com +).",
+      "hidden": true
+    },
+    {
+      "id": "patlasv4proto-pes-nasc",
+      "label": "Data de nascimento",
+      "type": "date",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-dados-pessoais",
+      "spec": "Não pode ser futura."
+    },
+    {
+      "id": "patlasv4proto-pes-foto",
+      "label": "Foto",
+      "type": "file",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-dados-pessoais",
+      "spec": "PNG, JPG ou PDF."
+    },
+    {
+      "id": "patlasv4proto-pes-falecido",
+      "label": "Falecido?",
+      "type": "boolean",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-dados-pessoais",
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-documentos",
+      "label": "Documentos",
+      "type": "embeddedReference",
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-dados-pessoais",
+      "linkedFormId": "form-patlasv4-proto-pessoa-documento",
+      "embeddedDisplay": "table",
+      "spec": "Tabela: Tipo, Número, Arquivo."
+    },
+    {
+      "id": "patlasv4proto-pes-filiacao",
+      "label": "Filiação",
+      "type": "embeddedReference",
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "linkedFormId": "form-patlasv4-proto-pessoa-filiacao",
+      "embeddedDisplay": "table",
+      "spec": "Nome, Nome social, Sexo, Grau de relacionamento."
+    },
+    {
+      "id": "patlasv4proto-pes-sexo",
+      "label": "Sexo",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Masculino",
+        "Feminino"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-genero",
+      "label": "Gênero",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Homem",
+        "Mulher",
+        "Não binário",
+        "Outro"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-cor-raca",
+      "label": "Cor ou raça",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Branca",
+        "Preta",
+        "Parda",
+        "Amarela",
+        "Indígena"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-deficiencias",
+      "label": "Deficiências",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Física",
+        "Auditiva",
+        "Visual",
+        "Intelectual",
+        "Mental",
+        "Reabilitado/readaptado"
+      ],
+      "spec": "Multi-seleção (chips)."
+    },
+    {
+      "id": "patlasv4proto-pes-estado-civil",
+      "label": "Estado Civil",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Solteiro",
+        "Casado",
+        "Divorciado",
+        "Viúvo",
+        "União estável"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-pais-nasc",
+      "label": "País de nascimento",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Brasil",
+        "Argentina",
+        "Paraguai",
+        "Bolívia",
+        "Outro"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-naturalidade",
+      "label": "Naturalidade",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Laranjeiras do Sul / Paraná",
+        "Cuiabá/MT",
+        "Várzea Grande/MT",
+        "Brasília/DF",
+        "São Paulo/SP",
+        "Quedas do Iguaçu / Paraná",
+        "Outro"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-nacionalidade",
+      "label": "Nacionalidade",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-info-complementares",
+      "options": [
+        "Brasil",
+        "Argentina",
+        "Paraguai",
+        "Bolívia",
+        "Outro"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-html-alerta-protheus",
+      "type": "html",
+      "label": "",
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "htmlContent": "<div class=\"proto-alert proto-alert--warn\">\n  <strong>Protheus</strong>\n  <p>Não foi possível se conectar ao Protheus para obtenção automática da matrícula do servidor. Se desejar, pode inserir manualmente.</p>\n</div>\n<style>\n  .proto-alert { margin: 0 0 12px; padding: 10px 12px; border-radius: 8px; border: 1px solid #eab30866; background: #fefce8; color: #854d0e; font-size: 0.9rem; }\n  .proto-alert p { margin: 4px 0 0; }\n</style>",
+      "spec": "Alerta quando a integração Protheus não retorna a matrícula.",
+      "hidden": true
+    },
+    {
+      "id": "patlasv4proto-pes-perfil",
+      "label": "Perfil",
+      "type": "textOptions",
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "hidden": false,
+      "options": [
+        "MTI",
+        "Parceiro",
+        "Cliente"
+      ],
+      "spec": "Perfil de sistema (oculto no layout Sydle atual; usado em regras)."
+    },
+    {
+      "id": "patlasv4proto-pes-matricula",
+      "label": "Matrícula",
+      "type": "number",
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "hidden": false,
+      "spec": "Inserção manual quando Protheus falha (perfil MTI)."
+    },
+    {
+      "id": "patlasv4proto-pes-organizacao",
+      "label": "Organização",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "highlight",
+      "sectionId": "sec-pes-profissional",
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "options": [
+        "Empresa Mato-grossense de Tecnologia da Informação / MTI",
+        "EloGroup / EloGP",
+        "Secretaria de Estado de Planejamento e Gestão / SEPLAG"
+      ],
+      "spec": "Vínculo com a organização, além do cargo."
+    },
+    {
+      "id": "patlasv4proto-pes-unidade",
+      "label": "Unidade organizacional",
+      "type": "reference",
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "hidden": true,
+      "linkedFormId": "form-patlasv4-proto-unidade-organizacional",
+      "options": [
+        "MTI",
+        "MTI/DIRC",
+        "MTI/DTIC",
+        "EloGroup",
+        "SEPLAG/GECON"
+      ],
+      "spec": "Oculto no layout Sydle; caminho pode vir na Organização."
+    },
+    {
+      "id": "patlasv4proto-pes-cargo",
+      "label": "Cargo",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "linkedFormId": "form-patlasv4-proto-cargo",
+      "options": [
+        "Diretor DIRC",
+        "Analista DIRC",
+        "Analista DTIC",
+        "Gerente de Projetos",
+        "Fiscal de Contrato",
+        "Responsável legal",
+        "Analista comercial",
+        "Gestor de contratos",
+        "Assessor Comercial"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-condicao-cargo",
+      "label": "Condição",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "options": [
+        "Titular",
+        "Substituto",
+        "Suplente"
+      ],
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-regiao-atuacao",
+      "label": "Região de atuação",
+      "type": "textOptions",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "options": [
+        "Todos",
+        "AC",
+        "AL",
+        "AP",
+        "AM",
+        "BA",
+        "CE",
+        "DF",
+        "ES",
+        "GO",
+        "MA",
+        "MT",
+        "MS",
+        "MG",
+        "PA",
+        "PB",
+        "PR",
+        "PE",
+        "PI",
+        "RJ",
+        "RN",
+        "RS",
+        "RO",
+        "RR",
+        "SC",
+        "SP",
+        "SE",
+        "TO"
+      ],
+      "spec": "Estado de atuação da pessoa. Não é a esfera (executivo ou legislativo)."
+    },
+    {
+      "id": "patlasv4proto-pes-data-inicio",
+      "label": "Data de início",
+      "type": "date",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "spec": "Início da ocupação no cargo."
+    },
+    {
+      "id": "patlasv4proto-pes-data-fim",
+      "label": "Data de fim",
+      "type": "date",
+      "size": "small",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "spec": "Fim da ocupação, quando houver."
+    },
+    {
+      "id": "patlasv4proto-pes-status-vinculo-funcional",
+      "label": "Status vínculo funcional",
+      "type": "textOptions",
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "hidden": true,
+      "options": [
+        "Ativo",
+        "Inativo",
+        "Suspenso",
+        "Aguardando validação Protheus"
+      ],
+      "spec": "Oculto no layout Sydle atual."
+    },
+    {
+      "id": "patlasv4proto-pes-data-validacao-protheus",
+      "label": "Data última validação Protheus",
+      "type": "date",
+      "size": "medium",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "sectionId": "sec-pes-profissional",
+      "hidden": true,
+      "spec": ""
+    },
+    {
+      "id": "patlasv4proto-pes-emails",
+      "label": "E-mails",
+      "type": "embeddedReference",
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-contato",
+      "linkedFormId": "form-patlasv4-proto-pessoa-email",
+      "embeddedDisplay": "table",
+      "spec": "Tipo e Email."
+    },
+    {
+      "id": "patlasv4proto-pes-telefones",
+      "label": "Telefones",
+      "type": "embeddedReference",
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-contato",
+      "linkedFormId": "form-patlasv4-proto-pessoa-telefone",
+      "embeddedDisplay": "table",
+      "spec": "Tipo, País, DDI, Número, Ramal."
+    },
+    {
+      "id": "patlasv4proto-pes-email-principal",
+      "label": "E-mail principal",
+      "type": "text",
+      "size": "large",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "highlight",
+      "sectionId": "sec-pes-contato",
+      "spec": "Seleção/destaque do e-mail principal."
+    },
+    {
+      "size": "medium",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "tooltip": false,
+      "id": "patlasv4proto-pes-celular",
+      "label": "Celular",
+      "type": "text",
+      "sectionId": "sec-pes-contato",
+      "spec": "Usado no handover (contato do cliente e do parceiro). Junto com o e-mail principal, precisa estar preenchido para sair no documento. Vazio sai como \"A definir\"."
+    },
+    {
+      "id": "patlasv4proto-pes-enderecos",
+      "label": "Endereços",
+      "type": "embeddedReference",
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "sectionId": "sec-pes-contato",
+      "linkedFormId": "form-patlasv4-proto-pessoa-endereco",
+      "embeddedDisplay": "form",
+      "spec": "Lista de endereços (acordeão / +)."
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "patlasv4proto-p-pessoa-lucas-santos",
+      "name": "LUCAS DOS SANTOS",
+      "iconColor": "#0F6CBD",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "LUCAS DOS SANTOS",
+        "patlasv4proto-pes-nasc": "28/02/2000",
+        "patlasv4proto-pes-falecido": false,
+        "patlasv4proto-pes-organizacao": "EloGroup / EloGP",
+        "patlasv4proto-pes-perfil": "Parceiro",
+        "patlasv4proto-pes-email-principal": "contatolucas.dsantos@gmail.com"
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-pes-documentos": [
+          {
+            "patlasv4proto-pdoc-tipo": "CPF",
+            "patlasv4proto-pdoc-numero": "117.349.439-12",
+            "patlasv4proto-pdoc-arquivo": "Imagem.pdf"
+          }
+        ],
+        "patlasv4proto-pes-enderecos": [
+          {
+            "patlasv4proto-pend-cep": "85450-000",
+            "patlasv4proto-pend-logradouro": "Sandalo",
+            "patlasv4proto-pend-numero": "S/N",
+            "patlasv4proto-pend-bairro": "Centro",
+            "patlasv4proto-pend-cidade": "Quedas do Iguaçu",
+            "patlasv4proto-pend-estado": "Paraná",
+            "patlasv4proto-pend-pais": "Brasil"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-bernardo",
+      "name": "Ricardo Almeida Ferreira",
+      "iconColor": "#334155",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Ricardo Almeida Ferreira",
+        "patlasv4proto-pes-nasc": "15/03/1988",
+        "patlasv4proto-pes-falecido": false,
+        "patlasv4proto-pes-sexo": "Masculino",
+        "patlasv4proto-pes-pais-nasc": "Brasil",
+        "patlasv4proto-pes-nacionalidade": "Brasil",
+        "patlasv4proto-pes-email-principal": "ricardo.ferreira@empresa-parceira.exemplo"
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-pes-documentos": [
+          {
+            "patlasv4proto-pdoc-tipo": "CPF",
+            "patlasv4proto-pdoc-numero": "529.981.047-25",
+            "patlasv4proto-pdoc-arquivo": null
+          },
+          {
+            "patlasv4proto-pdoc-tipo": "RG",
+            "patlasv4proto-pdoc-numero": "45871239",
+            "patlasv4proto-pdoc-arquivo": null
+          }
+        ],
+        "patlasv4proto-pes-emails": [
+          {
+            "patlasv4proto-peml-tipo": "Comercial",
+            "patlasv4proto-peml-email": "ricardo.ferreira@empresa-parceira.exemplo"
+          }
+        ],
+        "patlasv4proto-pes-telefones": [
+          {
+            "patlasv4proto-ptel-tipo": "Celular",
+            "patlasv4proto-ptel-pais": "Brasil",
+            "patlasv4proto-ptel-ddi": "+55",
+            "patlasv4proto-ptel-numero": "(65) 99876-5432"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-lucas",
+      "name": "Felipe Oliveira Costa",
+      "iconColor": "#0c4a6e",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Felipe Oliveira Costa",
+        "patlasv4proto-pes-nasc": "22/07/1990",
+        "patlasv4proto-pes-falecido": false,
+        "patlasv4proto-pes-sexo": "Masculino",
+        "patlasv4proto-pes-pais-nasc": "Brasil",
+        "patlasv4proto-pes-nacionalidade": "Brasil",
+        "patlasv4proto-pes-perfil": "MTI",
+        "patlasv4proto-pes-organizacao": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-pes-unidade": "MTI/DIRC",
+        "patlasv4proto-pes-cargo": "Analista DIRC",
+        "patlasv4proto-pes-matricula": "MTI-004821",
+        "patlasv4proto-pes-condicao-cargo": "Titular",
+        "patlasv4proto-pes-regiao-atuacao": "MT",
+        "patlasv4proto-pes-status-vinculo-funcional": "Ativo",
+        "patlasv4proto-pes-email-principal": "felipe.costa@exemplo.gov.br"
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-pes-documentos": [
+          {
+            "patlasv4proto-pdoc-tipo": "CPF",
+            "patlasv4proto-pdoc-numero": "741.852.963-00",
+            "patlasv4proto-pdoc-arquivo": null
+          }
+        ],
+        "patlasv4proto-pes-enderecos": [
+          {
+            "patlasv4proto-pend-cep": "78840-000",
+            "patlasv4proto-pend-logradouro": "Rua das Acácias",
+            "patlasv4proto-pend-numero": "120",
+            "patlasv4proto-pend-bairro": "Centro",
+            "patlasv4proto-pend-cidade": "Campo Verde / Mato Grosso / Brasil",
+            "patlasv4proto-pend-estado": "Mato Grosso / Brasil",
+            "patlasv4proto-pend-pais": "Brasil"
+          }
+        ],
+        "patlasv4proto-pes-emails": [
+          {
+            "patlasv4proto-peml-tipo": "Institucional",
+            "patlasv4proto-peml-email": "felipe.costa@exemplo.gov.br"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-mti",
+      "name": "Carlos Eduardo Souza",
+      "iconColor": "#7c3aed",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Carlos Eduardo Souza",
+        "patlasv4proto-pes-nasc": "03/11/1985",
+        "patlasv4proto-pes-falecido": false,
+        "patlasv4proto-pes-sexo": "Masculino",
+        "patlasv4proto-pes-perfil": "MTI",
+        "patlasv4proto-pes-organizacao": "Empresa Mato-grossense de Tecnologia da Informação",
+        "patlasv4proto-pes-unidade": "MTI/DTIC",
+        "patlasv4proto-pes-cargo": "Analista DTIC",
+        "patlasv4proto-pes-matricula": "MTI-002156",
+        "patlasv4proto-pes-condicao-cargo": "Titular",
+        "patlasv4proto-pes-regiao-atuacao": "Todos",
+        "patlasv4proto-pes-email-principal": "carlos.souza@exemplo.gov.br"
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-pes-documentos": [
+          {
+            "patlasv4proto-pdoc-tipo": "CPF",
+            "patlasv4proto-pdoc-numero": "321.654.987-00",
+            "patlasv4proto-pdoc-arquivo": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-parceiro",
+      "name": "Helena Ribeiro Lima",
+      "iconColor": "#0d9488",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Helena Ribeiro Lima",
+        "patlasv4proto-pes-nasc": "18/09/1992",
+        "patlasv4proto-pes-falecido": false,
+        "patlasv4proto-pes-sexo": "Feminino",
+        "patlasv4proto-pes-email-principal": "helena.lima@consultoria.exemplo"
+      },
+      "embeddedRowsByFieldId": {
+        "patlasv4proto-pes-documentos": [
+          {
+            "patlasv4proto-pdoc-tipo": "CPF",
+            "patlasv4proto-pdoc-numero": "987.654.321-00",
+            "patlasv4proto-pdoc-arquivo": null
+          }
+        ],
+        "patlasv4proto-pes-emails": [
+          {
+            "patlasv4proto-peml-tipo": "Comercial",
+            "patlasv4proto-peml-email": "helena.lima@consultoria.exemplo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-joao-victor",
+      "name": "João Victor",
+      "iconColor": "#166534",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "João Victor",
+        "patlasv4proto-pes-organizacao": "Empresa Mato-grossense de Tecnologia da Informação / MTI",
+        "patlasv4proto-pes-cargo": "Assessor Comercial",
+        "patlasv4proto-pes-perfil": "MTI",
+        "patlasv4proto-pes-regiao-atuacao": "MT",
+        "patlasv4proto-pes-email-principal": "joao.victor@mti.mt.gov.br"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-ana-paula",
+      "name": "Ana Paula Ribeiro",
+      "iconColor": "#0c1d46",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Ana Paula Ribeiro",
+        "patlasv4proto-pes-organizacao": "SEPLAG - Secretaria de Estado de Planejamento e Gestao",
+        "patlasv4proto-pes-email": "ana.ribeiro@seplag.mt.gov.br",
+        "patlasv4proto-pes-status": "Ativo"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-lucas-costa",
+      "name": "Lucas Costa",
+      "iconColor": "#0c1d46",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Lucas Costa",
+        "patlasv4proto-pes-organizacao": "SEPLAG - Secretaria de Estado de Planejamento e Gestao",
+        "patlasv4proto-pes-email": "lucas.costa@seplag.mt.gov.br",
+        "patlasv4proto-pes-status": "Ativo"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-marina-souza",
+      "name": "Marina Souza",
+      "iconColor": "#0c1d46",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Marina Souza",
+        "patlasv4proto-pes-organizacao": "SEPLAG - Secretaria de Estado de Planejamento e Gestao",
+        "patlasv4proto-pes-email": "marina.souza@seplag.mt.gov.br",
+        "patlasv4proto-pes-status": "Ativo"
+      }
+    },
+    {
+      "id": "patlasv4proto-p-pessoa-pedro-alves",
+      "name": "Pedro Alves",
+      "iconColor": "#0c1d46",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Pedro Alves",
+        "patlasv4proto-pes-organizacao": "SEPLAG - Secretaria de Estado de Planejamento e Gestao",
+        "patlasv4proto-pes-email": "pedro.alves@seplag.mt.gov.br",
+        "patlasv4proto-pes-status": "Ativo"
+      }
+    },
+    {
+      "id": "p-pessoa-todos",
+      "name": "Todos",
+      "iconColor": "#5b2c6f",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Todos",
+        "patlasv4proto-pes-organizacao": "SEPLAG - Secretaria de Estado de Planejamento e Gestao",
+        "patlasv4proto-pes-email-principal": ""
+      }
+    },
+    {
+      "id": "p-ho-pessoa-1",
+      "name": "Cristiani Fernandes",
+      "iconColor": "#2B9CBF",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Cristiani Fernandes"
+      }
+    },
+    {
+      "id": "p-ho-pessoa-2",
+      "name": "Rafael Monnerat",
+      "iconColor": "#F59740",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Rafael Monnerat"
+      }
+    },
+    {
+      "id": "p-ho-pessoa-3",
+      "name": "Ademir Ribeiro",
+      "iconColor": "#F66849",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Ademir Ribeiro"
+      }
+    },
+    {
+      "id": "p-raer-pes-luis",
+      "name": "Luis Fellipe Xavier dos Santos",
+      "iconColor": "#51DACF",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Luis Fellipe Xavier dos Santos"
+      }
+    },
+    {
+      "id": "p-raer-pes-paulo",
+      "name": "Paulo Marcio Pinheiro Macedo",
+      "iconColor": "#A581DD",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Paulo Marcio Pinheiro Macedo"
+      }
+    },
+    {
+      "id": "p-raer-pes-lucas",
+      "name": "Lucas dos Santos",
+      "iconColor": "#DCA95D",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Lucas dos Santos"
+      }
+    },
+    {
+      "id": "p-raer-pes-wannessa",
+      "name": "Wannessa Rocha da Fonseca",
+      "iconColor": "#CF5F81",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Wannessa Rocha da Fonseca"
+      }
+    },
+    {
+      "id": "p-raer-pes-robson",
+      "name": "Robson Silva Dolores Dias",
+      "iconColor": "#B0D85C",
+      "fieldValues": {
+        "patlasv4proto-pes-nome": "Robson Silva Dolores Dias"
+      }
+    }
+  ],
+  "activeExamplePresetId": "patlasv4proto-p-pessoa-lucas-santos",
+  "methods": [
+    {
+      "id": "patlasv4proto-pes-meth-criar",
+      "name": "Criar",
+      "icon": "person_add",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-metodo-criar-pessoa"
+    },
+    {
+      "id": "patlasv4proto-pes-meth-editar",
+      "name": "Editar",
+      "icon": "edit",
+      "kind": "destaque"
+    },
+    {
+      "id": "patlasv4proto-pes-meth-precadastro",
+      "name": "Pré-cadastrar acesso (CPF)",
+      "icon": "badge",
+      "kind": "destaque",
+      "inputFormId": "form-patlasv4-proto-metodo-precadastro-acesso"
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-pes-show-matricula-perfil-mti",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-pes-perfil",
+      "sourceKind": "textOptions",
+      "expectedOptionText": "MTI",
+      "action": "show",
+      "targetFieldIds": [
+        "patlasv4proto-pes-matricula"
+      ]
+    },
+    {
+      "id": "09bcd0c6-1815-4d50-a75f-236ca315acfb",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-pes-perfil",
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-pes-matricula"
+      ],
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Parceiro"
+    },
+    {
+      "id": "f6f13508-4e18-46f6-a627-13ceee35754d",
+      "operator": "eq",
+      "sourceFieldId": "patlasv4proto-pes-perfil",
+      "action": "hide",
+      "targetFieldIds": [
+        "patlasv4proto-pes-matricula"
+      ],
+      "sourceKind": "textOptions",
+      "expectedOptionText": "Cliente"
+    }
+  ],
+  "hiddenLabelFieldIds": [
+    "patlasv4proto-pes-perfil"
+  ],
+  "iconColor": "#2B9CBF",
+  "iconColors": [
+    "#2B9CBF"
+  ]
+}

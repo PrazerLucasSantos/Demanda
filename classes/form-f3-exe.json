@@ -1,0 +1,232 @@
+{
+  "id": "form-f3-exe",
+  "name": "## Execução",
+  "sectionLayout": "accordion",
+  "defaultCanvasMode": "edit",
+  "metadata": "Movido de Atlas Fase 3 → Atlas V2. Importado de Atlas Fase 3.html · chave exe · Lista: Execuções (ServiceNow) · Grupo: Demanda e execução · Estados: ABE→Aberto, EXE→Em execução, CON→Concluído · Ações: 1",
+  "listedHidden": false,
+  "iconColor": "#212121",
+  "sections": [
+    {
+      "id": "sec-f3-exe-t0",
+      "title": "1. Execução",
+      "icon": "description"
+    }
+  ],
+  "fields": [
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "identity",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-_st",
+      "label": "Situação",
+      "type": "textOptions",
+      "options": [
+        "Aberto",
+        "Em execução",
+        "Concluído"
+      ],
+      "textOptionsDisplay": "dropdown",
+      "sectionId": "sec-f3-exe-t0",
+      "spec": "Estados do protótipo: ABE=Aberto; EXE=Em execução; CON=Concluído"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-numero",
+      "label": "Número",
+      "type": "text",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-snNum",
+      "label": "Número no ServiceNow",
+      "type": "text",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-dem",
+      "label": "Demanda",
+      "type": "reference",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-dem",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-os",
+      "label": "Ordem de serviço",
+      "type": "reference",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-os",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-ac",
+      "label": "Autorização de consumo",
+      "type": "reference",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-ac",
+      "referenceOptionsSource": "class"
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-snEm",
+      "label": "Aberto em",
+      "type": "date",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-pct",
+      "label": "% de conclusão",
+      "type": "decimal",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false
+    },
+    {
+      "size": "small",
+      "readOnly": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": false,
+      "hidden": false,
+      "id": "f3-exe-ultRet",
+      "label": "Último retorno",
+      "type": "date",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-exe-note-8",
+      "label": "Nota",
+      "type": "alert",
+      "alertVariant": "info",
+      "sectionId": "sec-f3-exe-t0",
+      "htmlContent": "Dados devolvidos pelo ServiceNow pela API do Atlas: situação, percentual, atividades, datas e executores. Edição liberada aqui só para simular o retorno."
+    },
+    {
+      "size": "large",
+      "readOnly": false,
+      "required": false,
+      "multiple": true,
+      "relevance": "common",
+      "breakLine": true,
+      "hidden": false,
+      "id": "f3-exe-ativ",
+      "label": "Atividades",
+      "type": "embeddedReference",
+      "sectionId": "sec-f3-exe-t0",
+      "tooltip": false,
+      "linkedFormId": "form-f3-exe-ativ",
+      "embeddedDisplay": "table",
+      "embeddedRoot": false
+    }
+  ],
+  "fieldVisibilityRules": [],
+  "methods": [
+    {
+      "id": "meth-f3-exe-ret",
+      "name": "Simular retorno do ServiceNow",
+      "icon": "play_arrow",
+      "kind": "destaque",
+      "editSectionId": "sec-f3-exe-t0",
+      "spec": "De: ABE, EXE · Quem: [\"mti\"] · Evento: (dinâmico) · Efeito: r=>{r.pct=Math.min(100,N(r.pct)+35);r.ultRet=now();(r.ativ||[]).forEach((a,i,arr)=>{const lim=Math.round(arr.length*r.pct/100);a.sit=i<lim?'Concluída':i===lim?'Em andamento':a.sit||'Aberta'});const d="
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "form-f3-exe-p1",
+      "name": "Exemplo",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-exe-p2",
+      "name": "Exemplo 2",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-exe-p3",
+      "name": "Exemplo 3",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-exe-p4",
+      "name": "Exemplo 4",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    },
+    {
+      "id": "form-f3-exe-p5",
+      "name": "Exemplo 5",
+      "iconColor": "#3473c5",
+      "fieldValues": {}
+    }
+  ],
+  "activeExamplePresetId": "form-f3-exe-p1"
+}

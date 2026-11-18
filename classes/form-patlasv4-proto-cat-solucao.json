@@ -1,0 +1,383 @@
+{
+  "id": "form-patlasv4-proto-cat-solucao",
+  "name": "Solução",
+  "icon": "lightbulb",
+  "sectionLayout": "tabsAccordion",
+  "defaultCanvasMode": "edit",
+  "metadata": "Extensão de atualização e tagueamento no salvar. Utilit����rios fica oculto porque os campos estão ocultos.",
+  "sections": [
+    {
+      "id": "tab-sol-dados",
+      "title": "Dados Principais",
+      "icon": "info"
+    },
+    {
+      "id": "sec-sol-id",
+      "title": "Identificação",
+      "icon": "badge",
+      "parentSectionId": "tab-sol-dados"
+    },
+    {
+      "id": "tab-sol-prod",
+      "title": "Produtos da Solução",
+      "icon": "inventory_2"
+    },
+    {
+      "id": "tab-sol-util",
+      "title": "Utilitários",
+      "icon": "build"
+    }
+  ],
+  "fields": [
+    {
+      "id": "form-patlasv4-proto-cat-solucao-codigo",
+      "label": "Código da solução",
+      "type": "text",
+      "size": "large",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-solucao-propria",
+      "label": "Solução própria",
+      "type": "boolean",
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-identificador",
+      "label": "Nome",
+      "type": "text",
+      "size": "medium",
+      "readOnly": true,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "identity",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id",
+      "viewValue": "MTI Simplifica - Licenciamento de Solução SaaS de Simplificação e Desburocratização de Processos"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-catalogo",
+      "label": "Catálogo da solução",
+      "type": "reference",
+      "size": "small",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id",
+      "linkedFormId": "form-patlasv4-proto-catalogo-da-solucao",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "patlasv4proto-csol-nome"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-parceria",
+      "label": "Parceria",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id",
+      "linkedFormId": "form-patlasv4-proto-cat-parceria",
+      "referenceOptionsSource": "class",
+      "referenceDisplayFieldId": "form-patlasv4-proto-cat-parceria-identificador",
+      "referenceClassOptionPresetIds": [
+        "evp-parceria-elogroup",
+        "evp-parceria-apple",
+        "evp-parceria-sydle"
+      ]
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-vertical",
+      "label": "Vertical de serviço de TI",
+      "type": "reference",
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id",
+      "linkedFormId": "form-patlasv4-proto-cat-categoria"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-documentos-apoio",
+      "label": "Documentos de apoio",
+      "type": "file",
+      "size": "small",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-descricao",
+      "label": "Descrição",
+      "type": "html",
+      "size": "large",
+      "readOnly": false,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "sec-sol-id"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-ativo",
+      "label": "Ativo?",
+      "type": "boolean",
+      "size": "small",
+      "readOnly": false,
+      "hidden": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "tab-sol-util"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-produtos",
+      "label": "Produtos",
+      "type": "text",
+      "size": "large",
+      "readOnly": true,
+      "hidden": false,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Painel analítico.",
+      "sectionId": "tab-sol-prod"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-sequencia",
+      "label": "Sequência",
+      "type": "reference",
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "tab-sol-util"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-sequencia-filha",
+      "label": "Sequência filha",
+      "type": "reference",
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "tab-sol-util"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-prefixo-sequencia-filha",
+      "label": "Prefixo da sequência filha",
+      "type": "text",
+      "size": "medium",
+      "readOnly": true,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "tab-sol-util"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-tag",
+      "label": "Tag",
+      "type": "reference",
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": false,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "tab-sol-util"
+    },
+    {
+      "id": "form-patlasv4-proto-cat-solucao-criado",
+      "label": "Objeto criado?",
+      "type": "boolean",
+      "size": "medium",
+      "readOnly": false,
+      "hidden": true,
+      "required": true,
+      "multiple": false,
+      "relevance": "common",
+      "spec": "Schema do ambiente de desenvolvimento Atlas, leitura de 06/10/2026.",
+      "sectionId": "tab-sol-util"
+    }
+  ],
+  "fieldVisibilityRules": [
+    {
+      "id": "rule-solucao-hide-parceria-quando-propria",
+      "operator": "eq",
+      "sourceFieldId": "form-patlasv4-proto-cat-solucao-solucao-propria",
+      "sourceKind": "boolean",
+      "expectedBoolean": true,
+      "action": "hide",
+      "targetFieldIds": [
+        "form-patlasv4-proto-cat-solucao-parceria"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "form-patlasv4-proto-cat-solucao-ativar-inativar",
+      "name": "Ativar/Inativar",
+      "icon": "toggle_on",
+      "kind": "destaque"
+    },
+    {
+      "id": "patlasv4proto-sol-meth-obs",
+      "name": "Adicionar Observação",
+      "icon": "add_notes",
+      "kind": "menu"
+    },
+    {
+      "id": "patlasv4proto-sol-meth-status",
+      "name": "Alterar Status",
+      "icon": "sync_alt",
+      "kind": "destaque"
+    }
+  ],
+  "exampleValuePresets": [
+    {
+      "id": "p-sol-teste-simulado",
+      "name": "Teste Simulado de Solução",
+      "iconColor": "#0F6CBD",
+      "fieldValues": {
+        "form-patlasv4-proto-cat-solucao-codigo": "QWER001",
+        "form-patlasv4-proto-cat-solucao-identificador": "MTI Simplifica - Licenciamento de Solução SaaS de Simplificação e Desburocratização de Processos",
+        "form-patlasv4-proto-cat-solucao-catalogo": "Catálogo — HML PARC",
+        "form-patlasv4-proto-cat-solucao-solucao-propria": false,
+        "form-patlasv4-proto-cat-solucao-parceria": "Elogroup",
+        "form-patlasv4-proto-cat-solucao-vertical": "Vertical 001",
+        "form-patlasv4-proto-cat-solucao-descricao": "",
+        "form-patlasv4-proto-cat-solucao-ativo": true,
+        "form-patlasv4-proto-cat-solucao-tag": "Ativo",
+        "form-patlasv4-proto-cat-solucao-produtos": ""
+      }
+    },
+    {
+      "id": "p-sol-simplifica",
+      "name": "MTI Simplifica",
+      "iconColor": "#7c3aed",
+      "fieldValues": {
+        "form-patlasv4-proto-cat-solucao-codigo": "SIMP001",
+        "form-patlasv4-proto-cat-solucao-identificador": "MTI Simplifica - Serviços de Solução SaaS de Simplificação e Desburocratização de Processos",
+        "form-patlasv4-proto-cat-solucao-catalogo": "Catálogo MTI Simplifica",
+        "form-patlasv4-proto-cat-solucao-solucao-propria": false,
+        "form-patlasv4-proto-cat-solucao-parceria": "Elogroup",
+        "form-patlasv4-proto-cat-solucao-vertical": "Vertical 001",
+        "form-patlasv4-proto-cat-solucao-descricao": "Solução SaaS de simplificação e desburocratização de processos.",
+        "form-patlasv4-proto-cat-solucao-ativo": true,
+        "form-patlasv4-proto-cat-solucao-tag": "Ativo",
+        "form-patlasv4-proto-cat-solucao-produtos": "Elaborar plano de projeto; Licença plataforma Simplifica; Implantação MTI Simplifica"
+      }
+    },
+    {
+      "id": "p-sol-host",
+      "name": "MTI Host",
+      "iconColor": "#0F6CBD",
+      "fieldValues": {
+        "form-patlasv4-proto-cat-solucao-codigo": "HOST001",
+        "form-patlasv4-proto-cat-solucao-identificador": "MTI SIMPLIFICA",
+        "form-patlasv4-proto-cat-solucao-catalogo": "Catálogo MTI Host",
+        "form-patlasv4-proto-cat-solucao-solucao-propria": false,
+        "form-patlasv4-proto-cat-solucao-parceria": "FacilMova Host",
+        "form-patlasv4-proto-cat-solucao-vertical": "Vertical 002",
+        "form-patlasv4-proto-cat-solucao-descricao": "Infraestrutura de TI gerenciada como serviço (IAaaS).",
+        "form-patlasv4-proto-cat-solucao-ativo": true,
+        "form-patlasv4-proto-cat-solucao-tag": "Ativo",
+        "form-patlasv4-proto-cat-solucao-produtos": "Serviço de hospedagem"
+      }
+    },
+    {
+      "id": "p-sol-nao-sei-informar",
+      "name": "Não sei informar",
+      "iconColor": "#64748b",
+      "fieldValues": {
+        "form-patlasv4-proto-cat-solucao-identificador": "Não sei informar",
+        "form-patlasv4-proto-cat-solucao-ativo": true
+      }
+    },
+    {
+      "id": "p-sol-outras",
+      "name": "Outras",
+      "iconColor": "#8a4b08",
+      "fieldValues": {
+        "form-patlasv4-proto-cat-solucao-identificador": "Outras",
+        "form-patlasv4-proto-cat-solucao-ativo": true
+      }
+    },
+    {
+      "id": "p-sol-atlas-gestao-doc",
+      "name": "Atlas Gestão Documental",
+      "iconColor": "#23796f",
+      "fieldValues": {
+        "form-patlasv4-proto-cat-solucao-codigo": "AGD001",
+        "form-patlasv4-proto-cat-solucao-identificador": "Atlas Gestão Documental",
+        "form-patlasv4-proto-cat-solucao-parceria": "Elogroup",
+        "form-patlasv4-proto-cat-solucao-catalogo": "Catálogo — HML PARC",
+        "form-patlasv4-proto-cat-solucao-vertical": "Vertical 001",
+        "form-patlasv4-proto-cat-solucao-descricao": "Solução de gestão documental e processos administrativos.",
+        "form-patlasv4-proto-cat-solucao-ativo": true,
+        "form-patlasv4-proto-cat-solucao-solucao-propria": false
+      }
+    }
+  ],
+  "activeExamplePresetId": "p-sol-simplifica",
+  "listedHidden": false,
+  "classTabs": [
+    {
+      "id": "class-tab-custom-mvlnsgtfgpz6o",
+      "name": "Produtos da Solução",
+      "icon": "folder",
+      "contentType": "html",
+      "htmlContent": "",
+      "showIdentityHeader": true,
+      "isPrincipal": false
+    }
+  ],
+  "classTabOrder": [
+    "class-tab-detalhes",
+    "class-tab-dados",
+    "class-tab-social",
+    "class-tab-custom-mvlnsgtfgpz6o"
+  ],
+  "iconColor": "#2B9CBF",
+  "iconColors": [
+    "#2B9CBF"
+  ]
+}
