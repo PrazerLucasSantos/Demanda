@@ -1,0 +1,184 @@
+[
+  {
+    "id": "ws-demanda",
+    "name": "Classe Demanda",
+    "explorerChromeColor": "#00058f",
+    "explorerHeaderForeground": "#ffffff",
+    "explorerUserInitials": "LS",
+    "packages": [
+      {
+        "id": "pkg-dem",
+        "name": "Demanda",
+        "classes": [
+          {
+            "id": "cls-form-f3-dem",
+            "name": "Classe  Demanda",
+            "linkedFormId": "form-f3-dem"
+          }
+        ]
+      },
+      {
+        "id": "pkg-emb",
+        "name": "Referencias embutidas",
+        "classes": [
+          {
+            "id": "cls-form-f3-dem-sla",
+            "name": "SLA",
+            "linkedFormId": "form-f3-dem-sla"
+          },
+          {
+            "id": "cls-form-f3-dem-dct",
+            "name": "Dados do contrato",
+            "linkedFormId": "form-f3-dem-dct"
+          },
+          {
+            "id": "cls-form-f3-dem-aprov",
+            "name": "Aprovadores (dem)",
+            "linkedFormId": "form-f3-dem-aprov"
+          },
+          {
+            "id": "cls-form-f3-dem-escopos",
+            "name": "Parceiras",
+            "linkedFormId": "form-f3-dem-escopos"
+          },
+          {
+            "id": "cls-form-f3-dem-itensMTI",
+            "name": "Itens a consumir (dem)",
+            "linkedFormId": "form-f3-dem-itensMTI"
+          },
+          {
+            "id": "cls-form-f3-dem-pats",
+            "name": "Assinaturas do patrocinador (dem)",
+            "linkedFormId": "form-f3-dem-pats"
+          },
+          {
+            "id": "cls-form-f3-dem-aten",
+            "name": "Classe Atendimento do Parceiro - Demanda",
+            "linkedFormId": "form-f3-dem-aten"
+          },
+          {
+            "id": "cls-form-f3-dem-gers",
+            "name": "Aprovação dos gerentes (dem)",
+            "linkedFormId": "form-f3-dem-gers"
+          },
+          {
+            "id": "cls-form-f3-dem-aten-itensB",
+            "name": "Item do atendimento",
+            "linkedFormId": "form-f3-dem-aten-itensB"
+          },
+          {
+            "id": "cls-form-f3-dem-sigOrc",
+            "name": "Signatários do orçamento (dem)",
+            "linkedFormId": "form-f3-dem-sigOrc"
+          },
+          {
+            "id": "cls-form-f3-dem-itens",
+            "name": "Item do atendimento — visão do cliente",
+            "linkedFormId": "form-f3-dem-itens"
+          },
+          {
+            "id": "cls-form-f3-dem-sigAut",
+            "name": "Signatários da autorização (dem)",
+            "linkedFormId": "form-f3-dem-sigAut"
+          },
+          {
+            "id": "cls-form-f3-dem-entregas",
+            "name": "Entregas de licenciamento (dem)",
+            "linkedFormId": "form-f3-dem-entregas"
+          },
+          {
+            "id": "cls-form-f3-dem-_ths",
+            "name": "Termos de homologação (dem)",
+            "linkedFormId": "form-f3-dem-_ths"
+          },
+          {
+            "id": "cls-form-f3-dem-eventos",
+            "name": "Evento",
+            "linkedFormId": "form-f3-dem-eventos"
+          },
+          {
+            "id": "cls-form-f3-dem-versoes",
+            "name": "Versão",
+            "linkedFormId": "form-f3-dem-versoes"
+          }
+        ]
+      },
+      {
+        "id": "pkg-ref",
+        "name": "Referencias",
+        "classes": [
+          {
+            "id": "cls-form-patlasv4-proto-pessoa",
+            "name": "Pessoa",
+            "linkedFormId": "form-patlasv4-proto-pessoa"
+          },
+          {
+            "id": "cls-form-patlasv4-proto-unidade-organizacional",
+            "name": "Organização — Principal",
+            "linkedFormId": "form-patlasv4-proto-unidade-organizacional"
+          },
+          {
+            "id": "cls-form-f3-ct",
+            "name": "Contrato",
+            "linkedFormId": "form-f3-ct"
+          },
+          {
+            "id": "cls-form-f3-ct-itens",
+            "name": "Itens contratados (ct)",
+            "linkedFormId": "form-f3-ct-itens"
+          },
+          {
+            "id": "cls-form-patlasv4-proto-cat-solucao",
+            "name": "Solução",
+            "linkedFormId": "form-patlasv4-proto-cat-solucao"
+          },
+          {
+            "id": "cls-form-patlasv4-proto-catalogo-da-solucao",
+            "name": "Catálogo de Solução",
+            "linkedFormId": "form-patlasv4-proto-catalogo-da-solucao"
+          },
+          {
+            "id": "cls-form-patlasv4-proto-cat-parceria",
+            "name": "Parceria",
+            "linkedFormId": "form-patlasv4-proto-cat-parceria"
+          },
+          {
+            "id": "cls-form-f3-os",
+            "name": "Ordem de serviço",
+            "linkedFormId": "form-f3-os"
+          },
+          {
+            "id": "cls-mqebasqyphbwea",
+            "name": "Workflow de Assinatura — Principal 🟢",
+            "linkedFormId": "mqebasqyphbwea"
+          },
+          {
+            "id": "cls-form-f3-orc",
+            "name": "Orçamento",
+            "linkedFormId": "form-f3-orc"
+          },
+          {
+            "id": "cls-form-f3-exe",
+            "name": "Execução",
+            "linkedFormId": "form-f3-exe"
+          },
+          {
+            "id": "cls-form-f3-ac",
+            "name": "Autorização de consumo",
+            "linkedFormId": "form-f3-ac"
+          },
+          {
+            "id": "cls-form-f3-prop",
+            "name": "Classe Proposta",
+            "linkedFormId": "form-f3-prop"
+          },
+          {
+            "id": "cls-form-f3-inden",
+            "name": "Indenização",
+            "linkedFormId": "form-f3-inden"
+          }
+        ]
+      }
+    ]
+  }
+]

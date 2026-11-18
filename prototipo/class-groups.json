@@ -1,0 +1,44 @@
+{
+  "groups": [
+    {
+      "id": "grp-demanda",
+      "name": "Classe Demanda",
+      "kind": "fase"
+    }
+  ],
+  "memberOrderByGroup": {
+    "grp-demanda": [
+      "form-f3-dem",
+      "form-f3-dem-sla",
+      "form-patlasv4-proto-pessoa",
+      "form-patlasv4-proto-unidade-organizacional",
+      "form-f3-ct",
+      "form-f3-ct-itens",
+      "form-f3-dem-dct",
+      "form-patlasv4-proto-cat-solucao",
+      "form-f3-dem-aprov",
+      "form-patlasv4-proto-catalogo-da-solucao",
+      "form-f3-dem-escopos",
+      "form-f3-dem-itensMTI",
+      "form-f3-dem-pats",
+      "form-f3-dem-aten",
+      "form-f3-dem-gers",
+      "form-patlasv4-proto-cat-parceria",
+      "form-f3-dem-aten-itensB",
+      "form-f3-os",
+      "mqebasqyphbwea",
+      "form-f3-dem-sigOrc",
+      "form-f3-orc",
+      "form-f3-dem-itens",
+      "form-f3-dem-sigAut",
+      "form-f3-dem-entregas",
+      "form-f3-dem-_ths",
+      "form-f3-exe",
+      "form-f3-ac",
+      "form-f3-prop",
+      "form-f3-inden",
+      "form-f3-dem-eventos",
+      "form-f3-dem-versoes"
+    ]
+  }
+}
